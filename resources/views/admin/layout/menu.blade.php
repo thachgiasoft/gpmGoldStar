@@ -224,7 +224,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
         </li>
-        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+        <li><a href="{!! URL::route('goldstar-admin.qlnguoidung.danhsach') !!}"><i class="fa fa-book"></i> <span>Tài khoản</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
