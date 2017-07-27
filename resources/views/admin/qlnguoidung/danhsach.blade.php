@@ -114,15 +114,8 @@
 @endsection
 @section('script')
 <script>
- 
-  $(function () {
+   $(function () {
     $("#sinhvien").DataTable();
-  });
-  $('#datepicker').datepicker({
-    weekStart: 1,
-    format: "dd/mm/yy",
-    autoclose: 1,
-    language: "vi"
   });
 </script>
 @endsection
