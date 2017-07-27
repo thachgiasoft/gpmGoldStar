@@ -1,0 +1,31 @@
+.form-group {
+    padding: 0px;
+}
+.form-control {
+    border-color: inherit;
+    box-shadow: none;
+    border: none;
+    border-bottom: 0.5px solid black;
+    padding: 0px;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+    /*background:green;*/
+}
+
+input[type=text] {
+    text-align: left;
+    /*background: red;*/
+}
+
+.table-bordered>thead>tr>th,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>tbody>tr>td,
+.table-bordered>tfoot>tr>td,
+.table-bordered {
+    border: 1px solid black;
+    text-align: center;
+}
