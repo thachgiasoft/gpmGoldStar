@@ -15,6 +15,7 @@ Route::get('goldstar-admin', function () {
     return view('admin.layout.index');
 });
 Route::group(['prefix'=>'goldstar-admin'],function(){
+
 	Route::group(['prefix'=>'congviennuoc'],function(){
 		Route::group(['prefix'=>'ql'],function(){
 			Route::get('danh-sach',['as'=>'goldstar-admin.nhomloaitin.danhsach','uses'=>'NguoiDungController@getDanhSach']);
@@ -29,8 +30,22 @@ Route::group(['prefix'=>'goldstar-admin'],function(){
 	});
 
 	Route::group(['prefix'=>'cafe'],function(){
+		//quản lý danh mục
+		Route::group(['prefix'=>'qldanhmuc'],function(){
+			Route::get('danh-sach',['as'=>'goldstar-admin.cafe.qldanhmuc.danhsach','uses'=>'cafe_DanhMucController@getDanhSach']);
+			Route::post('them',['as'=>'goldstar-admin.cafe.qldanhmuc.postthem','uses'=>'cafe_DanhMucController@postThem']);
+			Route::get('sua/{id}',['as'=>'goldstar-admin.cafe.qldanhmuc.getsua','uses'=>'cafe_DanhMucController@getSua']);
+			Route::post('sua/{id}',['as'=>'goldstar-admin.cafe.qldanhmuc.postsua','uses'=>'cafe_DanhMucController@postSua']);
+			Route::get('xoa/{id}',['as'=>'goldstar-admin.cafe.qldanhmuc.getxoa','uses'=>'cafe_DanhMucController@getXoa']);
+		});
 
-
+		Route::group(['prefix'=>'qlsanpham'],function(){
+			Route::get('danh-sach',['as'=>'goldstar-admin.cafe.qlsanpham.danhsach','uses'=>'cafe_DanhMucController@getDanhSach']);
+			Route::post('them',['as'=>'goldstar-admin.cafe.qlsanpham.postthem','uses'=>'cafe_DanhMucController@postThem']);
+			Route::get('sua/{id}',['as'=>'goldstar-admin.cafe.qlsanpham.getsua','uses'=>'cafe_DanhMucController@getSua']);
+			Route::post('sua/{id}',['as'=>'goldstar-admin.cafe.qlsanpham.postsua','uses'=>'cafe_DanhMucController@postSua']);
+			Route::get('xoa/{id}',['as'=>'goldstar-admin.cafe.qlsanpham.getxoa','uses'=>'cafe_DanhMucController@getXoa']);
+		});
 
 
 	});
