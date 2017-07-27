@@ -11,16 +11,32 @@
 |
 */
 
-//Nhóm admin
 Route::group(['prefix'=>'goldstar-admin'],function(){
-	//nhóm thể loại
-	Route::group(['prefix'=>'nhomloaitin'],function(){
-		Route::get('danhsach',['as'=>'goldstar-admin.nhomloaitin.danhsach','uses'=>'NhomLoaiTinController@getDanhSach']);
-		Route::post('them',['as'=>'goldstar-admin.nhomloaitin.postthem','uses'=>'NhomLoaiTinController@postThem']);
-		Route::get('sua/{id}',['as'=>'admin.nhomloaitin.getsua','uses'=>'NhomLoaiTinController@getSua']);
-		Route::post('sua/{id}',['as'=>'admin.nhomloaitin.postsua','uses'=>'NhomLoaiTinController@postSua']);
-		Route::get('xoa/{id}',['as'=>'admin.nhomloaitin.getxoa','uses'=>'NhomLoaiTinController@getXoa']);
+
+	Route::group(['prefix'=>'congviennuoc'],function(){
+		Route::group(['prefix'=>'ql'],function(){
+			Route::get('danh-sach',['as'=>'goldstar-admin.nhomloaitin.danhsach','uses'=>'NhomLoaiTinController@getDanhSach']);
+			Route::post('them',['as'=>'goldstar-admin.nhomloaitin.postthem','uses'=>'NhomLoaiTinController@postThem']);
+			Route::get('sua/{id}',['as'=>'admin.nhomloaitin.getsua','uses'=>'NhomLoaiTinController@getSua']);
+			Route::post('sua/{id}',['as'=>'admin.nhomloaitin.postsua','uses'=>'NhomLoaiTinController@postSua']);
+			Route::get('xoa/{id}',['as'=>'admin.nhomloaitin.getxoa','uses'=>'NhomLoaiTinController@getXoa']);
+		});
+
+
+
 	});
 
+	Route::group(['prefix'=>'cafe'],function(){
+
+
+
+
+	});
+	Route::group(['prefix'=>'nhahang'],function(){
+
+
+
+
+	});
 });
 Auth::routes();
