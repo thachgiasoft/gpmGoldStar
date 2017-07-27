@@ -11,8 +11,10 @@
 |
 */
 
+Route::get('goldstar-admin', function () {
+    return view('admin.layout.index');
+});
 Route::group(['prefix'=>'goldstar-admin'],function(){
-
 	Route::group(['prefix'=>'congviennuoc'],function(){
 		Route::group(['prefix'=>'ql'],function(){
 			Route::get('danh-sach',['as'=>'goldstar-admin.nhomloaitin.danhsach','uses'=>'NhomLoaiTinController@getDanhSach']);
