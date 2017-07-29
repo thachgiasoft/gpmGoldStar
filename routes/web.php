@@ -62,6 +62,9 @@ Route::group(['prefix'=>'goldstar-admin'],function(){
 		Route::post('sua/{id}',['as'=>'goldstar-admin.qlnguoidung.postsua','uses'=>'NguoiDungController@postSua']);
 		Route::get('xoa/{id}',['as'=>'goldstar-admin.qlnguoidung.getxoa','uses'=>'NguoiDungController@getXoa']);
 	});
+	Route::group(['prefix'=>'qlcauhinh'],function(){
+		Route::get('gioi-thieu-cong-ty',['as'=>'goldstar-admin.qlcauhinh.gioithieucongty','uses'=>'CauHinhController@getGioiThieuCongTy']);
+	});
 
 });
 Auth::routes();
