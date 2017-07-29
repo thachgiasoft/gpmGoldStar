@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CafeDanhmucTable extends Migration
+class TblSlideTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CafeDanhmucTable extends Migration
      */
     public function up()
     {
-        Schema::create('cafe_danhmuc', function (Blueprint $table) {
+        Schema::create('tbl_slide', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tendanhmuc')->unique();
-            $table->string('tendanhmuckhongdau');
+            $table->string('TieuDe')->nullable();
+            $table->string('Link')->nullable();
+            $table->LongText('HinhAnh')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CafeDanhmucTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cafe_danhmuc');
+        Schema::dropIfExists('tbl_slide');
     }
 }

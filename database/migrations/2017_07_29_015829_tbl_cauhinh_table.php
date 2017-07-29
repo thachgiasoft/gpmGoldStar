@@ -19,6 +19,7 @@ class TblCauhinhTable extends Migration
             $table->LongText('GioiThieuNhaHangCaFe')->nullable();
             $table->LongText('GioiThieuCongVienNuoc')->nullable();
             $table->string('Icon')->nullable();
+            $table->string('DienThoai')->nullable();
             $table->string('Title')->nullable();
             $table->string('Logo')->nullable();
             $table->LongText('ThongTin')->nullable();

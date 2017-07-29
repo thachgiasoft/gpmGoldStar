@@ -203,10 +203,12 @@
           </ul>
         </li>
         <li class="header">Hệ thống</li>
+        <li><a href="{!! URL::route('goldstar-admin.qlslide.danhsach') !!}"><i class="fa fa-book"></i> <span>Slide hình ảnh</span></a></li>
         <li><a href="{!! URL::route('goldstar-admin.qlnguoidung.danhsach') !!}"><i class="fa fa-book"></i> <span>Tài khoản</span></a></li>
         <li><a href="{!! URL::route('goldstar-admin.qlcauhinh.gioithieucongty') !!}"><i class="fa fa-book"></i> <span>Giới thiệu công ty</span></a></li>
         <li><a href="{!! URL::route('goldstar-admin.qlcauhinh.gioithieucongviennuoc') !!}"><i class="fa fa-book"></i> <span>Giới thiệu công viên nước</span></a></li>
         <li><a href="{!! URL::route('goldstar-admin.qlcauhinh.gioithieunhahangcf') !!}"><i class="fa fa-book"></i> <span>Giới thiệu nhà hàng - cafe</span></a></li>
+        <li><a href="{!! URL::route('goldstar-admin.qlcauhinh.cauhinhhethong') !!}"><i class="fa fa-book"></i> <span>Cấu hình hệ thống</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

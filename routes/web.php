@@ -62,6 +62,13 @@ Route::group(['prefix'=>'goldstar-admin'],function(){
 		Route::post('sua/{id}',['as'=>'goldstar-admin.qlnguoidung.postsua','uses'=>'NguoiDungController@postSua']);
 		Route::get('xoa/{id}',['as'=>'goldstar-admin.qlnguoidung.getxoa','uses'=>'NguoiDungController@getXoa']);
 	});
+	Route::group(['prefix'=>'qlslide'],function(){
+		Route::get('danh-sach',['as'=>'goldstar-admin.qlslide.danhsach','uses'=>'SlideController@getDanhSach']);
+		Route::post('them',['as'=>'goldstar-admin.qlslide.postthem','uses'=>'SlideController@postThem']);
+		Route::get('sua/{id}',['as'=>'goldstar-admin.qlslide.getsua','uses'=>'SlideController@getSua']);
+		Route::post('sua/{id}',['as'=>'goldstar-admin.qlslide.postsua','uses'=>'SlideController@postSua']);
+		Route::get('xoa/{id}',['as'=>'goldstar-admin.qlslide.getxoa','uses'=>'SlideController@getXoa']);
+	});
 	Route::group(['prefix'=>'qlcauhinh'],function(){
 		Route::get('gioi-thieu-cong-ty',['as'=>'goldstar-admin.qlcauhinh.gioithieucongty','uses'=>'CauHinhController@getGioiThieuCongTy']);
 		Route::post('gioi-thieu-cong-ty',['as'=>'goldstar-admin.qlcauhinh.postgioithieucongty','uses'=>'CauHinhController@postGioiThieuCongTy']);
@@ -71,6 +78,9 @@ Route::group(['prefix'=>'goldstar-admin'],function(){
 
 		Route::get('gioi-thieu-nha-hang-cafe',['as'=>'goldstar-admin.qlcauhinh.gioithieunhahangcf','uses'=>'CauHinhController@getGioiThieuNhaHangCF']);
 		Route::post('gioi-thieu-nha-hang-cafe',['as'=>'goldstar-admin.qlcauhinh.postgioithieunhahangcf','uses'=>'CauHinhController@postGioiThieuNhaHangCF']);
+
+		Route::get('cau-hinh-he-thong',['as'=>'goldstar-admin.qlcauhinh.cauhinhhethong','uses'=>'CauHinhController@getCauHinhHeThong']);
+		Route::post('cau-hinh-he-thong',['as'=>'goldstar-admin.qlcauhinh.postcauhinhhethong','uses'=>'CauHinhController@postCauHinhHeThong']);
 	});
 
 });
