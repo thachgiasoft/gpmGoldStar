@@ -64,6 +64,13 @@ Route::group(['prefix'=>'goldstar-admin'],function(){
 	});
 	Route::group(['prefix'=>'qlcauhinh'],function(){
 		Route::get('gioi-thieu-cong-ty',['as'=>'goldstar-admin.qlcauhinh.gioithieucongty','uses'=>'CauHinhController@getGioiThieuCongTy']);
+		Route::post('gioi-thieu-cong-ty',['as'=>'goldstar-admin.qlcauhinh.postgioithieucongty','uses'=>'CauHinhController@postGioiThieuCongTy']);
+		
+		Route::get('gioi-thieu-cong-vien-nuoc',['as'=>'goldstar-admin.qlcauhinh.gioithieucongviennuoc','uses'=>'CauHinhController@getGioiThieuCongVienNuoc']);
+		Route::post('gioi-thieu-cong-vien-nuoc',['as'=>'goldstar-admin.qlcauhinh.postgioithieucongviennuoc','uses'=>'CauHinhController@postGioiThieuCongVienNuoc']);
+
+		Route::get('gioi-thieu-nha-hang-cafe',['as'=>'goldstar-admin.qlcauhinh.gioithieunhahangcf','uses'=>'CauHinhController@getGioiThieuNhaHangCF']);
+		Route::post('gioi-thieu-nha-hang-cafe',['as'=>'goldstar-admin.qlcauhinh.postgioithieunhahangcf','uses'=>'CauHinhController@postGioiThieuNhaHangCF']);
 	});
 
 });

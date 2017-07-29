@@ -69,8 +69,7 @@
 
 <!--My Script-->
 <script src="{!! url('public/admin_asset/js/myscript.js') !!}"></script>
-<script type="text/javascript" language="javascript" src="{!! url('public/admin_asset/ckeditor/ckeditor.js') !!}" ></script>
-
+<script type="text/javascript" language="javascript" src="{!! url('public/admin_asset/js/ckeditor/ckeditor.js') !!}" ></script>
 
 <script src="{!! url('public/admin_asset/plugins/datepicker/bootstrap-datepicker.js') !!}"></script>
 <script src="{!! url('public/admin_asset/plugins/datepicker/locales/bootstrap-datepicker.vi.js') !!}"></script>
