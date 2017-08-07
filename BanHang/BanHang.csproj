@@ -105,6 +105,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="css\index.js" />
     <Content Include="css\style.css" />
+    <Content Include="DangNhap.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="images\banhang.png" />
     <Content Include="images\baocao.png" />
     <Content Include="images\khohang.png" />
@@ -178,7 +180,21 @@
     <Compile Include="Account\RegisterSuccess.aspx.designer.cs">
       <DependentUpon>RegisterSuccess.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DangNhap.aspx.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangNhap.aspx.designer.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Data\StaticContext.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="KeepAlive.ashx.cs">
       <DependentUpon>KeepAlive.ashx</DependentUpon>
     </Compile>
