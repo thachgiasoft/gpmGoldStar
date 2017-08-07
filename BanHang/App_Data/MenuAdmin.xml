@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MenuAdmin>
+  <Panel Text="Menu">
+    <Group Text="Bàn hàng - Danh mục" Name="Ban_Hang_Danh_Muc">
+      <Item Text="Bán hàng lẻ" Size="Large" LargeImageUrl="~/Ribbon/Images/MathIcons/AnalyzeCode.png">
+      </Item>
+      <Item Text="Danh mục" ItemType="DropDownButton" Size="Large" LargeImageUrl="~/Ribbon/Images/MathIcons/View.png">
+        <SubItem Text="Thông tin cửa hàng" ItemType="DropDownButton" SmallImageUrl="~/Ribbon/Images/MathIcons/Zoom.png">
+        </SubItem>
+        <SubItem Text="Nhóm hàng" ItemType="DropDownButton" SmallImageUrl="~/Ribbon/Images/MathIcons/Unzoom.png">
+        </SubItem>
+        <SubItem Text="Mã hàng" ItemType="DropDownButton" SmallImageUrl="~/Ribbon/Images/MathIcons/FullScreen.png">
+        </SubItem>
+      </Item>
+    </Group>    
+  </Panel>    
+</MenuAdmin>

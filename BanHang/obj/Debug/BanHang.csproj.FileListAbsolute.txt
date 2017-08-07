@@ -1,0 +1,204 @@
+D:\Code\ASP Ban Hang1\BanHang\BanHang\bin\BanHang.dll
+D:\Code\ASP Ban Hang1\BanHang\BanHang\bin\BanHang.pdb
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.csprojResolveAssemblyReference.cache
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuChuyenKho.resources
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapLe.resources
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapSi.resources
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatKhac.resources
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoBanHangLe.resources
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHang.resources
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangLe.resources
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangSi.resources
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTonKho.resources
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.Report.rpHoaDonBanHangLe.resources
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.csproj.GenerateResource.Cache
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.dll.licenses
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.dll
+D:\Code\ASP Ban Hang1\BanHang\BanHang\obj\Debug\BanHang.pdb
+D:\GPM\gpm\BanHang\BanHang\bin\BanHang.dll
+D:\GPM\gpm\BanHang\BanHang\bin\BanHang.pdb
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.csprojResolveAssemblyReference.cache
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuChuyenKho.resources
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapLe.resources
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapSi.resources
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatKhac.resources
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoBanHangLe.resources
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangLe.resources
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangSi.resources
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTonKho.resources
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.Report.rpHoaDonBanHangLe.resources
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.csproj.GenerateResource.Cache
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.dll.licenses
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.dll
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.pdb
+D:\Code\ASP Ban Hang\BanHang\BanHang\bin\BanHang.dll
+D:\Code\ASP Ban Hang\BanHang\BanHang\bin\BanHang.pdb
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.csprojResolveAssemblyReference.cache
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapSi.resources
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoBanHangLe.resources
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangLe.resources
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangSi.resources
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTonKho.resources
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpHoaDonBanHangLe.resources
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.csproj.GenerateResource.Cache
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.dll.licenses
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.dll
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.pdb
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTraHang.resources
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapLe.resources
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuChuyenKho.resources
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuDoiHang.resources
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatKhac.resources
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatTra.resources
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuDoiHang.resources
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatTra.resources
+D:\GPM\gpm\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTraHang.resources
+D:\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpDonDatHang.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.csprojResolveAssemblyReference.cache
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuChuyenKho.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuDoiHang.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapSi.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatKhac.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatTra.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoBanHangLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangSi.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTonKho.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTraHang.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpDonDatHang.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpHoaDonBanHangLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.csproj.GenerateResource.Cache
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.dll.licenses
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.dll
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.pdb
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\bin\BanHang.dll
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\bin\BanHang.pdb
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.HoaDonBanle.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\ASP Ban Hang\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietnhap.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\bin\BanHang.dll
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\bin\BanHang.pdb
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.csprojResolveAssemblyReference.cache
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.HoaDonBanle.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuChuyenKho.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuDoiHang.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapSi.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatKhac.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatTra.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoBanHangLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietnhap.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangSi.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTonKho.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTraHang.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpDonDatHang.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpHoaDonBanHangLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.csproj.GenerateResource.Cache
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.dll.licenses
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.dll
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.pdb
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietXuat.resources
+C:\Users\vmquy\Desktop\Cty GPM\Code\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietDoanhThu.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.csprojResolveAssemblyReference.cache
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.HoaDonBanle.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuChuyenKho.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuDoiHang.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapSi.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatKhac.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatTra.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoBanHangLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietDoanhThu.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietnhap.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietXuat.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangSi.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTonKho.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTraHang.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpDonDatHang.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpHoaDonBanHangLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.csproj.GenerateResource.Cache
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.dll.licenses
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.dll
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\bin\BanHang.dll
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\bin\BanHang.pdb
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.pdb
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\bin\BanHang.dll
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\bin\BanHang.pdb
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.csprojResolveAssemblyReference.cache
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.HoaDonBanle.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuChuyenKho.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuDoiHang.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapLe.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapSi.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatKhac.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatTra.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoBanHangLe.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietDoanhThu.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietnhap.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietXuat.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangLe.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangSi.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTonKho.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTraHang.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpDonDatHang.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.Report.rpHoaDonBanHangLe.resources
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.csproj.GenerateResource.Cache
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.dll.licenses
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.dll
+D:\GPM\BanHang\Ban Hang CCV\gpm123\BanHang\BanHang\obj\Debug\BanHang.pdb
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\bin\BanHang.dll
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\bin\BanHang.pdb
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.csprojResolveAssemblyReference.cache
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.HoaDonBanle.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuChuyenKho.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuDoiHang.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapSi.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatKhac.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatTra.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoBanHangLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietDoanhThu.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietnhap.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietXuat.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangSi.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTonKho.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTraHang.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpDonDatHang.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.Report.rpHoaDonBanHangLe.resources
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.csproj.GenerateResource.Cache
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.dll.licenses
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.dll
+C:\Users\vmquy\Desktop\Cty GPM\Ban Hang CCV\gpm123\BanHang\obj\Debug\BanHang.pdb
+D:\GPM\gpm123\BanHang\bin\BanHang.dll
+D:\GPM\gpm123\BanHang\bin\BanHang.pdb
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.csprojResolveAssemblyReference.cache
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.HoaDonBanle.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuChuyenKho.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuDoiHang.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapLe.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuNhapSi.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatKhac.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBangKePhieuXuatTra.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoBanHangLe.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietDoanhThu.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietnhap.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoChiTietXuat.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangLe.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoNhapHangSi.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTonKho.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTraHang.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpDonDatHang.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.Report.rpHoaDonBanHangLe.resources
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.csproj.GenerateResource.Cache
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.dll.licenses
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.dll
+D:\GPM\gpm123\BanHang\obj\Debug\BanHang.pdb
+C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\obj\Debug\BanHang.csprojResolveAssemblyReference.cache
+C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\obj\Debug\BanHang.dll.licenses
+C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\obj\Debug\BanHang.dll
+C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\bin\BanHang.dll
+C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\bin\BanHang.pdb
+C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\obj\Debug\BanHang.pdb

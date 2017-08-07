@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Account/ChangePassword.aspx">
+      <publishTime>06/15/2017 09:09:35</publishTime>
+    </File>
+    <File Include="Account/ChangePasswordSuccess.aspx">
+      <publishTime>06/15/2017 09:09:35</publishTime>
+    </File>
+    <File Include="Account/Login.aspx">
+      <publishTime>06/15/2017 09:09:35</publishTime>
+    </File>
+    <File Include="Account/Register.aspx">
+      <publishTime>06/15/2017 09:09:35</publishTime>
+    </File>
+    <File Include="Account/RegisterSuccess.aspx">
+      <publishTime>06/15/2017 09:09:35</publishTime>
+    </File>
+    <File Include="Account/Web.config">
+      <publishTime>06/15/2017 09:09:35</publishTime>
+    </File>
+    <File Include="App_Data/main.xml">
+      <publishTime>06/22/2017 06:19:29</publishTime>
+    </File>
+    <File Include="App_Data/MenuAdmin.xml">
+      <publishTime>06/15/2017 09:09:35</publishTime>
+    </File>
+    <File Include="BangKePhieuChuyenKho.aspx">
+      <publishTime>06/15/2017 09:09:47</publishTime>
+    </File>
+    <File Include="BangKePhieuDoiHang.aspx">
+      <publishTime>06/15/2017 09:09:55</publishTime>
+    </File>
+    <File Include="BangKePhieuNhapLe.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="BangKePhieuNhapSi.aspx">
+      <publishTime>06/15/2017 09:09:47</publishTime>
+    </File>
+    <File Include="BangKePhieuXuatKhac.aspx">
+      <publishTime>06/15/2017 09:09:47</publishTime>
+    </File>
+    <File Include="BangKePhieuXuatTra.aspx">
+      <publishTime>06/15/2017 09:09:55</publishTime>
+    </File>
+    <File Include="BanHangLe.aspx">
+      <publishTime>06/26/2017 21:15:00</publishTime>
+    </File>
+    <File Include="BaoCaoBanHangLe.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="BaoCaoNhapHangLe.aspx">
+      <publishTime>06/15/2017 09:09:47</publishTime>
+    </File>
+    <File Include="BaoCaoNhapHangSi.aspx">
+      <publishTime>06/15/2017 09:09:47</publishTime>
+    </File>
+    <File Include="BaoCaoTonKho.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="BaoCaoTraHang.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="bin/BanHang.dll">
+      <publishTime>06/27/2017 15:00:09</publishTime>
+    </File>
+    <File Include="bin/BanHang.dll.r16">
+      <publishTime>06/15/2017 09:09:37</publishTime>
+    </File>
+    <File Include="bin/BanHang.dll.r18">
+      <publishTime>06/15/2017 09:09:38</publishTime>
+    </File>
+    <File Include="bin/BanHang.pdb.r16">
+      <publishTime>06/15/2017 09:09:43</publishTime>
+    </File>
+    <File Include="bin/BanHang.pdb.r18">
+      <publishTime>06/15/2017 09:09:38</publishTime>
+    </File>
+    <File Include="CaBan.aspx">
+      <publishTime>06/24/2017 09:09:50</publishTime>
+    </File>
+    <File Include="ChietKhauTheoHangHoa.aspx">
+      <publishTime>06/24/2017 09:11:07</publishTime>
+    </File>
+    <File Include="ChietKhauTheoHangTangHang.aspx">
+      <publishTime>06/24/2017 09:12:16</publishTime>
+    </File>
+    <File Include="ChietKhauTheoKhachHang.aspx">
+      <publishTime>06/24/2017 09:12:53</publishTime>
+    </File>
+    <File Include="ChietKhauTheoNganhHang.aspx">
+      <publishTime>06/24/2017 09:13:39</publishTime>
+    </File>
+    <File Include="ChietKhauTheoNhomHang.aspx">
+      <publishTime>06/24/2017 09:15:20</publishTime>
+    </File>
+    <File Include="ChiTietDatHangNhaCungCap.aspx">
+      <publishTime>06/15/2017 09:09:48</publishTime>
+    </File>
+    <File Include="ChiTietDatHangServer.aspx">
+      <publishTime>06/15/2017 13:29:29</publishTime>
+    </File>
+    <File Include="ChiTietDonDatHang.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="ChiTietDonDoiHang.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="ChiTietDonHang.aspx">
+      <publishTime>06/15/2017 09:09:48</publishTime>
+    </File>
+    <File Include="ChiTietHangHoaCombo.aspx">
+      <publishTime>06/15/2017 09:09:48</publishTime>
+    </File>
+    <File Include="ChiTietHoaDonDaIn.aspx">
+      <publishTime>06/23/2017 13:32:17</publishTime>
+    </File>
+    <File Include="ChiTietPhieuChuyenKho.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="ChiTietPhieuKiemKho.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="ChiTietPhieuNhapLe.aspx">
+      <publishTime>06/15/2017 09:09:48</publishTime>
+    </File>
+    <File Include="ChiTietPhieuNhapSi.aspx">
+      <publishTime>06/15/2017 09:09:48</publishTime>
+    </File>
+    <File Include="ChiTietPhieuXuatKhac.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="ChiTietPhieuXuatSi.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="ChiTietPhieuXuatTra.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="Content/Images/AquaHeader.jpg">
+      <publishTime>06/15/2017 09:09:35</publishTime>
+    </File>
+    <File Include="Content/Images/BlackGlassHeader.jpg">
+      <publishTime>06/15/2017 09:09:35</publishTime>
+    </File>
+    <File Include="Content/Images/GlassHeader.jpg">
+      <publishTime>06/15/2017 09:09:35</publishTime>
+    </File>
+    <File Include="Content/Images/PlasticBlueHeader.jpg">
+      <publishTime>06/15/2017 09:09:35</publishTime>
+    </File>
+    <File Include="Content/Images/RedWineHeader.jpg">
+      <publishTime>06/15/2017 09:09:36</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>06/15/2017 09:09:36</publishTime>
+    </File>
+    <File Include="css/index.js">
+      <publishTime>06/15/2017 09:09:39</publishTime>
+    </File>
+    <File Include="css/style.css">
+      <publishTime>06/15/2017 09:09:43</publishTime>
+    </File>
+    <File Include="DangNhap.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DangXuat.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DanhMucCombo.aspx">
+      <publishTime>06/24/2017 09:32:29</publishTime>
+    </File>
+    <File Include="DanhMucLamTron.aspx">
+      <publishTime>06/24/2017 09:34:03</publishTime>
+    </File>
+    <File Include="DanhMucThue.aspx">
+      <publishTime>06/24/2017 09:35:48</publishTime>
+    </File>
+    <File Include="DanhMucTinhThue.aspx">
+      <publishTime>06/24/2017 09:36:27</publishTime>
+    </File>
+    <File Include="DanhSachDatHangNhaCungCap.aspx">
+      <publishTime>06/26/2017 14:06:03</publishTime>
+    </File>
+    <File Include="DanhSachDonDatHangChoDuyet.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DanhSachDonDatHangClient.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DanhSachDonDatHangHangDaDuyetServer.aspx">
+      <publishTime>06/15/2017 13:29:29</publishTime>
+    </File>
+    <File Include="DanhSachDonDatHangServer.aspx">
+      <publishTime>06/26/2017 14:05:14</publishTime>
+    </File>
+    <File Include="DanhSachDonHang.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DanhSachDonHangChuaDuyet.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DanhSachDonHangDaDuyet.aspx">
+      <publishTime>06/15/2017 13:29:29</publishTime>
+    </File>
+    <File Include="DanhSachGiaTheoVung.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DanhSachKiemKho.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DanhSachPhieuChuyenKho.aspx">
+      <publishTime>06/26/2017 07:59:11</publishTime>
+    </File>
+    <File Include="DanhSachPhieuNhapLe.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DanhSachPhieuNhapSi.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DanhSachPhieuXuatKhac.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DanhSachPhieuXuatSi.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DanhSachPhieuXuatTra.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DonDatHang.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DonDoiHang.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="DonViTinh.aspx">
+      <publishTime>06/24/2017 09:44:15</publishTime>
+    </File>
+    <File Include="DuLieu.aspx">
+      <publishTime>06/19/2017 10:47:43</publishTime>
+    </File>
+    <File Include="DuyetHangClient.aspx">
+      <publishTime>06/15/2017 13:29:29</publishTime>
+    </File>
+    <File Include="DuyetHangServer.aspx">
+      <publishTime>06/15/2017 13:29:29</publishTime>
+    </File>
+    <File Include="Fonts/digital-7 %28italic%29.ttf">
+      <publishTime>06/22/2017 09:56:07</publishTime>
+    </File>
+    <File Include="Fonts/digital-7 %28mono italic%29.ttf">
+      <publishTime>06/22/2017 09:56:07</publishTime>
+    </File>
+    <File Include="Fonts/digital-7 %28mono%29.ttf">
+      <publishTime>06/22/2017 09:56:07</publishTime>
+    </File>
+    <File Include="Fonts/digital-7.ttf">
+      <publishTime>06/22/2017 09:56:07</publishTime>
+    </File>
+    <File Include="GiaTheoKho.aspx">
+      <publishTime>06/15/2017 13:29:29</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="HangHoa.aspx">
+      <publishTime>06/24/2017 09:46:11</publishTime>
+    </File>
+    <File Include="HangSanXuat.aspx">
+      <publishTime>06/22/2017 09:19:17</publishTime>
+    </File>
+    <File Include="HinhThucThanhToan.aspx">
+      <publishTime>06/24/2017 09:47:45</publishTime>
+    </File>
+    <File Include="HoaDonBanLe/2.pdf">
+      <publishTime>06/23/2017 16:45:38</publishTime>
+    </File>
+    <File Include="images/banhang.png">
+      <publishTime>06/22/2017 06:05:26</publishTime>
+    </File>
+    <File Include="images/baocao.png">
+      <publishTime>06/22/2017 06:14:39</publishTime>
+    </File>
+    <File Include="images/khohang.png">
+      <publishTime>06/22/2017 06:12:59</publishTime>
+    </File>
+    <File Include="images/nhapxuatton.png">
+      <publishTime>06/22/2017 06:16:49</publishTime>
+    </File>
+    <File Include="ImportExcel_HangHoa.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="ImportExcel_KhachHang.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="ImportExcel_MaHang.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="ImportExcel_NhaCungCap.aspx">
+      <publishTime>06/20/2017 13:40:08</publishTime>
+    </File>
+    <File Include="InBangKePhieuChuyenKho.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="InBangKePhieuDoiHang.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="InBangKePhieuNhapLe.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="InBangKePhieuNhapSi.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="InBangKePhieuXuatKhac.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="InBangKePhieuXuatTra.aspx">
+      <publishTime>06/15/2017 09:09:56</publishTime>
+    </File>
+    <File Include="InBaoCaoBanHangLe.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="InBaoCaoNhapHangLe.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="InBaoCaoNhapHangSi.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="InBaoCaoTonKho.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="InBaoCaoTraHang.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="InDonDatHang.aspx">
+      <publishTime>06/19/2017 10:47:43</publishTime>
+    </File>
+    <File Include="InHoaDonBanLe.aspx">
+      <publishTime>06/27/2017 14:52:37</publishTime>
+    </File>
+    <File Include="KeepAlive.ashx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="keyCode.aspx">
+      <publishTime>06/15/2017 09:09:58</publishTime>
+    </File>
+    <File Include="KhachHang.aspx">
+      <publishTime>06/24/2017 09:49:22</publishTime>
+    </File>
+    <File Include="KiemKho.aspx">
+      <publishTime>06/19/2017 10:47:44</publishTime>
+    </File>
+    <File Include="LichSuKho.aspx">
+      <publishTime>06/15/2017 15:57:35</publishTime>
+    </File>
+    <File Include="LichSuThayDoiGia.aspx">
+      <publishTime>06/15/2017 13:29:29</publishTime>
+    </File>
+    <File Include="LichSuTruyCap.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="Light.master">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="MaHang.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="Main.master">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="NganhHang.aspx">
+      <publishTime>06/24/2017 09:51:01</publishTime>
+    </File>
+    <File Include="NhaCungCap.aspx">
+      <publishTime>06/24/2017 09:52:01</publishTime>
+    </File>
+    <File Include="NhanVienThuNgan.aspx">
+      <publishTime>06/24/2017 09:52:56</publishTime>
+    </File>
+    <File Include="NhomHang.aspx">
+      <publishTime>06/23/2017 16:48:29</publishTime>
+    </File>
+    <File Include="NhomKhachHang.aspx">
+      <publishTime>06/24/2017 09:54:32</publishTime>
+    </File>
+    <File Include="NhomNguoiDung.aspx">
+      <publishTime>06/24/2017 10:00:33</publishTime>
+    </File>
+    <File Include="PhanQuyen.aspx">
+      <publishTime>06/24/2017 10:11:37</publishTime>
+    </File>
+    <File Include="PhieuChuyenKho.aspx">
+      <publishTime>06/26/2017 07:57:18</publishTime>
+    </File>
+    <File Include="PhieuDoiHang.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="PhieuNhapLe.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="PhieuNhapSi.aspx">
+      <publishTime>06/26/2017 14:47:33</publishTime>
+    </File>
+    <File Include="PhieuXuatKhac.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="PhieuXuatSi.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="PhieuXuatTra.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="Quan.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="QuanTriNguoiDung.aspx">
+      <publishTime>06/24/2017 10:00:33</publishTime>
+    </File>
+    <File Include="Root.master">
+      <publishTime>06/26/2017 10:37:24</publishTime>
+    </File>
+    <File Include="ThanhPho.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="ThayDoiMatKhau.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="ThemDonHang.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="ThemDonHangClient.aspx">
+      <publishTime>06/15/2017 13:29:29</publishTime>
+    </File>
+    <File Include="ThemDonHangServer.aspx">
+      <publishTime>06/26/2017 10:45:33</publishTime>
+    </File>
+    <File Include="ThemHangHoaCombo.aspx">
+      <publishTime>06/15/2017 11:09:42</publishTime>
+    </File>
+    <File Include="ThemKhachHang.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="ThemTheVoucher.aspx">
+      <publishTime>06/15/2017 09:09:57</publishTime>
+    </File>
+    <File Include="TheVoucher.aspx">
+      <publishTime>06/20/2017 10:49:24</publishTime>
+    </File>
+    <File Include="ThongTinCuaHang.aspx">
+      <publishTime>06/19/2017 10:47:44</publishTime>
+    </File>
+    <File Include="ThongTinCuaHangKho.aspx">
+      <publishTime>06/24/2017 10:00:33</publishTime>
+    </File>
+    <File Include="TonKhoBanDau.aspx">
+      <publishTime>06/15/2017 09:09:58</publishTime>
+    </File>
+    <File Include="Vung.aspx">
+      <publishTime>06/24/2017 09:58:52</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/27/2017 15:00:10</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MathInterface>
+  <Group>
+      <Item Name="ban-hang-le" NavigateUrl="BanHangLe.aspx" Size="Large" Text="Bán hàng lẻ" LargeImageUrl="images/banhang.png">
+      </Item>
+  </Group>
+  <Group>
+    <Item Text="Danh mục" ItemType="DropDownButton" Size="Large" LargeImageUrl="images/khohang.png">
+      <SubItem ItemType="DropDownButton" Name="thanh_pho" NavigateUrl="ThanhPho.aspx" Text="Thành phố">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Quận" NavigateUrl="Quan.aspx" Text="Quận">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="don_vi_tinh" NavigateUrl="DonViTinh.aspx" Text="Đơn vị tính">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="nhom_khach_hang" NavigateUrl="NhomKhachHang.aspx" Text="Nhóm khách hàng">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="khach_hang" NavigateUrl="KhachHang.aspx" Text="Khách hàng">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="nha_cung_cap" NavigateUrl="NhaCungCap.aspx" Text="Nhà cung cấp">
+      </SubItem>
+      <Item ItemType="DropDownButton" Name="danh_muc_chiet_khau" Text="Danh mục chiết khấu">
+        <SubItem ItemType="DropDownButton" Name="chiet_khau_theo_hang_hoa" NavigateUrl="ChietKhauTheoHangHoa.aspx" Text="Chiết khấu theo hàng hóa">
+        </SubItem>
+        <SubItem ItemType="DropDownButton" Name="chiet_khau_theo_khach_hang" NavigateUrl="ChietKhauTheoKhachHang.aspx" Text="Chiết khấu theo khách hàng">
+        </SubItem>
+        <SubItem ItemType="DropDownButton" Name="chiet_khau_theo_nhom_hang" NavigateUrl="ChietKhauTheoNhomHang.aspx" Text="Chiết khấu theo nhóm hàng">
+        </SubItem>
+        <SubItem ItemType="DropDownButton" Name="chiet_khau_theo_nganh_hang" NavigateUrl="ChietKhauTheoNganhHang.aspx" Text="Chiết khấu theo ngành hàng">
+        </SubItem>
+        <SubItem ItemType="DropDownButton" Name="chiet_khau_theo_hang_tang_hang" NavigateUrl="ChietKhauTheoHangTangHang.aspx" Text="Chiết khấu theo hàng tặng hàng">
+        </SubItem>
+        <SubItem ItemType="DropDownButton" Name="the_voucher" Text="Thẻ Voucher" NavigateUrl="TheVoucher.aspx">
+        </SubItem>
+      </Item>
+      <SubItem ItemType="DropDownButton" Name="nganh_hang" NavigateUrl="NganhHang.aspx" Text="Ngành hàng">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="nhom_hang" NavigateUrl="NhomHang.aspx" Text="Nhóm hàng">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="ma_hang" Text="Mã hàng" NavigateUrl="MaHang.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="hang_hoa" Text="Hàng hóa" NavigateUrl="HangHoa.aspx">
+      </SubItem>
+      <Item ItemType="DropDownButton"  Name="danh_muc_thue" Text="Danh mục thuế">
+        <SubItem ItemType="DropDownButton" Name="Danh sách danh mục thuế" NavigateUrl="DanhMucThue.aspx" Text="Danh sách danh mục thuế">
+        </SubItem>
+        <SubItem ItemType="DropDownButton" Name="Danh mục cách làm tròn" NavigateUrl="DanhMucLamTron.aspx" Text="Danh mục cách làm tròn">
+        </SubItem>
+        <SubItem ItemType="DropDownButton" Name="Danh mục cách tính thuế" NavigateUrl="DanhMucTinhThue.aspx" Text="Danh mục cách tính thuế">
+        </SubItem>
+      </Item>
+      <SubItem ItemType="DropDownButton" Name="Hình thức thanh toán" NavigateUrl="HinhThucThanhToan.aspx" Text="Hình thức thanh toán">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Danh mục Combo" NavigateUrl="DanhMucCombo.aspx" Text="Danh mục Combo">
+      </SubItem>
+    </Item>
+  </Group>
+  <Group>
+    <Item Text="Nhập xuất tồn" ItemType="DropDownButton" Size="Large" LargeImageUrl="images/nhapxuatton.png">
+      <SubItem ItemType="DropDownButton" Name="ton_kho_ban_dau" Text="Tồn kho ban đầu" NavigateUrl="TonKhoBanDau.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Phiếu nhập sỉ" Text="Phiếu nhập sỉ" NavigateUrl="DanhSachPhieuNhapSi.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Phiếu nhập lẻ" Text="Phiếu nhập lẻ" NavigateUrl="DanhSachPhieuNhapLe.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="doi_hang" Text="Đổi hàng" NavigateUrl="DonDoiHang.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Danh sách đơn hàng đã duyệt" NavigateUrl="DanhSachDonHangDaDuyet.aspx" Text="Danh sách đơn hàng đã duyệt">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="don_dat_hang" Text="Đơn đặt hàng" NavigateUrl="DanhSachDonHang.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Phiếu xuất sỉ" Text="Phiếu xuất sỉ" NavigateUrl="DanhSachPhieuXuatSi.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="phieu_xuat_tra" Text="Phiếu xuất trả" NavigateUrl="DanhSachPhieuXuatTra.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Phiếu xuất khác" Text="Phiếu xuất khác" NavigateUrl="DanhSachPhieuXuatKhac.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Phiếu chuyển kho" Text="Phiếu chuyển kho" NavigateUrl="DanhSachPhieuChuyenKho.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Kiểm Kho" NavigateUrl="DanhSachKiemKho.aspx" Text="Kiểm Kho">
+      </SubItem>
+    </Item>
+  </Group>
+  <Group>
+    <Item Text="Bảng kê" ItemType="DropDownButton" Size="Large" LargeImageUrl="images/sssss.png">
+      <SubItem ItemType="DropDownButton" Name="Phiếu nhập sỉ" Text="Phiếu nhập sỉ" NavigateUrl="BangKePhieuNhapSi.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Phiếu nhập lẻ" Text="Phiếu nhập lẻ" NavigateUrl="BangKePhieuNhapLe.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Phiếu xuất trả" Text="Phiếu xuất trả" NavigateUrl="BangKePhieuXuatTra.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Phiếu xuất khác" Text="Phiếu xuất khác" NavigateUrl="BangKePhieuXuatKhac.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Phiếu chuyển kho" Text="Phiếu chuyển kho" NavigateUrl="BangKePhieuChuyenKho.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Phiếu đổi hàng" Text="Phiếu đổi hàng" NavigateUrl="BangKePhieuDoiHang.aspx">
+      </SubItem>
+    </Item>
+  </Group>
+  <Group>
+    <Item Text="Báo cáo" ItemType="DropDownButton" Size="Large" LargeImageUrl="images/baocao.png">
+      <SubItem ItemType="DropDownButton" Name="Nhập hàng lẻ" Text="Nhập hàng lẻ" NavigateUrl="BaoCaoNhapHangLe.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Nhập hàng sỉ" Text="Nhập hàng sỉ" NavigateUrl="BaoCaoNhapHangSi.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Bán hàng lẻ" Text="Bán hàng lẻ" NavigateUrl="BaoCaoBanHangLe.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Trả hàng" Text="Báo cáo trả hàng" NavigateUrl="BaoCaoTraHang.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Tồn kho" Text="Tồn kho" NavigateUrl="BaoCaoTonKho.aspx">
+      </SubItem>
+    </Item>
+  </Group>
+  <Group>
+    <Item Text="Hệ thống" ItemType="DropDownButton" Size="Large" LargeImageUrl="~/Ribbon/Images/MathIcons/View.png">
+      <SubItem ItemType="DropDownButton" Name="Thông tin cửa hàng" Text="Thông tin cửa hàng" NavigateUrl="ThongTinCuaHang.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="nhom_nguoi_dung" Text="Nhóm người dùng" NavigateUrl="NhomNguoiDung.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="quan_tri_nguoi_dung" Text="Quản trị người dùng" NavigateUrl="QuanTriNguoiDung.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Quản lý nhân viên thu ngân" NavigateUrl="NhanVienThuNgan.aspx" Text="Quản lý nhân viên thu ngân">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Quản lý kho" Text="Quản lý kho" NavigateUrl="ThongTinCuaHangKho.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="lich_su_truy_cap" Text="Lịch sử truy cập" NavigateUrl="LichSuTruyCap.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="lich_su_thay_doi_gia" Text="Lịch sử thay đổi giá" NavigateUrl="LichSuThayDoiGia.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Quản lý ca bán" NavigateUrl="CaBan.aspx" Text="Quản lý ca bán">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="Quản Lý Dữ Liệu" NavigateUrl="DuLieu.aspx" Text="Quản Lý Dữ Liệu">
+      </SubItem>
+    </Item>
+  </Group>
+  <Group>
+    <Item Text="Tài Khoản" ItemType="DropDownButton" Size="Large" LargeImageUrl="~/Ribbon/Images/MathIcons/View.png">
+      <SubItem ItemType="DropDownButton" Name="Thay đổi mật khẩu" Text="Thay đổi mật khẩu" NavigateUrl="ThayDoiMatKhau.aspx">
+      </SubItem>
+      <SubItem ItemType="DropDownButton" Name="btnDangXuat" Text="Đăng Xuất" NavigateUrl="DangXuat.aspx">
+      </SubItem>
+    </Item>
+  </Group>
+  <Group>
+     <Item Name="ho-tro" NavigateUrl="http://gpm.vn/contacts/" Size="Large" Text="Hỗ trợ" LargeImageUrl="~/Ribbon/Images/MathIcons/View.png">
+     </Item>
+  </Group>
+</MathInterface>
