@@ -9,6 +9,6 @@ namespace BanHang.Data
     public class StaticContext
     {
         public static string ConnectionString = WebConfigurationManager.ConnectionStrings["BanHangConnectionString"].ConnectionString;
-        public static string ConnectionServer = WebConfigurationManager.ConnectionStrings["BanHangConnectionServer"].ConnectionString;
+       
     }
 }
