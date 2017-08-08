@@ -227,33 +227,33 @@
                         <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowNewButtonInHeader="True" VisibleIndex="11" Name="iconaction" ShowClearFilterButton="True">
                         </dx:GridViewCommandColumn>
                         <dx:GridViewDataSpinEditColumn Caption="Giá Mua" FieldName="GiaMua" VisibleIndex="3" > 
-                            <PropertiesSpinEdit DisplayFormatString="g">
+                            <PropertiesSpinEdit DisplayFormatString="N0" DisplayFormatInEditMode="True" NumberFormat="Custom">
                                 <ValidationSettings SetFocusOnError="True">
                                     <RequiredField IsRequired="True" />
                                 </ValidationSettings>
                             </PropertiesSpinEdit>
                         </dx:GridViewDataSpinEditColumn>
                         <dx:GridViewDataSpinEditColumn Caption="Giá Bán" FieldName="GiaBan1" VisibleIndex="4">
-                            <PropertiesSpinEdit DisplayFormatString="g">
+                            <PropertiesSpinEdit DisplayFormatString="N0" DisplayFormatInEditMode="True" NumberFormat="Custom">
                                 <ValidationSettings SetFocusOnError="True">
                                     <RequiredField IsRequired="True" />
                                 </ValidationSettings>
                             </PropertiesSpinEdit>
                         </dx:GridViewDataSpinEditColumn>
                         <dx:GridViewDataSpinEditColumn Caption="Giá Bán 2" FieldName="GiaBan2" Visible="False" VisibleIndex="6">
-                            <PropertiesSpinEdit DisplayFormatString="g">
+                            <PropertiesSpinEdit DisplayFormatString="N0" DisplayFormatInEditMode="True" NumberFormat="Custom">
                             </PropertiesSpinEdit>
                         </dx:GridViewDataSpinEditColumn>
                         <dx:GridViewDataSpinEditColumn Caption="Giá Bán 3" FieldName="GiaBan3" Visible="False" VisibleIndex="7">
-                            <PropertiesSpinEdit DisplayFormatString="g">
+                            <PropertiesSpinEdit DisplayFormatString="N0" DisplayFormatInEditMode="True" NumberFormat="Custom">
                             </PropertiesSpinEdit>
                         </dx:GridViewDataSpinEditColumn>
                         <dx:GridViewDataSpinEditColumn Caption="Giá Bán 4" FieldName="GiaBan4" Visible="False" VisibleIndex="8">
-                            <PropertiesSpinEdit DisplayFormatString="g">
+                            <PropertiesSpinEdit DisplayFormatString="N0" DisplayFormatInEditMode="True" NumberFormat="Custom">
                             </PropertiesSpinEdit>
                         </dx:GridViewDataSpinEditColumn>
                         <dx:GridViewDataSpinEditColumn Caption="Giá Bán 5" FieldName="GiaBan5" Visible="False" VisibleIndex="9">
-                            <PropertiesSpinEdit DisplayFormatString="g">
+                            <PropertiesSpinEdit DisplayFormatString="N0" DisplayFormatInEditMode="True" NumberFormat="Custom">
                             </PropertiesSpinEdit>
                         </dx:GridViewDataSpinEditColumn>
                         <dx:GridViewDataTextColumn Caption="Mã Hàng" FieldName="MaHang" ShowInCustomizationForm="True" VisibleIndex="0">
