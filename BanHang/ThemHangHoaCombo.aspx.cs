@@ -58,9 +58,6 @@ namespace BanHang
                         {
                             data.ThemBarCode(IDHangHoaComBo, barcode);
                         }
-
-
-
                         foreach (DataRow dr in dt.Rows)
                         {
                             string IDHangHoa1 = dr["IDHangHoa"].ToString();

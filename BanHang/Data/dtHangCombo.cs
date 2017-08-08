@@ -9,27 +9,27 @@ namespace BanHang.Data
 {
     public class dtHangCombo
     {
-        
-        //public void XoaHangCombo(string ID)
-        //{
-        //    using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
-        //    {
-        //        try
-        //        {
-        //            myConnection.Open();
-        //            string cmdText = "UPDATE [GPM_HangHoa] SET [DAXOA] = 1 WHERE [ID] = @ID";
-        //            using (SqlCommand myCommand = new SqlCommand(cmdText, myConnection))
-        //            {
-        //                myCommand.Parameters.AddWithValue("@ID", ID);
-        //                myCommand.ExecuteNonQuery();
-        //            }
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            throw new Exception("Lỗi: Quá trình cập nhật dữ liệu gặp lỗi, hãy tải lại trang");
-        //        }
-        //    }
-        //}
+
+        public void XoaHangCombo(string ID)
+        {
+            using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
+            {
+                try
+                {
+                    myConnection.Open();
+                    string cmdText = "UPDATE [GPM_HangHoa] SET [DAXOA] = 1 WHERE [ID] = @ID";
+                    using (SqlCommand myCommand = new SqlCommand(cmdText, myConnection))
+                    {
+                        myCommand.Parameters.AddWithValue("@ID", ID);
+                        myCommand.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Lỗi: Quá trình cập nhật dữ liệu gặp lỗi, hãy tải lại trang");
+                }
+            }
+        }
 
         public void ThemBarCode(object IDHangHoa, string BarCode)
         {
@@ -297,7 +297,7 @@ namespace BanHang.Data
                 try
                 {
                     myConnection.Open();
-                    string cmdText = "UPDATE [GPM_HangHoa] SET [GhiChu] = @GhiChu,[MaHang] = @MaHang,[IDDonViTinh] = @IDDonViTinh ,[TenHangHoa] = @TenHangHoa,[GiaBan1] = @TongTien  WHERE [ID] = @ID";
+                    string cmdText = "UPDATE [GPM_HangHoa] SET [TrangThaiHang] = 3,[GhiChu] = @GhiChu,[MaHang] = @MaHang,[IDDonViTinh] = @IDDonViTinh ,[TenHangHoa] = @TenHangHoa,[GiaBan1] = @TongTien  WHERE [ID] = @ID";
                     using (SqlCommand myCommand = new SqlCommand(cmdText, myConnection))
                     {
                         myCommand.Parameters.AddWithValue("@GhiChu", GhiChu);
@@ -319,21 +319,21 @@ namespace BanHang.Data
 
 
 
-        //public DataTable DanhSachHangHoaCombo_IDHangHoaComBo(string IDHangHoaComBo)
-        //{
-        //    using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
-        //    {
-        //        con.Open();
-        //        string cmdText = "select * from [GPM_HangHoa_Combo] where [IDHangHoaCombo] =  '" + IDHangHoaComBo + "'";
-        //        using (SqlCommand command = new SqlCommand(cmdText, con))
-        //        using (SqlDataReader reader = command.ExecuteReader())
-        //        {
-        //            DataTable tb = new DataTable();
-        //            tb.Load(reader);
-        //            return tb;
-        //        }
-        //    }
-        //}
+        public DataTable DanhSachHangHoaCombo_IDHangHoaComBo(string IDHangHoaComBo)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "select * from [GPM_HangHoa_Combo] where [IDHangHoaCombo] =  '" + IDHangHoaComBo + "'";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    return tb;
+                }
+            }
+        }
         //public DataTable DanhSachHangHoaCombo_ID(int ID)
         //{
         //    using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
@@ -350,31 +350,29 @@ namespace BanHang.Data
         //    }
         //}
 
-        //public void CapNhatHangHoa_Combo(int ID, string TrangThai, string TrongLuong, string TongTien, string HanSuDung, string TenHangHoa)
-        //{
-        //    using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
-        //    {
-        //        try
-        //        {
-        //            myConnection.Open();
-        //            string cmdText = "UPDATE [GPM_HangHoa] SET [TenHangHoa] = @TenHangHoa,[HanSuDung] = @HanSuDung,[GiaBanSauThue] = @TongTien,[IDTrangThaiHang] = @TrangThai,[TrongLuong] = @TrongLuong  WHERE [ID] = @ID";
-        //            using (SqlCommand myCommand = new SqlCommand(cmdText, myConnection))
-        //            {
-        //                myCommand.Parameters.AddWithValue("@TenHangHoa", TenHangHoa);
-        //                myCommand.Parameters.AddWithValue("@ID", ID);
-        //                myCommand.Parameters.AddWithValue("@TrangThai", TrangThai);
-        //                myCommand.Parameters.AddWithValue("@TrongLuong", TrongLuong);
-        //                myCommand.Parameters.AddWithValue("@TongTien", TongTien);
-        //                myCommand.Parameters.AddWithValue("@HanSuDung", HanSuDung);
-        //                myCommand.ExecuteNonQuery();
-        //            }
-        //            myConnection.Close();
-        //        }
-        //        catch
-        //        {
-        //            throw new Exception("Lỗi: Quá trình cập nhật dữ liệu gặp lỗi");
-        //        }
-        //    }
-        //}
+        public void CapNhatHangHoa_Combo(int ID, string TrangThaiHang, string TongTien, string TenHangHoa)
+        {
+            using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
+            {
+                try
+                {
+                    myConnection.Open();
+                    string cmdText = "UPDATE [GPM_HangHoa] SET [TenHangHoa] = @TenHangHoa,[TrangThaiHang] = @TrangThaiHang,[GiaBan1] = @TongTien WHERE [ID] = @ID";
+                    using (SqlCommand myCommand = new SqlCommand(cmdText, myConnection))
+                    {
+                        myCommand.Parameters.AddWithValue("@TenHangHoa", TenHangHoa);
+                        myCommand.Parameters.AddWithValue("@ID", ID);
+                        myCommand.Parameters.AddWithValue("@TrangThaiHang", TrangThaiHang);
+                        myCommand.Parameters.AddWithValue("@TongTien", TongTien);
+                        myCommand.ExecuteNonQuery();
+                    }
+                    myConnection.Close();
+                }
+                catch
+                {
+                    throw new Exception("Lỗi: Quá trình cập nhật dữ liệu gặp lỗi");
+                }
+            }
+        }
     }
 }

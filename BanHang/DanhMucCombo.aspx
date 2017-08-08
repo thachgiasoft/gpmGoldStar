@@ -115,7 +115,10 @@
             </TitlePanel>
         </Styles>
     </dx:ASPxGridView>
-     <asp:SqlDataSource ID="SqlTrangThaiHang" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT * FROM [GPM_TrangThaiHang]">
+     <asp:SqlDataSource ID="SqlTrangThaiHang" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT * FROM [GPM_TrangThaiHang] WHERE ([ID] &gt; @ID)">
+         <SelectParameters>
+             <asp:Parameter DefaultValue="2" Name="ID" Type="Int32" />
+         </SelectParameters>
      </asp:SqlDataSource>
     <asp:SqlDataSource ID="sqlDonViTinh" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT [ID], [TenDonViTinh] FROM [GPM_DonViTinh] WHERE ([DaXoa] = @DaXoa)">
         <SelectParameters>
