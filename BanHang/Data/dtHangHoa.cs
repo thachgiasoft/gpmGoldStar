@@ -9,7 +9,24 @@ namespace BanHang.Data
 {
     public class dtHangHoa
     {
-       
+        public static bool KiemTraMaHang(string MaHang)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "SELECT MaHang FROM [GPM_HangHoa] WHERE [MaHang] = " + MaHang;
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    if (tb.Rows.Count != 0)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        }
         public void CapNhatBarCode(int ID, object IDHangHoa, string BarCode)
         {
             using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
@@ -55,7 +72,11 @@ namespace BanHang.Data
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
             {
                 con.Open();
+<<<<<<< HEAD
                 string cmdText = "select * from GPM_HangHoa where DaXoa = 0";
+=======
+                string cmdText = "SELECT [GPM_HANGHOA].* FROM [GPM_HANGHOA] WHERE GPM_HANGHOA.[DAXOA] = 0 AND TrangThai = 0  AND TenHangHoa is not null";
+>>>>>>> d73b477cb42768c5ae49d4b9ac539ac3a9566df5
                 using (SqlCommand command = new SqlCommand(cmdText, con))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
