@@ -17,8 +17,12 @@ namespace BanHang
         dtImportHangHoa data = new dtImportHangHoa();
         protected void Page_Load(object sender, EventArgs e)
         {
-            data = new dtImportHangHoa();
-            data.XoaDuLieuTemp();
+            if (!IsPostBack)
+            {
+                data = new dtImportHangHoa();
+                data.XoaDuLieuTemp();
+            }
+            LoadGrid();
         }
 
         private void LoadGrid()
@@ -45,77 +49,60 @@ namespace BanHang
 
         protected void btnThem_Click(object sender, EventArgs e)
         {
-            //data = new dtImportHangHoa();
-            //DataTable dt = data.DanhSachHangHoa_Import_Temp();
-            //if (dt.Rows.Count != 0)
-            //{
-            //    foreach (DataRow dr in dt.Rows)
-            //    {
-            //        string MaHang = dr["MaHang"].ToString();
-            //        string TenHangHoa = dr["TenHangHoa"].ToString();
-            //        TenHangHoa = dtSetting.convertDauSangKhongDau(TenHangHoa).ToUpper();
+            data = new dtImportHangHoa();
+            DataTable dt = data.DanhSachHangHoa_Import_Temp();
+            if (dt.Rows.Count != 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    string MaHang = dr["MaHang"].ToString();
+                    string TenHangHoa = dr["TenHangHoa"].ToString();
+                    TenHangHoa = dtSetting.convertDauSangKhongDau(TenHangHoa).ToUpper();
 
-            //        int IDNhomHang = Int32.Parse(dr["IDNhomHang"].ToString());
-            //        TenHangHoa = dtSetting.convertDauSangKhongDau(TenHangHoa).ToUpper();
-            //        int IDDonViTinh = Int32.Parse(dr["IDDonViTinh"].ToString());
-            //        int IDNhaSanXuat = Int32.Parse(dr["IDNhaSanXuat"].ToString());
+                    int IDDonViTinh = Int32.Parse(dr["IDDonViTinh"].ToString());
                     
-            //        float GiaMua = float.Parse(dr["GiaMua"].ToString());
-            //        float GiaBan1 = float.Parse(dr["GiaBan1"].ToString());
+                    float GiaMua = float.Parse(dr["GiaMua"].ToString());
+                    float GiaBan1 = float.Parse(dr["GiaBan1"].ToString());
+                    float GiaBan2 = float.Parse(dr["GiaBan2"] != null ? dr["GiaBan2"].ToString() : "0");
+                    float GiaBan3 = float.Parse(dr["GiaBan3"] != null ? dr["GiaBan3"].ToString() : "0");
+                    float GiaBan4 = float.Parse(dr["GiaBan4"] != null ? dr["GiaBan4"].ToString() : "0");
+                    float GiaBan5 = float.Parse(dr["GiaBan5"] != null ? dr["GiaBan5"].ToString() : "0");
+                    int TrangThaiHang = Int32.Parse(dr["TrangThaiHang"].ToString());
+                    string Barcode = dr["Barcode"] != null ? dr["Barcode"].ToString() : "";
 
-            //        float GiaBan2 = float.Parse(dr["GiaBan2"] != null ? dr["GiaBan2"].ToString() : "0");
-            //        float GiaBan3 = float.Parse(dr["GiaBan3"] != null ? dr["GiaBan3"].ToString() : "0");
-            //        float GiaBan4 = float.Parse(dr["GiaBan4"] != null ? dr["GiaBan4"].ToString() : "0");
-            //        float GiaBan5 = float.Parse(dr["GiaBan5"] != null ? dr["GiaBan5"].ToString() : "0");
-            //        DateTime NgayCapNhat = DateTime.Parse(dr["NgayCapNhat"].ToString());
-            //        int TrangThai = Int32.Parse(dr["TrangThai"].ToString());
-            //        string GhiChu = dr["GhiChu"] != null ? dr["GhiChu"].ToString() : "";
-            //        int DaXoa = Int32.Parse(dr["DaXoa"].ToString());
-            //        string Barcode = dr["Barcode"] != null ? dr["Barcode"].ToString() : "";
+                    data = new dtImportHangHoa();
+                    object IDHangHoa = -1;
+                    dtHangHoa hh = new dtHangHoa();
+                    DataTable dd = data.KiemTraHangHoa(MaHang);
+                    if (dd.Rows.Count == 0)
+                    {
+                        IDHangHoa = hh.ThemHangHoa(MaHang, TenHangHoa, IDDonViTinh + "", GiaMua, GiaBan1, GiaBan2, GiaBan3, GiaBan4, GiaBan5, TrangThaiHang + "", "");
+                        hh.ThemHangVaoTonKho(Int32.Parse(IDHangHoa + ""));
+                        
+                    }
+                    if ((int)IDHangHoa != -1)
+                    {
+                        DataTable d3 = hh.kiemTraBarcode(IDHangHoa + "", Barcode);
+                        if (d3.Rows.Count == 0)
+                        {
+                            hh.ThemBarCode((int)IDHangHoa, Barcode);
+                        }
+                    }
+                    else
+                    {
+                        DataRow drx = dd.Rows[0];
+                        int ID = Int32.Parse(drx["ID"].ToString());
+                        DataTable d3 = hh.kiemTraBarcode(ID + "", Barcode);
+                        if (d3.Rows.Count == 0)
+                        {
+                            hh.ThemBarCode(ID, Barcode);
+                        }
+                    }
+                }
 
-            //        data = new dtImportHangHoa();
-            //        object IDHangHoa = -1;
-            //        dataHangHoa hh = new dataHangHoa();
-            //        DataTable dd = data.KiemTraHangHoa(MaHang);
-            //        if (dd.Rows.Count == 0)
-            //        {
-            //            IDHangHoa = hh.insertHangHoa_Full(IDNhomHang, MaHang, TenHangHoa, IDDonViTinh, IDNhaSanXuat, GiaMua, GiaBan1, GiaBan2, GiaBan3, GiaBan4, GiaBan5, 0, GhiChu, DaXoa);
-            //             Thêm hàng hóa vào các kho....
-            //            dtThongTinCuaHangKho dtx = new dtThongTinCuaHangKho();
-            //            DataTable dtax = dtx.LayDanhSach();
-            //            for (int i = 0; i < dtax.Rows.Count; i++)
-            //            {
-            //                DataRow drx = dtax.Rows[i];
-            //                int IDKho = Int32.Parse(drx["ID"].ToString());
-            //                dtHangHoa da = new dtHangHoa();
-            //                da.ThemHangVaoTonKho(IDKho, (int)IDHangHoa, 0, DateTime.Now, GiaBan1);
-            //            } 
-            //        }
-            //        if ((int)IDHangHoa != -1)
-            //        {
-            //            DataTable d3 = hh.KiemTraBarcode((int)IDHangHoa, Barcode);
-            //            if (d3.Rows.Count == 0)
-            //            {
-            //                hh.ThemBarCode((int)IDHangHoa, Barcode);
-            //            }
-            //        }
-            //        else
-            //        {
-            //            DataRow drx = dd.Rows[0];
-            //            int ID = Int32.Parse(drx["ID"].ToString());
-            //            DataTable d3 = hh.KiemTraBarcode(ID, Barcode);
-            //            if (d3.Rows.Count == 0)
-            //            {
-            //                hh.ThemBarCode(ID, Barcode);
-            //            }
-            //        }
-            //    }
-
-            //    data.XoaDuLieuTemp();
-            //    ActionServer.CapNhatServer();
-            //    dtLichSuTruyCap.ThemLichSu(Session["IDNhanVien"].ToString(), Session["IDNhom"].ToString(), "Inport Hàng Hóa", dtSetting.LayIDKho(), "Hàng Hóa", "Import"); 
-            //    Response.Redirect("HangHoa.aspx");
-          //  }
+                data.XoaDuLieuTemp();
+                Response.Redirect("HangHoa.aspx");
+            }
         }
 
         protected void btnHuy_Click(object sender, EventArgs e)
@@ -152,40 +139,37 @@ namespace BanHang
 
         private void Import_Temp(DataTable dataTable)
         {
-            //int intRow = dataTable.Rows.Count;
-            //if (intRow != 0)
-            //{
-            //    for (int i = 0; i <= intRow - 1; i++)
-            //    {
-            //        DataRow dr = dataTable.Rows[i];
+            int intRow = dataTable.Rows.Count;
+            if (intRow != 0)
+            {
+                for (int i = 0; i <= intRow - 1; i++)
+                {
+                    DataRow dr = dataTable.Rows[i];
 
-            //        dtNhomHang d = new dtNhomHang();
-            //        int IDNhomHang = d.LayDanhSachNhomHang_GetID(dr["NhomHang"].ToString());
-            //        dtDonViTinh d1 = new dtDonViTinh();
-            //        int IDDonViTinh = d1.LayDonViTinh_GetID(dr["DonViTinh"].ToString());
-            //        dtHangSanXuat d2 = new dtHangSanXuat();
-            //        int IDNhaSanXuat = d2.LayNhaSanXuat_GetID(dr["NhaSanXuat"].ToString());
-            //        string MaHang = dr["MaHang"].ToString();
-            //        string TenHangHoa = dr["TenHangHoa"].ToString();
+                    dtDonViTinh d1 = new dtDonViTinh();
+                    int IDDonViTinh = d1.layID_DonViTinh_Ten(dr["Ten Don Vi Tinh"].ToString());
 
-            //        float GiaMua = float.Parse(dr["GiaMua"].ToString());
-            //        float GiaBan1 = float.Parse(dr["GiaBan1"].ToString());
+                    dtBaoCao d2 = new dtBaoCao();
+                    int TrangThaiHang = d2.layID_LoaiHangHoa_Ten(dr["Trang Thai Hang"].ToString());
 
-            //        float GiaBan2 = float.Parse(dr["GiaBan2"] != null ? dr["GiaBan2"].ToString() : "0");
-            //        float GiaBan3 = float.Parse(dr["GiaBan3"] != null ? dr["GiaBan3"].ToString() : "0");
-            //        float GiaBan4 = float.Parse(dr["GiaBan4"] != null ? dr["GiaBan4"].ToString() : "0");
-            //        float GiaBan5 = float.Parse(dr["GiaBan5"] != null ? dr["GiaBan5"].ToString() : "0");
-            //        DateTime NgayCapNhat = DateTime.Parse(dr["NgayCapNhat"].ToString());
-            //        int TrangThai = Int32.Parse(dr["TrangThai"].ToString());
-            //        string GhiChu = dr["GhiChu"] != null ? dr["GhiChu"].ToString() : "";
-            //        int DaXoa = Int32.Parse(dr["DaXoa"].ToString());
-            //        string Barcode = dr["Barcode"] != null ? dr["Barcode"].ToString() : "";
+                    string MaHang = dr["Ma Hang"].ToString();
+                    string TenHangHoa = dr["Ten Hang Hoa"].ToString();
 
-            //        data = new dtImportHangHoa();
-            //        data.insertHangHoa_temp(IDNhomHang, MaHang, TenHangHoa, IDDonViTinh, IDNhaSanXuat, GiaMua, GiaBan1, GiaBan2, GiaBan3, GiaBan4, GiaBan5, NgayCapNhat, TrangThai, GhiChu, DaXoa, Barcode);
-            //    }
-            //    LoadGrid();
-            //}
+                    float GiaMua = float.Parse(dr["Gia Mua"].ToString());
+                    float GiaBan1 = float.Parse(dr["Gia Ban1"].ToString());
+                    float GiaBan2 = float.Parse((dr["Gia Ban2"] == null ? dr["Gia Ban2"].ToString() : "0").Replace(".", ","));
+                    float GiaBan3 = float.Parse((dr["Gia Ban3"] == null ? dr["Gia Ban3"].ToString() : "0").Replace(".", ","));
+                    float GiaBan4 = float.Parse((dr["Gia Ban4"] == null ? dr["Gia Ban4"].ToString() : "0").Replace(".", ","));
+                    float GiaBan5 = float.Parse((dr["Gia Ban5"] == null ? dr["Gia Ban5"].ToString() : "0").Replace(".", ","));
+
+                    int TrangThai = Int32.Parse(dr["Trang Thai"].ToString());
+                    string Barcode = dr["Barcode"] != null ? dr["Barcode"].ToString() : "";
+
+                    data = new dtImportHangHoa();
+                    data.insertHangHoa_temp(MaHang, TenHangHoa, IDDonViTinh, GiaMua, GiaBan1, GiaBan2, GiaBan3, GiaBan4, GiaBan5, TrangThaiHang, TrangThai, Barcode);
+                }
+                LoadGrid();
+            }
         }
 
         private void UploadFile()

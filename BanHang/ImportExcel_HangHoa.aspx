@@ -102,34 +102,34 @@
                 <Columns>
                     <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="15">
                     </dx:GridViewCommandColumn>
-                    <dx:GridViewDataTextColumn Caption="MaHang" FieldName="MaHang" VisibleIndex="1">
+                    <dx:GridViewDataTextColumn FieldName="MaHang" VisibleIndex="0" Caption="Mã hàng">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="TenHangHoa" FieldName="TenHangHoa" VisibleIndex="2">
+                    <dx:GridViewDataTextColumn FieldName="TenHangHoa" VisibleIndex="1" Caption="Tên hàng hóa">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="GiaMua" FieldName="GiaMua" VisibleIndex="5">
+                    <dx:GridViewDataTextColumn FieldName="TrangThai" VisibleIndex="10" Caption="Trạng thái">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="GiaBan1" FieldName="GiaBan1" VisibleIndex="6">
+                    <dx:GridViewDataTextColumn Caption="Giá mua" VisibleIndex="3" FieldName="GiaMua">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="GhiChu" FieldName="GhiChu" VisibleIndex="12">
+                    <dx:GridViewDataTextColumn FieldName="GiaBan1" VisibleIndex="4" Caption="Giá bán 1">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="Barcode" FieldName="Barcode" VisibleIndex="14">
+                    <dx:GridViewDataTextColumn FieldName="GiaBan2" VisibleIndex="5" Caption="Giá bán 2">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataComboBoxColumn Caption="Nhóm hàng" FieldName="IDNhomHang" ShowInCustomizationForm="True" VisibleIndex="0">
-                        <PropertiesComboBox DataSourceID="sqlNhomHang" TextField="TenNhomHang" ValueField="ID">
+                    <dx:GridViewDataTextColumn FieldName="GiaBan3" ShowInCustomizationForm="True" VisibleIndex="6" Caption="Giá bán 3">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn FieldName="GiaBan4" ShowInCustomizationForm="True" VisibleIndex="7" Caption="Giá bán 4">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn FieldName="GiaBan5" ShowInCustomizationForm="True" VisibleIndex="8" Caption="Giá bán 5">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn FieldName="Barcode" ShowInCustomizationForm="True" VisibleIndex="11" Caption="Barcode">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataComboBoxColumn Caption="Đơn vị tính" FieldName="IDDonViTinh" ShowInCustomizationForm="True" VisibleIndex="2">
+                        <PropertiesComboBox DataSourceID="sqlDonViTinh1" TextField="TenDonViTinh" ValueField="ID">
                         </PropertiesComboBox>
                     </dx:GridViewDataComboBoxColumn>
-                    <dx:GridViewDataComboBoxColumn Caption="Nhà SX" FieldName="IDNhaSanXuat" ShowInCustomizationForm="True" VisibleIndex="3">
-                        <PropertiesComboBox DataSourceID="sqlHangSX" TextField="TenNhanHang" ValueField="ID">
+                    <dx:GridViewDataComboBoxColumn Caption="Trạng thái hàng" FieldName="TrangThaiHang" ShowInCustomizationForm="True" VisibleIndex="9">
+                        <PropertiesComboBox DataSourceID="sqlTrangThaiHang" TextField="TenTrangThai" ValueField="ID">
                         </PropertiesComboBox>
                     </dx:GridViewDataComboBoxColumn>
-                    <dx:GridViewDataComboBoxColumn Caption="Đơn vị tính" FieldName="IDDonViTinh" ShowInCustomizationForm="True" VisibleIndex="4">
-                        <PropertiesComboBox DataSourceID="sqlDonViTinh" TextField="TenDonViTinh" ValueField="ID">
-                        </PropertiesComboBox>
-                    </dx:GridViewDataComboBoxColumn>
-                    <dx:GridViewDataDateColumn Caption="NgayCapNhat" FieldName="NgayCapNhat" ShowInCustomizationForm="True" VisibleIndex="10">
-                        <PropertiesDateEdit DisplayFormatString="dd/MM/yyyy">
-                        </PropertiesDateEdit>
-                    </dx:GridViewDataDateColumn>
                 </Columns>
         <Styles>
             <Header Font-Bold="True" HorizontalAlign="Center">
@@ -141,18 +141,10 @@
         </Styles>
     </dx:ASPxGridView>
                                                 
-                                                <asp:SqlDataSource ID="sqlNhomHang" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT [ID], [TenNhomHang] FROM [GPM_NhomHang] WHERE ([DaXoa] = @DaXoa)">
-                                                    <SelectParameters>
-                                                        <asp:Parameter DefaultValue="0" Name="DaXoa" Type="Int32" />
-                                                    </SelectParameters>
-                                                </asp:SqlDataSource>
-                                                <asp:SqlDataSource ID="sqlHangSX" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT [ID], [TenNhanHang] FROM [GPM_HangSanXuat] WHERE ([DaXoa] = @DaXoa)">
-                                                    <SelectParameters>
-                                                        <asp:Parameter DefaultValue="0" Name="DaXoa" Type="Int32" />
-                                                    </SelectParameters>
+                                                <asp:SqlDataSource ID="sqlTrangThaiHang" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT [ID], [TenTrangThai] FROM [GPM_TrangThaiHang]">
                                                 </asp:SqlDataSource>
                                                 
-                                                <asp:SqlDataSource ID="sqlDonViTinh" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT [ID], [TenDonViTinh] FROM [GPM_DonViTinh] WHERE ([DaXoa] = @DaXoa)">
+                                                <asp:SqlDataSource ID="sqlDonViTinh1" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT [ID], [TenDonViTinh] FROM [GPM_DonViTinh] WHERE ([DaXoa] = @DaXoa)">
                                                     <SelectParameters>
                                                         <asp:Parameter DefaultValue="0" Name="DaXoa" Type="Int32" />
                                                     </SelectParameters>

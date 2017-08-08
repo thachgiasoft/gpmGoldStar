@@ -33,12 +33,12 @@ namespace BanHang.Data
             }
         }
 
-        public DataTable LayDanhSachHangHoa()
+        public DataTable kiemTraBarcode(string IDHangHoa, string Barcode)
         {
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
             {
                 con.Open();
-                string cmdText = "SELECT [GPM_HANGHOA].* FROM [GPM_HANGHOA] WHERE GPM_HANGHOA.[DAXOA] = 0 AND TrangThai = 0";
+                string cmdText = "SELECT * FROM GPM_HangHoa_Barcode WHERE IDHangHoa = '" + IDHangHoa + "' AND Barcode = '" + Barcode + "'";
                 using (SqlCommand command = new SqlCommand(cmdText, con))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -48,6 +48,40 @@ namespace BanHang.Data
                 }
             }
         }
+
+
+        public DataTable LayDanhSachHangHoa()
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "select * from GPM_HangHoa where DaXoa = 0";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    return tb;
+                }
+            }
+        }
+
+        public DataTable LayDanhSachHangHoa_FullBarcode()
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "select GPM_HangHoa.MaHang, GPM_HangHoa.TenHangHoa, GPM_HangHoa.GiaMua, GPM_HangHoa.GiaBan1, GPM_HangHoa.GiaBan2, GPM_HangHoa.GiaBan3, GPM_HangHoa.GiaBan4, GPM_HangHoa.GiaBan5 ,GPM_HangHoa.TrangThai, GPM_HangHoa_Barcode.Barcode, GPM_DonViTinh.TenDonViTinh, GPM_TrangThaiHang.TenTrangThai as TrangThaiHang from GPM_HangHoa,GPM_HangHoa_Barcode,GPM_DonViTinh, GPM_TrangThaiHang where GPM_DonViTinh.ID = GPM_HangHoa.IDDonViTinh and GPM_HangHoa.ID = GPM_HangHoa_Barcode.IDHangHoa and GPM_TrangThaiHang.ID = GPM_HangHoa.TrangThaiHang";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    return tb;
+                }
+            }
+        }
+
         public object ThemHangHoa(string MaHang, string TenHangHoa, string IDDonViTinh, float GiaMua, float GiaBan1, float GiaBan2, float GiaBan3, float GiaBan4, float GiaBan5, string TrangThaiHang, string GhiChu)
         {
             using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))

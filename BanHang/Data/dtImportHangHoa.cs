@@ -52,7 +52,7 @@ namespace BanHang.Data
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
             {
                 con.Open();
-                string cmdText = " SELECT * FROM [GPM_HangHoa_Import]";
+                string cmdText = "SELECT * FROM [GPM_HangHoa_Import]";
                 using (SqlCommand command = new SqlCommand(cmdText, con))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -78,7 +78,7 @@ namespace BanHang.Data
             }
         }
 
-        public object insertHangHoa_temp(int IDNhomHang, string MaHang, string TenHangHoa, int IDDonViTinh, int IDNhaSanXuat, float GiaMua, float GiaBan1, float GiaBan2, float GiaBan3, float GiaBan4, float GiaBan5,DateTime NgayCapNhat, int TrangThai, string GhiChu, int DaXoa,string Barcode)
+        public object insertHangHoa_temp(string MaHang, string TenHangHoa, int IDDonViTinh, float GiaMua, float GiaBan1, float GiaBan2, float GiaBan3, float GiaBan4, float GiaBan5, int TrangThaiHang, int TrangThai, string Barcode)
         {
             using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
             {
@@ -86,26 +86,22 @@ namespace BanHang.Data
                 {
                     object IDHangHoa = null;
                     myConnection.Open();
-                    string cmdText = "INSERT INTO [GPM_HangHoa_Import] ([IDNhomHang], [MaHang], [TenHangHoa], [IDDonViTinh], [IDNhaSanXuat], [GiaMua], [GiaBan1], [GiaBan2], [GiaBan3], [GiaBan4], [GiaBan5], [NgayCapNhat], [TrangThai], [GhiChu], [DaXoa], [Barcode])" +
+                    string cmdText = "INSERT INTO [GPM_HangHoa_Import] ([MaHang], [TenHangHoa], [IDDonViTinh], [GiaMua], [GiaBan1], [GiaBan2], [GiaBan3], [GiaBan4], [GiaBan5], [TrangThaiHang], [TrangThai], [Barcode])" +
                                      " OUTPUT INSERTED.ID" +
-                                     " VALUES (@IDNhomHang, @MaHang, @TenHangHoa,@IDDonViTinh, @IDNhaSanXuat, @GiaMua, @GiaBan1, @GiaBan2, @GiaBan3, @GiaBan4, @GiaBan5, @NgayCapNhat, @TrangThai,  @GhiChu, @DaXoa, @Barcode)";
+                                     " VALUES (@MaHang, @TenHangHoa,@IDDonViTinh, @GiaMua, @GiaBan1, @GiaBan2, @GiaBan3, @GiaBan4, @GiaBan5, @TrangThaiHang, @TrangThai, @Barcode)";
                     using (SqlCommand myCommand = new SqlCommand(cmdText, myConnection))
                     {
-                        myCommand.Parameters.AddWithValue("@IDNhomHang", IDNhomHang);
                         myCommand.Parameters.AddWithValue("@MaHang", MaHang);
                         myCommand.Parameters.AddWithValue("@TenHangHoa", TenHangHoa);
                         myCommand.Parameters.AddWithValue("@IDDonViTinh", IDDonViTinh);
-                        myCommand.Parameters.AddWithValue("@IDNhaSanXuat", IDNhaSanXuat);
                         myCommand.Parameters.AddWithValue("@GiaMua", GiaMua);
                         myCommand.Parameters.AddWithValue("@GiaBan1", GiaBan1);
                         myCommand.Parameters.AddWithValue("@GiaBan2", GiaBan2);
                         myCommand.Parameters.AddWithValue("@GiaBan3", GiaBan3);
                         myCommand.Parameters.AddWithValue("@GiaBan4", GiaBan4);
                         myCommand.Parameters.AddWithValue("@GiaBan5", GiaBan5);
-                        myCommand.Parameters.AddWithValue("@NgayCapNhat", NgayCapNhat);
+                        myCommand.Parameters.AddWithValue("@TrangThaiHang", TrangThaiHang);
                         myCommand.Parameters.AddWithValue("@TrangThai", TrangThai);
-                        myCommand.Parameters.AddWithValue("@GhiChu", GhiChu);
-                        myCommand.Parameters.AddWithValue("@DaXoa", DaXoa);
                         myCommand.Parameters.AddWithValue("@Barcode", Barcode);
                         IDHangHoa = myCommand.ExecuteScalar();
                     }
