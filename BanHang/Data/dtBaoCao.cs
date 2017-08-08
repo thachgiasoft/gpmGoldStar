@@ -58,5 +58,24 @@ namespace BanHang.Data
                 }
             }
         }
+        public int layID_LoaiHangHoa_Ten(string ten)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "select ID from GPM_TrangThaiHang where TenTrangThai = '" + ten + "'";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    if (tb.Rows.Count != 0)
+                    {
+                        return Int32.Parse(tb.Rows[0]["ID"].ToString());
+                    }
+                    return 0;
+                }
+            }
+        }
     }
 }

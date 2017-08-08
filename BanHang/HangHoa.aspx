@@ -50,6 +50,8 @@
             <dx:ASPxButton ID="ASPxButton1" runat="server" AutoPostBack="False" ClientVisible="false"  Text="ASPxButton">
                 <ClientSideEvents Click="function(s, e){ txtBarCode.Focus();}" />
             </dx:ASPxButton>
+            <dx:ASPxGridViewExporter ID="ExportHangHoa" runat="server" ExportedRowType="All" GridViewID="HangHoaExport">
+            </dx:ASPxGridViewExporter>
             <dx:ASPxGridView ID="gridHangHoa" runat="server" AutoGenerateColumns="False" KeyFieldName="ID" Width="100%" OnRowDeleting="gridHangHoa_RowDeleting" OnRowInserting="gridHangHoa_RowInserting" OnRowUpdating="gridHangHoa_RowUpdating">
                     <SettingsDetail ShowDetailRow="True" />
                     <Templates>
@@ -282,7 +284,11 @@
                         </TitlePanel>
                     </Styles>
                 </dx:ASPxGridView>
-            <asp:SqlDataSource ID="SqlTrangThai" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT * FROM [GPM_TrangThaiHang]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlTrangThai" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT * FROM [GPM_TrangThaiHang] WHERE ([ID] &lt; @ID)">
+                <SelectParameters>
+                    <asp:Parameter DefaultValue="3" Name="ID" Type="Int32" />
+                </SelectParameters>
+            </asp:SqlDataSource>
         </dx:PanelContent>
         </PanelCollection>
     </dx:ASPxPanel>
@@ -293,4 +299,37 @@
             <asp:Parameter DefaultValue="0" Name="DaXoa" Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>                
+    <dx:ASPxGridView ID="HangHoaExport" runat="server" AutoGenerateColumns="False" Visible="False" Width="100%">
+<SettingsCommandButton>
+<ShowAdaptiveDetailButton ButtonType="Image"></ShowAdaptiveDetailButton>
+
+<HideAdaptiveDetailButton ButtonType="Image"></HideAdaptiveDetailButton>
+</SettingsCommandButton>
+        <Columns>
+            <dx:GridViewDataTextColumn FieldName="MaHang" VisibleIndex="0">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="TenHangHoa" VisibleIndex="1">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="TenDonViTinh" VisibleIndex="2">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="GiaMua" VisibleIndex="3">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="GiaBan1" VisibleIndex="4">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="GiaBan2" VisibleIndex="5">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="GiaBan3" VisibleIndex="6">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="GiaBan4" VisibleIndex="7">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="GiaBan5" VisibleIndex="8">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="TrangThaiHang" VisibleIndex="9">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Barcode" VisibleIndex="11">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="TrangThai" VisibleIndex="10">
+            </dx:GridViewDataTextColumn>
+        </Columns>
+    </dx:ASPxGridView>
     </asp:Content>

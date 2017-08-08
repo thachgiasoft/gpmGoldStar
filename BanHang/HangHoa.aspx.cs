@@ -192,9 +192,10 @@ namespace BanHang
 
         protected void btnXuatExcel_Click(object sender, EventArgs e)
         {
-            //HangHoaExport.DataSource = data.getDanhSachHangHoa_Full_Barcode();
-            //HangHoaExport.DataBind();
-            //export.WriteXlsToResponse();
+            dtHangHoa data = new dtHangHoa();
+            HangHoaExport.DataSource = data.LayDanhSachHangHoa_FullBarcode();
+            HangHoaExport.DataBind();
+            export.WriteXlsToResponse();
         }
 
         protected void btnNhapExcel_Click(object sender, EventArgs e)
