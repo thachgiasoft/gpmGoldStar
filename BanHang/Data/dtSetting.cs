@@ -13,6 +13,12 @@ namespace BanHang.Data
 {
     public class dtSetting
     {
+        public static string convertDauSangKhongDau(string s)
+        {
+            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = s.Normalize(NormalizationForm.FormD);
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').ToUpper();
+        } 
         public static string GetSHA1HashData(string data)
         {
             //create new instance of md5
