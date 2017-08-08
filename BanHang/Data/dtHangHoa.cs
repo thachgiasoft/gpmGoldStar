@@ -66,17 +66,12 @@ namespace BanHang.Data
             }
         }
 
-
         public DataTable LayDanhSachHangHoa()
         {
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
             {
                 con.Open();
-<<<<<<< HEAD
-                string cmdText = "select * from GPM_HangHoa where DaXoa = 0";
-=======
-                string cmdText = "SELECT [GPM_HANGHOA].* FROM [GPM_HANGHOA] WHERE GPM_HANGHOA.[DAXOA] = 0 AND TrangThai = 0  AND TenHangHoa is not null";
->>>>>>> d73b477cb42768c5ae49d4b9ac539ac3a9566df5
+                string cmdText = "select * from GPM_HangHoa where DaXoa = 0 and TrangThaiHang <3";
                 using (SqlCommand command = new SqlCommand(cmdText, con))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
