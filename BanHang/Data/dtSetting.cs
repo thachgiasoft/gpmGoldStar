@@ -13,6 +13,68 @@ namespace BanHang.Data
 {
     public class dtSetting
     {
+        public static string LayIDDonViTinh(string IDHangHoa)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "SELECT IDDonViTinh FROM [GPM_HangHoa] WHERE [ID] = " + IDHangHoa;
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    if (tb.Rows.Count != 0)
+                    {
+                        DataRow dr = tb.Rows[0];
+                        string ID = dr["IDDonViTinh"].ToString().Trim();
+                        return ID;
+                    }
+                    return null;
+                }
+            }
+        }
+        public static string LayMaHang(string IDHangHoa)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "SELECT MaHang FROM [GPM_HangHoa] WHERE [ID] = " + IDHangHoa;
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    if (tb.Rows.Count != 0)
+                    {
+                        DataRow dr = tb.Rows[0];
+                        string ID = dr["MaHang"].ToString().Trim();
+                        return ID;
+                    }
+                    return null;
+                }
+            }
+        }
+        public static float GiaBan1(string IDHangHoa)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = " SELECT GiaBan1 FROM [GPM_HangHoa] WHERE [ID] = '" + IDHangHoa + "'";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    if (tb.Rows.Count != 0)
+                    {
+                        DataRow dr = tb.Rows[0];
+                        return float.Parse(dr["GiaBan1"].ToString());
+                    }
+                    else return -1;
+                }
+            }
+        }
         public static string convertDauSangKhongDau(string s)
         {
             Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
