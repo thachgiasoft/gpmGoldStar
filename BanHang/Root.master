@@ -91,17 +91,7 @@
                                                             </dx:RibbonDropDownButtonItem>
                                                             <dx:RibbonDropDownButtonItem Name="Khách Hàng Trả Hàng" Text="Khách Hàng Trả Hàng" NavigateUrl="DanhSachKhachHangTraHang.aspx">
                                                             </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Đơn Đặt Hàng Thu Mua" NavigateUrl="DanhSachDonHangThuMua.aspx" Text="Đơn Đặt Hàng Thu Mua">
-                                                            </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Đơn đặt hàng chi nhánh" NavigateUrl="DonDatHangChiNhanh.aspx" Text="Đơn đặt hàng chi nhánh">
-                                                            </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="don_dat_hang" Text="Chi Nhánh Đặt Hàng" NavigateUrl="ChiNhanhDatHang.aspx">
-                                                            </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="phieu_xuat_tra" Text="Phiếu xuất trả" NavigateUrl="DanhSachPhieuXuatTra.aspx">
-                                                            </dx:RibbonDropDownButtonItem>
                                                             <dx:RibbonDropDownButtonItem Name="Phiếu xuất khác" Text="Phiếu xuất khác" NavigateUrl="DanhSachPhieuXuatKhac.aspx">
-                                                            </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Phiếu chuyển kho" Text="Phiếu chuyển kho" NavigateUrl="DanhSachPhieuChuyenKho.aspx">
                                                             </dx:RibbonDropDownButtonItem>
                                                             <dx:RibbonDropDownButtonItem Name="Kiểm Kho" NavigateUrl="DanhSachKiemKho.aspx" Text="Kiểm Kho">
                                                                 <LargeImage IconID="actions_apply_16x16">

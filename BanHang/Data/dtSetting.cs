@@ -13,6 +13,70 @@ namespace BanHang.Data
 {
     public class dtSetting
     {
+        public static void CongTonKho(string IDHangHoa, string SoLuongCon)
+        {
+            using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
+            {
+                try
+                {
+                    myConnection.Open();
+                    string cmdText = "UPDATE [GPM_HangHoaTonKho] SET [SoLuongCon] = [SoLuongCon] + @SoLuongCon, [NgayCapNhat] = getdate() WHERE [IDHangHoa] = @IDHangHoa ";
+                    using (SqlCommand myCommand = new SqlCommand(cmdText, myConnection))
+                    {
+                        myCommand.Parameters.AddWithValue("@IDHangHoa", IDHangHoa);
+                        myCommand.Parameters.AddWithValue("@SoLuongCon", SoLuongCon);
+                      
+                        myCommand.ExecuteNonQuery();
+                    }
+                    myConnection.Close();
+                }
+                catch
+                {
+                    throw new Exception("Lỗi: Quá trình thêm dữ liệu gặp lỗi");
+                }
+            }
+        }
+        public static int TrangThaiHang(string IDHangHoa)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "SELECT TrangThaiHang FROM [GPM_HangHoa] WHERE [ID] = " + IDHangHoa;
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    if (tb.Rows.Count != 0)
+                    {
+                        DataRow dr = tb.Rows[0];
+                        return Int32.Parse(dr["TrangThaiHang"].ToString().Trim());
+                    }
+                    return 0;
+                }
+            }
+        }
+        public static string LayIDHangHoa_MaHang(string MaHang)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "SELECT ID FROM [GPM_HangHoa] WHERE [MaHang] = '" + MaHang + "'";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    if (tb.Rows.Count != 0)
+                    {
+                        DataRow dr = tb.Rows[0];
+                        string ID = dr["ID"].ToString().Trim();
+                        return ID;
+                    }
+                    return null;
+                }
+            }
+        }
         public static string LayIDDonViTinh(string IDHangHoa)
         {
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
@@ -70,6 +134,26 @@ namespace BanHang.Data
                     {
                         DataRow dr = tb.Rows[0];
                         return float.Parse(dr["GiaBan1"].ToString());
+                    }
+                    else return -1;
+                }
+            }
+        }
+        public static float GiaMua(string IDHangHoa)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = " SELECT GiaMua FROM [GPM_HangHoa] WHERE [ID] = '" + IDHangHoa + "'";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    if (tb.Rows.Count != 0)
+                    {
+                        DataRow dr = tb.Rows[0];
+                        return float.Parse(dr["GiaMua"].ToString());
                     }
                     else return -1;
                 }
