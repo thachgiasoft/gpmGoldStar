@@ -202,3 +202,9 @@ C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\obj\Debug\BanHang.dll
 C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\bin\BanHang.dll
 C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\bin\BanHang.pdb
 C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\obj\Debug\BanHang.pdb
+D:\GPM\GoldStarQL\gpmGoldStar\BanHang\bin\BanHang.dll
+D:\GPM\GoldStarQL\gpmGoldStar\BanHang\bin\BanHang.pdb
+D:\GPM\GoldStarQL\gpmGoldStar\BanHang\obj\Debug\BanHang.csprojResolveAssemblyReference.cache
+D:\GPM\GoldStarQL\gpmGoldStar\BanHang\obj\Debug\BanHang.dll.licenses
+D:\GPM\GoldStarQL\gpmGoldStar\BanHang\obj\Debug\BanHang.dll
+D:\GPM\GoldStarQL\gpmGoldStar\BanHang\obj\Debug\BanHang.pdb
