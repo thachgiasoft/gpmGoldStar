@@ -10,7 +10,7 @@
 namespace BanHang {
     
     
-    public partial class DanhSachPhieuXuatKhac {
+    public partial class DanhSachKiemKho {
         
         /// <summary>
         /// ASPxFormLayout1 control.
@@ -31,40 +31,31 @@ namespace BanHang {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer1;
         
         /// <summary>
-        /// btnThemPhieuXuatKhac control.
+        /// btnKiemKho control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnThemPhieuXuatKhac;
+        protected global::DevExpress.Web.ASPxButton btnKiemKho;
         
         /// <summary>
-        /// gridPhieuXuatKhac control.
+        /// gridDanhSachKiemKho control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView gridPhieuXuatKhac;
+        protected global::DevExpress.Web.ASPxGridView gridDanhSachKiemKho;
         
         /// <summary>
-        /// SqlLyDoXuat control.
+        /// sqlNguoiDung control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlLyDoXuat;
-        
-        /// <summary>
-        /// SqlNhanVien control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlNhanVien;
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlNguoiDung;
         
         /// <summary>
         /// popup control.
