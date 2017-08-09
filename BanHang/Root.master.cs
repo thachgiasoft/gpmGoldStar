@@ -19,6 +19,7 @@ namespace BanHang {
             //else
             //{
             Session["TenDangNhap"] = "anh minh";
+            Session["IDNhanVien"] = "1";
              //   lblChao.Text = "Xin Chào: " + Session["TenDangNhap"].ToString();
                 ASPxLabel2.Text = Server.HtmlDecode("Copyrights &copy;") + DateTime.Now.Year + Server.HtmlDecode(". All Rights Reserved. Designed by GPM.VN");
             //}
