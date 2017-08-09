@@ -26,7 +26,7 @@
 </script>
     <dx:ASPxPanel ID="ASPxPanel1" runat="server" Width="100%"><PanelCollection>
     <dx:PanelContent ID="PanelContent1" runat="server">
-        <dx:ASPxButton ID="XuatFilePDF" runat="server" OnClick="XuatFilePDF_Click" Text="Xuất PDF">
+        <dx:ASPxButton ID="XuatFilePDF" runat="server" OnClick="XuatFilePDF_Click" Text="Xuất PDF" Visible="False">
             <Image IconID="export_exporttopdf_16x16">
             </Image>
         </dx:ASPxButton>

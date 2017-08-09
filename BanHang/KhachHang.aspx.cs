@@ -18,8 +18,8 @@ namespace BanHang
         public void LoadGrid()
         {
             data = new dtKhachHang();
-            gridKhachHang.DataSource = data.LayDanhSachKhachHang();
-            gridKhachHang.DataBind();
+            KhachHangExport.DataSource = data.LayDanhSachKhachHang();
+            KhachHangExport.DataBind();
         }
 
         protected void gridKhachHang_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
@@ -38,7 +38,7 @@ namespace BanHang
             {
                 data.SuaThongTinKhachHang(Int32.Parse(ID), IDNhomKhachHang, TenKhachHang, NgaySinh, CMND, DiaChi, DienThoai, GhiChu);
                 e.Cancel = true;
-                gridKhachHang.CancelEdit();
+                KhachHangExport.CancelEdit();
                 LoadGrid();
             }
             else
@@ -76,7 +76,7 @@ namespace BanHang
             {
                 data.ThemKhachHang(IDNhomKhachHang, sDate + MaKh, TenKhachHang, NgaySinh, CMND, DiaChi, DienThoai, GhiChu);
                 e.Cancel = true;
-                gridKhachHang.CancelEdit();
+                KhachHangExport.CancelEdit();
                 LoadGrid();
             }
             else
@@ -92,7 +92,7 @@ namespace BanHang
             data = new dtKhachHang();
             data.XoaKhachHang(Int32.Parse(ID));
             e.Cancel = true;
-            gridKhachHang.CancelEdit();
+            KhachHangExport.CancelEdit();
             LoadGrid();
         }
 
@@ -103,12 +103,12 @@ namespace BanHang
 
         protected void btnXuatExcel_Click(object sender, EventArgs e)
         {
-            //XuatDuLieu.WriteXlsToResponse();
+            ExportKhachHang.WriteXlsToResponse();
         }
 
         protected void btnNhapExcel_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("ImportExcel_KhachHang.aspx");
+            Response.Redirect("ImportExcel_KhachHang.aspx");
         }
     }
 }

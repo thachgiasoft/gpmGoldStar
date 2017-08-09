@@ -76,13 +76,22 @@ namespace BanHang {
         protected global::DevExpress.Web.ASPxButton btnNhapExcel;
         
         /// <summary>
-        /// gridKhachHang control.
+        /// ExportKhachHang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView gridKhachHang;
+        protected global::DevExpress.Web.ASPxGridViewExporter ExportKhachHang;
+        
+        /// <summary>
+        /// KhachHangExport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView KhachHangExport;
         
         /// <summary>
         /// sqlNhomKhachHang control.
