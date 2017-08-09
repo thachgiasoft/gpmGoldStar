@@ -22,7 +22,7 @@ namespace BanHang
                 data = new dtThemDonHangKho();
                 object IDPhieuDatHang = data.ThemPhieuDatHang();
                 IDThuMuaDatHang_Temp.Value = IDPhieuDatHang.ToString();
-                txtNguoiLap.Text = "aaaaaaa";
+                txtNguoiLap.Text = Session["TenDangNhap"].ToString();
                 txtSoDonHang.Text = (DateTime.Now.ToString("ddMMyyyy-hhmmss"));
             }
             LoadGrid(IDThuMuaDatHang_Temp.Value.ToString());

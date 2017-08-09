@@ -20,7 +20,7 @@ namespace BanHang
                 data = new dtPhieuXuatKhac();
                 object IDPhieuXuatKhac = data.ThemPhieuXuatKhac_Temp();
                 IDPhieuXuatKhac_Temp.Value = IDPhieuXuatKhac.ToString();
-                cmbNguoiLapPhieu.Text = "1";// Session["IDNhanVien"].ToString();
+                cmbNguoiLapPhieu.Text = Session["IDNhanVien"].ToString();
                
             }
             LoadGrid(IDPhieuXuatKhac_Temp.Value.ToString());  
