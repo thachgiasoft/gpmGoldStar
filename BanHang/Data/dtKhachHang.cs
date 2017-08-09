@@ -86,6 +86,38 @@ namespace BanHang.Data
                 }
             }
         }
+        public object ThemKhachHang_Temp(int IDNhomKhachHang, string MaKhachHang, string TenKhachHang, DateTime NgaySinh, string CMND, string DiaChi, string DienThoai, string GhiChu)
+        {
+            using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
+            {
+                try
+                {
+                    object ID = null;
+                    myConnection.Open();
+                    string cmdText = "INSERT INTO [GPM_KHACHHANG_IMPORT] ([IDNhomKhachHang],[MaKhachHang], [TenKhachHang], [NgaySinh], [CMND], [DiaChi], [DienThoai], [GhiChu])  OUTPUT INSERTED.ID VALUES (@IDNhomKhachHang,@MaKhachHang, @TenKhachHang, @NgaySinh, @CMND, @DiaChi, @DienThoai, @GhiChu)";
+                    using (SqlCommand myCommand = new SqlCommand(cmdText, myConnection))
+                    {
+
+                        myCommand.Parameters.AddWithValue("@IDNhomKhachHang", IDNhomKhachHang);
+                        myCommand.Parameters.AddWithValue("@TenKhachHang", TenKhachHang);
+                        myCommand.Parameters.AddWithValue("@NgaySinh", NgaySinh);
+                        myCommand.Parameters.AddWithValue("@CMND", CMND);
+                        myCommand.Parameters.AddWithValue("@DiaChi", DiaChi);
+                        myCommand.Parameters.AddWithValue("@DienThoai", DienThoai);
+                        myCommand.Parameters.AddWithValue("@GhiChu", GhiChu);
+                        myCommand.Parameters.AddWithValue("@MaKhachHang", MaKhachHang);
+                        // myCommand.ExecuteNonQuery();
+                        ID = myCommand.ExecuteScalar();
+                    }
+                    myConnection.Close();
+                    return ID;
+                }
+                catch
+                {
+                    throw new Exception("Lỗi: Quá trình thêm dữ liệu gặp lỗi");
+                }
+            }
+        }
         public void CapNhatMaKhachHang(object ID, string MaKhachHang, string Barcode)
         {
             using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
@@ -253,7 +285,7 @@ namespace BanHang.Data
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
             {
                 con.Open();
-                string cmdText = " SELECT * FROM [GPM_KhachHang_Import_Temp]";
+                string cmdText = " SELECT * FROM [GPM_KhachHang_Import]";
                 using (SqlCommand command = new SqlCommand(cmdText, con))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -271,7 +303,7 @@ namespace BanHang.Data
                 try
                 {
                     myConnection.Open();
-                    string strSQL = "DELETE [GPM_KhachHang_Import_Temp]";
+                    string strSQL = "DELETE [GPM_KhachHang_Import]";
                     using (SqlCommand myCommand = new SqlCommand(strSQL, myConnection))
                     {
                         myCommand.ExecuteNonQuery();
@@ -289,7 +321,7 @@ namespace BanHang.Data
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
             {
                 con.Open();
-                string cmdText = " SELECT * FROM [GPM_KhachHang_Import_Temp] WHERE [GPM_KhachHang_Import_Temp].TenKhachHang = N'" + TenKhachHang + "' AND  [GPM_KhachHang_Import_Temp].CMND = N'" + CMND + "' AND [GPM_KhachHang_Import_Temp].DienThoai = N'" + DienThoai + "'";
+                string cmdText = " SELECT * FROM [GPM_KhachHang_Import] WHERE [GPM_KhachHang_Import].TenKhachHang = N'" + TenKhachHang + "' AND  [GPM_KhachHang_Import].CMND = N'" + CMND + "' AND [GPM_KhachHang_Import].DienThoai = N'" + DienThoai + "'";
                 using (SqlCommand command = new SqlCommand(cmdText, con))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -322,7 +354,7 @@ namespace BanHang.Data
                 try
                 {
                     myConnection.Open();
-                    string cmdText = "INSERT INTO [GPM_KhachHang_Import_Temp] ([IDNhomKhachHang], [TenKhachHang], [NgaySinh], [CMND], [DiaChi], [IDThanhPho], [IDQuan], [DienThoai], [Email], [GhiChu]) " +
+                    string cmdText = "INSERT INTO [GPM_KhachHang_Import] ([IDNhomKhachHang], [TenKhachHang], [NgaySinh], [CMND], [DiaChi], [IDThanhPho], [IDQuan], [DienThoai], [Email], [GhiChu]) " +
                     "VALUES (@IDNhomKhachHang, @TenKhachHang, @NgaySinh, @CMND, @DiaChi, @IDThanhPho, @IDQuan, @DienThoai, @Email, @GhiChu)";
                     using (SqlCommand myCommand = new SqlCommand(cmdText, myConnection))
                     {
@@ -358,7 +390,7 @@ namespace BanHang.Data
                 try
                 {
                     myConnection.Open();
-                    string strSQL = "DELETE [GPM_KhachHang_Import_Temp] WHERE [ID] = '" + ID + "'";
+                    string strSQL = "DELETE [GPM_KhachHang_Import] WHERE [ID] = '" + ID + "'";
                     using (SqlCommand myCommand = new SqlCommand(strSQL, myConnection))
                     {
                         myCommand.ExecuteNonQuery();

@@ -10,7 +10,16 @@
 namespace BanHang {
     
     
-    public partial class KhachHang {
+    public partial class ImportExcel_KhachHang {
+        
+        /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// ASPxFormLayout1 control.
@@ -31,13 +40,13 @@ namespace BanHang {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer1;
         
         /// <summary>
-        /// btnXuatPDF control.
+        /// UploadFileExcel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnXuatPDF;
+        protected global::DevExpress.Web.ASPxUploadControl UploadFileExcel;
         
         /// <summary>
         /// LayoutItemNestedControlContainer2 control.
@@ -49,13 +58,13 @@ namespace BanHang {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer2;
         
         /// <summary>
-        /// btnXuatExcel control.
+        /// btnNhap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnXuatExcel;
+        protected global::DevExpress.Web.ASPxButton btnNhap;
         
         /// <summary>
         /// LayoutItemNestedControlContainer3 control.
@@ -67,31 +76,49 @@ namespace BanHang {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer3;
         
         /// <summary>
-        /// btnNhapExcel control.
+        /// btnThem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnNhapExcel;
+        protected global::DevExpress.Web.ASPxButton btnThem;
         
         /// <summary>
-        /// ExportKhachHang control.
+        /// LayoutItemNestedControlContainer4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridViewExporter ExportKhachHang;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer4;
         
         /// <summary>
-        /// KhachHangExport control.
+        /// btnHuy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView KhachHangExport;
+        protected global::DevExpress.Web.ASPxButton btnHuy;
+        
+        /// <summary>
+        /// LayoutItemNestedControlContainer13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer13;
+        
+        /// <summary>
+        /// gridKhachHang_Temp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gridKhachHang_Temp;
         
         /// <summary>
         /// sqlNhomKhachHang control.
