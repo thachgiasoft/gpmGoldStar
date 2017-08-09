@@ -108,5 +108,25 @@ namespace BanHang.Data
                 }
             }
         }
+
+        public int LayIDNhomKhachHang_Ten(string str)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "SELECT ID FROM [GPM_NHOMKHACHHANG] WHERE TenNhomKhachHang = '" + str + "'";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    if (tb.Rows.Count != 0)
+                    {
+                        return Int32.Parse(tb.Rows[0]["ID"].ToString());
+                    }
+                    return 1;
+                }
+            }
+        }
     }
 }

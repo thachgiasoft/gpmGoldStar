@@ -86,6 +86,38 @@ namespace BanHang.Data
                 }
             }
         }
+        public object ThemKhachHang_Temp(int IDNhomKhachHang, string MaKhachHang, string TenKhachHang, DateTime NgaySinh, string CMND, string DiaChi, string DienThoai, string GhiChu)
+        {
+            using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
+            {
+                try
+                {
+                    object ID = null;
+                    myConnection.Open();
+                    string cmdText = "INSERT INTO [GPM_KHACHHANG_IMPORT] ([IDNhomKhachHang],[MaKhachHang], [TenKhachHang], [NgaySinh], [CMND], [DiaChi], [DienThoai], [GhiChu])  OUTPUT INSERTED.ID VALUES (@IDNhomKhachHang,@MaKhachHang, @TenKhachHang, @NgaySinh, @CMND, @DiaChi, @DienThoai, @GhiChu)";
+                    using (SqlCommand myCommand = new SqlCommand(cmdText, myConnection))
+                    {
+
+                        myCommand.Parameters.AddWithValue("@IDNhomKhachHang", IDNhomKhachHang);
+                        myCommand.Parameters.AddWithValue("@TenKhachHang", TenKhachHang);
+                        myCommand.Parameters.AddWithValue("@NgaySinh", NgaySinh);
+                        myCommand.Parameters.AddWithValue("@CMND", CMND);
+                        myCommand.Parameters.AddWithValue("@DiaChi", DiaChi);
+                        myCommand.Parameters.AddWithValue("@DienThoai", DienThoai);
+                        myCommand.Parameters.AddWithValue("@GhiChu", GhiChu);
+                        myCommand.Parameters.AddWithValue("@MaKhachHang", MaKhachHang);
+                        // myCommand.ExecuteNonQuery();
+                        ID = myCommand.ExecuteScalar();
+                    }
+                    myConnection.Close();
+                    return ID;
+                }
+                catch
+                {
+                    throw new Exception("Lỗi: Quá trình thêm dữ liệu gặp lỗi");
+                }
+            }
+        }
         public void CapNhatMaKhachHang(object ID, string MaKhachHang, string Barcode)
         {
             using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
