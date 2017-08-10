@@ -72,7 +72,7 @@ namespace BanHang.Data
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
             {
                 con.Open();
-                string cmdText = "select * from GPM_HangHoa where DaXoa = 0 and TrangThaiHang <3";
+                string cmdText = "select * from GPM_HangHoa where MaHang is not null and DaXoa = 0 and TrangThaiHang <3";
                 using (SqlCommand command = new SqlCommand(cmdText, con))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
