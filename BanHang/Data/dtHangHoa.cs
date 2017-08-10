@@ -83,6 +83,22 @@ namespace BanHang.Data
             }
         }
 
+        public string LayIDHangHoa_MaHang(string MaHang)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "select ID from GPM_HangHoa where MaHang = '" + MaHang + "'";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    return tb.Rows[0]["ID"].ToString();
+                }
+            }
+        }
+
         public DataTable LayDanhSachHangHoa_FullBarcode()
         {
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
