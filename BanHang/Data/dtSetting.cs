@@ -184,6 +184,51 @@ namespace BanHang.Data
                 }
             }
         }
+
+        public static string LayDiemQuyDoiTien()
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "SELECT SoTienQuyDoi FROM [GPM_Setting]";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    if (tb.Rows.Count != 0)
+                    {
+                        DataRow dr = tb.Rows[0];
+                        string ID = dr["SoTienQuyDoi"].ToString().Trim();
+                        return ID;
+                    }
+                    return null;
+                }
+            }
+        }
+
+        public static string LayTienQuyDoiDiem()
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "SELECT SoTienTichLuy FROM [GPM_Setting]";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    if (tb.Rows.Count != 0)
+                    {
+                        DataRow dr = tb.Rows[0];
+                        string ID = dr["SoTienTichLuy"].ToString().Trim();
+                        return ID;
+                    }
+                    return null;
+                }
+            }
+        }
+
         public static float GiaBan1(string IDHangHoa)
         {
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))

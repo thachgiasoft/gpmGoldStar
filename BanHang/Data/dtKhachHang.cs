@@ -14,7 +14,7 @@ namespace BanHang.Data
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
             {
                 con.Open();
-                string cmdText = "SELECT * FROM [GPM_KHACHHANG] WHERE DaXoa = 0 ORDER BY [ID] DESC";
+                string cmdText = "SELECT * FROM [GPM_KHACHHANG]";
                 using (SqlCommand command = new SqlCommand(cmdText, con))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -24,6 +24,23 @@ namespace BanHang.Data
                 }
             }
         }
+
+        public string layDiemTichLuy(string IDKH)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "SELECT DiemTichLuy FROM [GPM_KHACHHANG] WHERE ID = " + IDKH;
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    return tb.Rows[0]["DiemTichLuy"].ToString();
+                }
+            }
+        }
+
         public DataTable DanhSachQuan_IDThanhPho(string IDThanhPho)
         {
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
