@@ -69,7 +69,7 @@
                                             <dx:ListBoxColumn FieldName="MaKyHieu" Width="80px" Caption="Mã Ký Hiệu" />
                                             <dx:ListBoxColumn FieldName="TenKyHieu" Width="200px" Caption="Tên Ký Hiệu"/>
                                             <dx:ListBoxColumn FieldName="GiaVe" Width="100px" Caption="Giá Vé"/>
-                                            <dx:ListBoxColumn FieldName="GhiChu" Width="120px" Caption="Ghi Chú" />
+                                            <dx:ListBoxColumn FieldName="GhiChu" Width="200px" Caption="Ghi Chú" />
                                         </Columns>
                                     </dx:ASPxComboBox>
                                     <asp:SqlDataSource ID="SqlDanhSachKyHieu" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT * FROM [GPM_KyHieuGiaVe]"></asp:SqlDataSource>
@@ -218,7 +218,7 @@
                                         NullText="Tìm kiếm khách hàng ......." Width="100%" TextFormatString="{0} - {1} - {4}"
                                         EnableCallbackMode="true" CallbackPageSize="10" 
                                         OnItemsRequestedByFilterCondition="cmbKhachHang_ItemsRequestedByFilterCondition"
-                                        OnItemRequestedByValue="cmbKhachHang_ItemRequestedByValue" 
+                                        OnItemRequestedByValue="cmbKhachHang_ItemRequestedByValue" AutoPostBack="True" OnSelectedIndexChanged="cmbKhachHang_SelectedIndexChanged" 
                                         
                                         >                                    
                                         <Columns>

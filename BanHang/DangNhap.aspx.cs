@@ -45,6 +45,13 @@ namespace BanHang
                         Session["KTDangNhap"] = "GPM";
                         Response.Redirect("Default.aspx");
                     }
+                    if (IDNhom == 4)
+                    {
+                        Session["TenThuNgan"] = dr["TenNguoiDung"].ToString();
+                        Session["IDThuNgan"] = dr["ID"].ToString();
+                        Session["KTBanVe"] = "GPMBanVe";
+                        Response.Redirect("HeThongBanVe.aspx");
+                    }
                 }
                 else
                 {

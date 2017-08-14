@@ -9,6 +9,147 @@ namespace BanHang.Data
 {
     public class dtBanVe
     {
+        //public string LayID_Max(string KyHieu)
+        //{
+        //    using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+        //    {  
+        //        con.Open();
+        //        string cmdText = "SELECT SoThuTu FROM [GPM_GiaVe_ChiTiet] WHERE [KyHieu] = N'" + KyHieu + "' ORDER BY ID DESC";
+        //        using (SqlCommand command = new SqlCommand(cmdText, con))
+        //        using (SqlDataReader reader = command.ExecuteReader())
+        //        {
+        //            DataTable tb = new DataTable();
+        //            tb.Load(reader);
+        //            if (tb.Rows.Count != 0)
+        //            {
+        //                DataRow dr = tb.Rows[0];
+        //                float a = float.Parse(dr["SoThuTu"].ToString());
+        //                return (a + 1).ToString().Replace(".", "");
+                       
+        //            }
+        //            float b = 1 * (1000000/100);
+        //            return b.ToString().Replace(".","");
+        //        }
+        //    }
+        //}
+        public object InsertHoaDonBanVe(string IDNhanVien,string TenNhanVien, string IDKhachHang, HoaDonBanVe hoaDon,string DiemTichLuy)
+        {
+            object IDHoaDon = null;
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                SqlTransaction trans = null;
+                try
+                {
+                    con.Open();
+                    trans = con.BeginTransaction();
+                    string InsertHoaDon = "INSERT INTO [GPM_BanVe] ([IDKhachHang],[TenKhachHang], [IDNhanVien],[TenNhanVien],[SoLuong],[TongTien],[NgayBan],[KhachCanTra],[KhachThanhToan],[TienThua],[GiamGia],[DiemTichLuy]) " +
+                                            "OUTPUT INSERTED.ID " +
+                                            "VALUES (@IDKhachHang, @TenKhachHang, @IDNhanVien,@TenNhanVien, @SoLuong, @TongTien, getdate(), @KhachCanTra, @KhachThanhToan,@TienThua, @GiamGia, @DiemTichLuy)";
+
+                        using (SqlCommand cmd = new SqlCommand(InsertHoaDon, con, trans))
+                        {
+                            cmd.Parameters.AddWithValue("@IDKhachHang", IDKhachHang);
+                            cmd.Parameters.AddWithValue("@TenKhachHang", dtBanVe.LayTenKhachHang(IDKhachHang));
+                            cmd.Parameters.AddWithValue("@IDNhanVien", IDNhanVien);
+                            cmd.Parameters.AddWithValue("@TenNhanVien",TenNhanVien );
+                            cmd.Parameters.AddWithValue("@SoLuong", hoaDon.SoLuongHang);
+                            cmd.Parameters.AddWithValue("@TongTien",hoaDon.TongTien);
+                            cmd.Parameters.AddWithValue("@KhachCanTra", hoaDon.KhachCanTra);
+                            cmd.Parameters.AddWithValue("@KhachThanhToan", hoaDon.KhachThanhToan);
+                            cmd.Parameters.AddWithValue("@GiamGia",  hoaDon.GiamGia);
+                            cmd.Parameters.AddWithValue("@TienThua", hoaDon.TienThua);
+                            cmd.Parameters.AddWithValue("@DiemTichLuy", DiemTichLuy);
+                            IDHoaDon = cmd.ExecuteScalar();
+                        }
+                        if (IDHoaDon != null)
+                        {
+                            foreach (ChiTietBanVe cthd in hoaDon.ListChiTietBanVe)
+                            {
+                                int SLMua = cthd.SoLuong;
+                                for (int i = 0; i < SLMua; i++)
+                                {
+                                    //string cmdText = "SELECT SoThuTu FROM [GPM_GiaVe_ChiTiet] WHERE [KyHieu] = N'" + cthd.TenKyHieu + "' ORDER BY ID DESC";
+                                    //using (SqlCommand cmd = new SqlCommand(cmdText, con, trans))
+                                    //using (SqlDataReader reader = cmd.ExecuteReader())
+                                    //{
+                                    //    DataTable tb = new DataTable();
+                                    //    tb.Load(reader);
+                                    //    if (tb.Rows.Count != 0)
+                                    //    {
+                                    //        DataRow dr = tb.Rows[0];
+                                    //        float a = float.Parse(dr["SoThuTu"].ToString());
+                                    //        return (a + 1).ToString().Replace(".", "");
+
+                                    //    }
+                                    //    float b = 1 * (1000000 / 100);
+                                    //    return b.ToString().Replace(".", "");
+                                    //}
+                                    dtBanVe dt1 = new dtBanVe();
+                                    string InsertChiTietHoaDon = "INSERT INTO [GPM_GiaVe_ChiTiet] ([IDBanVe],[KyHieu],[GiaVe],[SoThuTu]) " +
+                                                            "VALUES (@IDBanVe, @KyHieu, @GiaVe, @SoThuTu)";
+                                    using (SqlCommand cmd = new SqlCommand(InsertChiTietHoaDon, con, trans))
+                                    {
+                                        cmd.Parameters.AddWithValue("@IDBanVe", IDHoaDon);
+                                        cmd.Parameters.AddWithValue("@KyHieu", cthd.TenKyHieu);
+                                        cmd.Parameters.AddWithValue("@GiaVe", cthd.DonGia);
+                                        cmd.Parameters.AddWithValue("@SoThuTu", "1111");
+                                        cmd.ExecuteNonQuery();
+                                    }
+                                } 
+                            }
+                            if (Int32.Parse(IDKhachHang) != 1)
+                            {
+                                string TruDiemTichLuy = "UPDATE [GPM_KhachHang] SET DiemTichLuy = DiemTichLuy -  @DiemTichLuy WHERE ID = @ID";
+                                using (SqlCommand cmd = new SqlCommand(TruDiemTichLuy, con, trans))
+                                {
+                                    cmd.Parameters.AddWithValue("@ID", IDKhachHang);
+                                    cmd.Parameters.AddWithValue("@DiemTichLuy", DiemTichLuy);
+                                    cmd.ExecuteNonQuery();
+                                }
+
+                                float TongTienGiam = hoaDon.KhachCanTra / float.Parse(dtSetting.LayTienQuyDoiDiem());
+                                string CongDiemTichLuy = "UPDATE [GPM_KhachHang] SET DiemTichLuy = DiemTichLuy +  @DiemTichLuy1 WHERE ID = @ID";
+                                using (SqlCommand cmd = new SqlCommand(CongDiemTichLuy, con, trans))
+                                {
+                                    cmd.Parameters.AddWithValue("@ID", IDKhachHang);
+                                    cmd.Parameters.AddWithValue("@DiemTichLuy1", TongTienGiam);
+                                    cmd.ExecuteNonQuery();
+                                }
+                            }
+                        } 
+                    trans.Commit();
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (trans != null) trans.Rollback();
+                    throw new Exception("Quá trình lưu dữ liệu có lỗi xảy ra, vui lòng tải lại trang và thanh toán lại !!");
+                }
+            }
+            return IDHoaDon;
+        }
+        public static string LayTenKhachHang(string IDKhachHang)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "SELECT TenKhachHang FROM [GPM_KhachHang] WHERE [ID] = '" + IDKhachHang + "'";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DataTable tb = new DataTable();
+                    tb.Load(reader);
+                    if (tb.Rows.Count != 0)
+                    {
+                        DataRow dr = tb.Rows[0];
+                        string ID = dr["TenKhachHang"].ToString().Trim();
+                        return ID;
+                    }
+                    return null;
+                }
+            }
+        }
+
         public float DiemTichLuy(string IDKhachHang)
         {
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))

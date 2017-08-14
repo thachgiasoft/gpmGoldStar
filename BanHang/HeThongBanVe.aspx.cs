@@ -13,18 +13,18 @@ namespace BanHang
     public partial class HeThongBanVe : System.Web.UI.Page
     {
         
-       public List<HoaDon1> DanhSachHoaDon
+       public List<HoaDonBanVe> DanhSachBanVe
         {
             get
             {
-                if (ViewState["DanhSachHoaDon"] == null)
-                    return new List<HoaDon1>();
+                if (ViewState["DanhSachBanVe"] == null)
+                    return new List<HoaDonBanVe>();
                 else
-                    return (List<HoaDon1>)ViewState["DanhSachHoaDon"];
+                    return (List<HoaDonBanVe>)ViewState["DanhSachBanVe"];
             }
             set
             {
-                ViewState["DanhSachHoaDon"] = value;
+                ViewState["DanhSachBanVe"] = value;
             }
         }
 
@@ -33,29 +33,29 @@ namespace BanHang
             //dtBanVe dt = new dtBanVe();   
             //ASPxGridViewInBuil.DataSource = dt.LayThongHoaDon();
             //ASPxGridViewInBuil.DataBind();
-            
-            //if (Session["KTBanLe"] == "GPMBanLe")
-            //{
+
+            if (Session["KTBanVe"] == "GPMBanVe")
+            {
                 if (!IsPostBack)
                 {
-                    DanhSachHoaDon = new List<HoaDon1>();
+                    DanhSachBanVe = new List<HoaDonBanVe>();
+                    cmbKyHieu.Focus();
                     ThemHoaDonMoi();
-                    //btnNhanVien.Text = Session["TenThuNgan"].ToString();
+                    btnNhanVien.Text = Session["TenThuNgan"].ToString();
                 }
-              
-            //}
-            //else
-            //{
-            //    Response.Redirect("DangNhap.aspx");
-            //}
+            }
+            else
+            {
+                Response.Redirect("DangNhap.aspx");
+            }
         }
 
         public void BindGridChiTietHoaDon()
         {
             int MaHoaDon = tabControlSoHoaDon.ActiveTabIndex;
-            gridChiTietHoaDon.DataSource = DanhSachHoaDon[MaHoaDon].ListChiTietHoaDon1;
+            gridChiTietHoaDon.DataSource = DanhSachBanVe[MaHoaDon].ListChiTietBanVe;
             gridChiTietHoaDon.DataBind();
-            formLayoutThanhToan.DataSource = DanhSachHoaDon[MaHoaDon];
+            formLayoutThanhToan.DataSource = DanhSachBanVe[MaHoaDon];
             formLayoutThanhToan.DataBind();
         }
         protected void btnInsertHang_Click(object sender, EventArgs e)
@@ -89,10 +89,10 @@ namespace BanHang
         }
         public void ThemHoaDonMoi()
         {
-            HoaDon1 hd = new HoaDon1();
-            DanhSachHoaDon.Add(hd);
+            HoaDonBanVe hd = new HoaDonBanVe();
+            DanhSachBanVe.Add(hd);
             Tab tabHoaDonNew = new Tab();
-            int SoHoaDon = DanhSachHoaDon.Count;
+            int SoHoaDon = DanhSachBanVe.Count;
             tabHoaDonNew.Name = SoHoaDon.ToString();
             tabHoaDonNew.Text = "Hóa đơn " + SoHoaDon.ToString();
             tabHoaDonNew.Index = SoHoaDon - 1;
@@ -105,13 +105,13 @@ namespace BanHang
             txtTienThua.Text = "";
             txtKhachThanhToan.Text = "";
             int indexTabActive = tabControlSoHoaDon.ActiveTabIndex;
-            DanhSachHoaDon.RemoveAt(indexTabActive);
+            DanhSachBanVe.RemoveAt(indexTabActive);
             tabControlSoHoaDon.Tabs.RemoveAt(indexTabActive);
             for (int i = 0; i < tabControlSoHoaDon.Tabs.Count; i++)
             {
                 tabControlSoHoaDon.Tabs[i].Text = "Hóa đơn " + (i + 1).ToString();
             }
-            if (DanhSachHoaDon.Count == 0)
+            if (DanhSachBanVe.Count == 0)
             {
                 ThemHoaDonMoi();
             }
@@ -125,36 +125,36 @@ namespace BanHang
             string TenKyHieu = tbThongTin.Rows[0]["TenKyHieu"].ToString();
             float GiaVe = float.Parse(tbThongTin.Rows[0]["GiaVe"].ToString());
             int MaHoaDon = tabControlSoHoaDon.ActiveTabIndex;
-            var exitHang = DanhSachHoaDon[MaHoaDon].ListChiTietHoaDon1.FirstOrDefault(item => item.TenKyHieu == TenKyHieu);
+            var exitHang = DanhSachBanVe[MaHoaDon].ListChiTietBanVe.FirstOrDefault(item => item.TenKyHieu == TenKyHieu);
             if (exitHang != null)
             {
                 int SoLuong = exitHang.SoLuong + int.Parse(txtSoLuong.Text);
                 float ThanhTienOld = exitHang.ThanhTien;
                 exitHang.SoLuong = SoLuong;
                 exitHang.ThanhTien = SoLuong * exitHang.DonGia;
-                DanhSachHoaDon[MaHoaDon].TongTien += SoLuong * exitHang.DonGia - ThanhTienOld;
-                DanhSachHoaDon[MaHoaDon].KhachCanTra = DanhSachHoaDon[MaHoaDon].TongTien - DanhSachHoaDon[MaHoaDon].GiamGia;
+                DanhSachBanVe[MaHoaDon].TongTien += SoLuong * exitHang.DonGia - ThanhTienOld;
+                DanhSachBanVe[MaHoaDon].KhachCanTra = DanhSachBanVe[MaHoaDon].TongTien - DanhSachBanVe[MaHoaDon].GiamGia;
             }
             else
             {
-                ChiTietHoaDon1 cthd = new ChiTietHoaDon1();
-                cthd.STT = DanhSachHoaDon[MaHoaDon].ListChiTietHoaDon1.Count + 1;
+                ChiTietBanVe cthd = new ChiTietBanVe();
+                cthd.STT = DanhSachBanVe[MaHoaDon].ListChiTietBanVe.Count + 1;
                 cthd.TenKyHieu = TenKyHieu;
                 cthd.SoLuong = int.Parse(txtSoLuong.Text);
                 cthd.DonGia = GiaVe;
                 cthd.ThanhTien = int.Parse(txtSoLuong.Text) * float.Parse(cthd.DonGia.ToString());
-                DanhSachHoaDon[MaHoaDon].ListChiTietHoaDon1.Add(cthd);
-                DanhSachHoaDon[MaHoaDon].SoLuongHang++;
-                DanhSachHoaDon[MaHoaDon].TongTien += cthd.ThanhTien;
-                DanhSachHoaDon[MaHoaDon].KhachCanTra = DanhSachHoaDon[MaHoaDon].TongTien - DanhSachHoaDon[MaHoaDon].GiamGia;
+                DanhSachBanVe[MaHoaDon].ListChiTietBanVe.Add(cthd);
+                DanhSachBanVe[MaHoaDon].SoLuongHang++;
+                DanhSachBanVe[MaHoaDon].TongTien += cthd.ThanhTien;
+                DanhSachBanVe[MaHoaDon].KhachCanTra = DanhSachBanVe[MaHoaDon].TongTien - DanhSachBanVe[MaHoaDon].GiamGia;
             }
-           
-            
+            LamMoi();     
         }
         protected void btnUpdateGridHang_Click(object sender, EventArgs e)
         {
             BatchUpdate();
             BindGridChiTietHoaDon();
+            LamMoi();
         }
         private void BatchUpdate()
         {
@@ -165,14 +165,15 @@ namespace BanHang
                 ASPxSpinEdit spineditSoLuong = gridChiTietHoaDon.FindRowCellTemplateControl(i, (GridViewDataColumn)gridChiTietHoaDon.Columns["SoLuong"], "txtSoLuongChange") as ASPxSpinEdit;
                 object SoLuongMoi = spineditSoLuong.Value;
                 int STT = Convert.ToInt32(gridChiTietHoaDon.GetRowValues(i, "STT"));
-                var exitHang = DanhSachHoaDon[MaHoaDon].ListChiTietHoaDon1.FirstOrDefault(item => item.STT == STT);
+                var exitHang = DanhSachBanVe[MaHoaDon].ListChiTietBanVe.FirstOrDefault(item => item.STT == STT);
                 int SoLuongOld = exitHang.SoLuong;
                 float ThanhTienOld = exitHang.ThanhTien;
                 exitHang.SoLuong = Convert.ToInt32(SoLuongMoi);
                 exitHang.ThanhTien = Convert.ToInt32(SoLuongMoi) * exitHang.DonGia;
-                DanhSachHoaDon[MaHoaDon].TongTien += exitHang.ThanhTien - ThanhTienOld;
-                DanhSachHoaDon[MaHoaDon].KhachCanTra = DanhSachHoaDon[MaHoaDon].TongTien - DanhSachHoaDon[MaHoaDon].GiamGia;
+                DanhSachBanVe[MaHoaDon].TongTien += exitHang.ThanhTien - ThanhTienOld;
+                DanhSachBanVe[MaHoaDon].KhachCanTra = DanhSachBanVe[MaHoaDon].TongTien - DanhSachBanVe[MaHoaDon].GiamGia;
             }
+            LamMoi();
         }
         public void HienThiThongBao(string thongbao)
         {
@@ -185,12 +186,14 @@ namespace BanHang
             bool isNumeric = float.TryParse(txtKhachThanhToan.Text, out TienKhachThanhToan);
             if (!isNumeric)
             {
+                txtKhachThanhToan.Text = "0";
+                txtKhachThanhToan.Focus();
                 HienThiThongBao("Nhập không đúng số tiền !!"); return;
             }
             int MaHoaDon = tabControlSoHoaDon.ActiveTabIndex;
-            DanhSachHoaDon[MaHoaDon].KhachThanhToan = TienKhachThanhToan;
-            DanhSachHoaDon[MaHoaDon].TienThua = TienKhachThanhToan - (DanhSachHoaDon[MaHoaDon].TongTien - float.Parse(txtGiamGia.Text));
-            txtTienThua.Text = DanhSachHoaDon[MaHoaDon].TienThua.ToString();
+            DanhSachBanVe[MaHoaDon].KhachThanhToan = TienKhachThanhToan;
+            DanhSachBanVe[MaHoaDon].TienThua = TienKhachThanhToan - (DanhSachBanVe[MaHoaDon].TongTien - float.Parse(txtGiamGia.Text));
+            txtTienThua.Text = DanhSachBanVe[MaHoaDon].TienThua.ToString();
 
         }
 
@@ -200,12 +203,13 @@ namespace BanHang
             {
                 int MaHoaDon = tabControlSoHoaDon.ActiveTabIndex;
                 int STT = Convert.ToInt32(((ASPxButton)sender).CommandArgument);
-                var itemToRemove = DanhSachHoaDon[MaHoaDon].ListChiTietHoaDon1.Single(r => r.STT == STT);
-                DanhSachHoaDon[MaHoaDon].SoLuongHang--;
-                DanhSachHoaDon[MaHoaDon].TongTien = DanhSachHoaDon[MaHoaDon].TongTien - itemToRemove.ThanhTien;
-                DanhSachHoaDon[MaHoaDon].KhachCanTra = DanhSachHoaDon[MaHoaDon].TongTien - DanhSachHoaDon[MaHoaDon].GiamGia;
-                DanhSachHoaDon[MaHoaDon].ListChiTietHoaDon1.Remove(itemToRemove);
+                var itemToRemove = DanhSachBanVe[MaHoaDon].ListChiTietBanVe.Single(r => r.STT == STT);
+                DanhSachBanVe[MaHoaDon].SoLuongHang--;
+                DanhSachBanVe[MaHoaDon].TongTien = DanhSachBanVe[MaHoaDon].TongTien - itemToRemove.ThanhTien;
+                DanhSachBanVe[MaHoaDon].KhachCanTra = DanhSachBanVe[MaHoaDon].TongTien - DanhSachBanVe[MaHoaDon].GiamGia;
+                DanhSachBanVe[MaHoaDon].ListChiTietBanVe.Remove(itemToRemove);
                 BindGridChiTietHoaDon();
+                LamMoi();
             }
             catch (Exception ex)
             {
@@ -230,9 +234,32 @@ namespace BanHang
 
         protected void btnThanhToan_Click(object sender, EventArgs e)
         {
-            
+            int MaHoaDon = tabControlSoHoaDon.ActiveTabIndex;
+            float TienKhachThanhToan;
+            bool isNumeric = float.TryParse(txtKhachThanhToan.Text, out TienKhachThanhToan);
+            if (!isNumeric)
+            {
+                HienThiThongBao("Nhập không đúng số tiền !!"); return;
+            }
+            if (TienKhachThanhToan < float.Parse(txtKhachThanhToan.Text))
+            {
+                HienThiThongBao("Thanh toán chưa đủ số tiền !!"); return;
+            }
+            DanhSachBanVe[MaHoaDon].KhachThanhToan = TienKhachThanhToan;
+            DanhSachBanVe[MaHoaDon].GiamGia = float.Parse(txtGiamGia.Text);
+            DanhSachBanVe[MaHoaDon].KhachCanTra = float.Parse(txtKhachCanTra.Text);
+            dtBanVe dt = new dtBanVe();
+            string IDNhanVien = Session["IDThuNgan"].ToString();
+            string TenNhanVien = Session["TenThuNgan"].ToString();
+            string IDKhachHang = "1";
+            if (cmbKhachHang.Value != null)
+                IDKhachHang = cmbKhachHang.Value.ToString();
+            object IDHoaDon = dt.InsertHoaDonBanVe(IDNhanVien,TenNhanVien, IDKhachHang, DanhSachBanVe[MaHoaDon],txtDiemTichLuy.Text.ToString());
+            HuyHoaDon();
+            cmbKhachHang.Text = "";
+            string jsInHoaDon = "window.open(\"InHoaDonBanVe.aspx?IDHoaDon=" + IDHoaDon + "\", \"PrintingFrame\");";
+            ClientScript.RegisterStartupScript(this.GetType(), "Print", jsInHoaDon, true);
         }
-
         protected void btnHuyKhachHang_Click(object sender, EventArgs e)
         {
             popupThemKhachHang.ShowOnPageLoad = false;
@@ -294,19 +321,34 @@ namespace BanHang
             {
                 string IDKhachHang = cmbKhachHang.Value.ToString();
                 dtBanVe data = new dtBanVe();
-                float DiemTichLuy = data.DiemTichLuy(IDKhachHang);
-                if (float.Parse(txtDiemTichLuy.Text) > DiemTichLuy)
+                int SoDiemCanDoi;
+                bool isNumeric = Int32.TryParse(txtDiemTichLuy.Text, out SoDiemCanDoi);
+                if (!isNumeric)
                 {
                     txtDiemTichLuy.Text = "0";
-                    HienThiThongBao("Điểm tích lũy không đủ !!"); return;
+                    txtDiemTichLuy.Focus();
+                    HienThiThongBao("Nhập không đúng số điểm !!"); return;
                 }
                 else
                 {
-                    int SoDiemCanDoi = Int32.Parse(txtDiemTichLuy.Text);
-                    float SoTienDoi  = float.Parse(dtSetting.LayDiemQuyDoiTien());
-                    float TongTien = float.Parse(txtTongTien.Text);
-                    txtKhachCanTra.Text = (TongTien - (SoTienDoi * SoDiemCanDoi))+"";
-                    txtGiamGia.Text = (SoTienDoi * SoDiemCanDoi) + "";
+                    float DiemTichLuy = data.DiemTichLuy(IDKhachHang);
+                    if (float.Parse(txtDiemTichLuy.Text) > DiemTichLuy)
+                    {
+                        txtDiemTichLuy.Text = "0";
+                        HienThiThongBao("Điểm tích lũy không đủ !!"); return;
+                    }
+                    else
+                    {
+                        float SoTienDoi = float.Parse(dtSetting.LayDiemQuyDoiTien());
+                        float TongTien = float.Parse(txtTongTien.Text);
+
+                        int MaHoaDon = tabControlSoHoaDon.ActiveTabIndex;
+                        DanhSachBanVe[MaHoaDon].KhachThanhToan = (TongTien - (SoTienDoi * SoDiemCanDoi));
+                        txtKhachCanTra.Text = (TongTien - (SoTienDoi * SoDiemCanDoi)) + "";
+                        txtGiamGia.Text = (SoTienDoi * SoDiemCanDoi) + "";
+                        txtKhachThanhToan.Text = "0";
+                        txtTienThua.Text = "0";
+                    }
                 }
             }
             else
@@ -316,9 +358,22 @@ namespace BanHang
                 HienThiThongBao("Vui lòng chọn khách hàng !!"); return;
             }
         }
+
+        protected void cmbKhachHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LamMoi();
+        }
+        public void LamMoi()
+        {
+            txtDiemTichLuy.Text = "0";
+            txtGiamGia.Text = "0";
+            txtKhachCanTra.Text = txtTongTien.Text;
+            txtKhachThanhToan.Text = "0";
+            txtTienThua.Text = "0";
+        }
     }
     [Serializable]
-    public class HoaDon1
+    public class HoaDonBanVe
     {
         public int IDHoaDon { get; set; }
         public int SoLuongHang { get; set; }
@@ -327,8 +382,8 @@ namespace BanHang
         public float KhachCanTra { get; set; }
         public float KhachThanhToan { get; set; }
         public float TienThua { get; set; }
-        public List<ChiTietHoaDon1> ListChiTietHoaDon1 { get; set; }
-        public HoaDon1()
+        public List<ChiTietBanVe> ListChiTietBanVe { get; set; }
+        public HoaDonBanVe()
         {
             SoLuongHang = 0;
             TongTien = 0;
@@ -336,18 +391,18 @@ namespace BanHang
             KhachCanTra = 0;
             KhachThanhToan = 0;
             TienThua = 0;
-            ListChiTietHoaDon1 = new List<ChiTietHoaDon1>();
+            ListChiTietBanVe = new List<ChiTietBanVe>();
         }
     }
     [Serializable]
-    public class ChiTietHoaDon1
+    public class ChiTietBanVe
     {
         public int STT { get; set; }
         public string TenKyHieu { get; set; }
         public int SoLuong { get; set; }
         public float DonGia { get; set; }
         public float ThanhTien { get; set; }
-        public ChiTietHoaDon1()
+        public ChiTietBanVe()
         {
             SoLuong = 0;
             DonGia = 0;
