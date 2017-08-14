@@ -282,7 +282,7 @@ namespace BanHang
             DanhSachHoaDon[MaHoaDon].KhachThanhToan = TienKhachThanhToan;
 
             dtBanHangLe dt = new dtBanHangLe();
-            string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+            string IDNhanVien = Session["IDThuNgan"].ToString();
             string IDKhachHang = "1";
 
             string Diem = dtSetting.LayTienQuyDoiDiem();
@@ -317,8 +317,20 @@ namespace BanHang
                 string SDT = txtSoDienThoai.Text == null ? "" : txtSoDienThoai.Text;
                 string DC = txtDiaChi.Text == null ? "" : txtDiaChi.Text;
                 dtKhachHang dtkh = new dtKhachHang();
-                string MaKh = "";
-                object ID = dtkh.ThemKhachHang(IDNhom, MaKh, TenKH, DateTime.Now, "", DC, SDT, "");
+
+                DateTime date = DateTime.Now;
+                string sDate = date.ToString("MMddyyyy");
+                int MaKh = 0;
+                Random dr = new Random();
+                while (MaKh == 0)
+                {
+                    int sR = dr.Next(10000, 99999);
+                    int kt = dtkh.KiemTraMaKhachHang(sDate + sR);
+                    if (kt == 0)
+                        MaKh = sR;
+                }
+
+                object ID = dtkh.ThemKhachHang(IDNhom, MaKh + "", TenKH, DateTime.Now, "", DC, SDT, "");
 
                 txtTenKhachHang.Text = "";
                 cmbNhomKhachHang.Text = "";
@@ -350,7 +362,16 @@ namespace BanHang
                 {
                     txtGiamGia.Enabled = false;
                     txtSoDiem.Enabled = false;
-                    txtSoDiemHienCo.Text = "";
+                    txtSoDiemHienCo.Value = "";
+                    txtSoDiem.Value = 0;
+
+                    int MaHoaDon = tabControlSoHoaDon.ActiveTabIndex;
+                    DanhSachHoaDon[MaHoaDon].SoDiemGiam = 0;
+                    DanhSachHoaDon[MaHoaDon].GiamGia = 0;
+
+                    DanhSachHoaDon[MaHoaDon].HinhThucGiamGia = "";
+                    DanhSachHoaDon[MaHoaDon].KhachCanTra = DanhSachHoaDon[MaHoaDon].TongTien - DanhSachHoaDon[MaHoaDon].GiamGia;
+                    BindGridChiTietHoaDon();
                 }
             }
             else

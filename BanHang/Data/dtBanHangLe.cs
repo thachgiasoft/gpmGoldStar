@@ -50,7 +50,7 @@ namespace BanHang.Data
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
             {
                 con.Open();
-                string cmdText = "select GPM_ChiTietHoaDon.GiaBan,GPM_ChiTietHoaDon.SoLuong,GPM_ChiTietHoaDon.ThanhTien,GPM_HangHoa.TenHangHoa,GPM_HangHoa.MaHang,GPM_DonViTinh.TenDonViTinh from GPM_ChiTietHoaDon,GPM_HangHoa,GPM_DonViTinh WHERE GPM_HangHoa.ID = GPM_ChiTietHoaDon.IDHangHoa AND GPM_HangHoa.IDDonViTinh = GPM_DonViTinh.ID AND GPM_ChiTietHoaDon.IDHoaDon = " + IDHoaDon;
+                string cmdText = "select GPM_ChiTietHoaDon.DonGia as GiaBan,GPM_ChiTietHoaDon.SoLuong,GPM_ChiTietHoaDon.TongTien as ThanhTien,GPM_HangHoa.TenHangHoa,GPM_HangHoa.MaHang,GPM_DonViTinh.TenDonViTinh from GPM_ChiTietHoaDon,GPM_HangHoa,GPM_DonViTinh WHERE GPM_HangHoa.ID = GPM_ChiTietHoaDon.IDHangHoa AND GPM_HangHoa.IDDonViTinh = GPM_DonViTinh.ID AND GPM_ChiTietHoaDon.IDHoaDon = " + IDHoaDon;
                 using (SqlCommand command = new SqlCommand(cmdText, con))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -108,6 +108,18 @@ namespace BanHang.Data
                         IDHoaDon = cmd.ExecuteScalar();
                     }
 
+                    DateTime date = DateTime.Now;
+                    string strDate = date.ToString("ddMMyyyy") + "-";
+                    string MaHD = strDate + ((int)IDHoaDon * 0.0001).ToString().Replace(".","");
+
+                    string strUpdateMaHoaDon = "update GPM_HoaDon set MaHoaDon = @MaHoaDon where ID = @ID";
+                    using (SqlCommand cmd = new SqlCommand(strUpdateMaHoaDon, con, trans))
+                    {
+                        cmd.Parameters.AddWithValue("@MaHoaDon", MaHD);
+                        cmd.Parameters.AddWithValue("@ID", IDHoaDon);
+                        cmd.ExecuteNonQuery();
+                    }
+
                     string strUpdateDiemKH = "update GPM_KhachHang set DiemTichLuy = DiemTichLuy - @dTL where ID = @IDKhachHang";
                     using (SqlCommand cmd = new SqlCommand(strUpdateDiemKH, con, trans))
                     {
@@ -117,7 +129,7 @@ namespace BanHang.Data
                     }
 
                     string strUpdateDiemKHTang = "update GPM_KhachHang set DiemTichLuy = DiemTichLuy + @dTLTang where ID = @IDKhachHang";
-                    using (SqlCommand cmd = new SqlCommand(strUpdateDiemKH, con, trans))
+                    using (SqlCommand cmd = new SqlCommand(strUpdateDiemKHTang, con, trans))
                     {
                         cmd.Parameters.AddWithValue("@dTLTang", hoaDon.SoDiemTang);
                         cmd.Parameters.AddWithValue("@IDKhachHang", IDKhachHang);
