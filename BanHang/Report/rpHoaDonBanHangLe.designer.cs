@@ -113,7 +113,6 @@
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.reportHeaderBand1 = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.xrBarCode1 = new DevExpress.XtraReports.UI.XRBarCode();
             this.xrLabel25 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel24 = new DevExpress.XtraReports.UI.XRLabel();
             this.Title = new DevExpress.XtraReports.UI.XRControlStyle();
@@ -144,13 +143,12 @@
             this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel23 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.TienThua = new DevExpress.XtraReports.UI.CalculatedField();
+            this.xrBarCode1 = new DevExpress.XtraReports.UI.XRBarCode();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -247,7 +245,7 @@
             // xrLabel15
             // 
             this.xrLabel15.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "sadohcm_goldstar_GPM_Setting.DienThoai")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "sadohcm_goldstar_GPM_Setting.DienThoai", "ĐT: {0}")});
             this.xrLabel15.Dpi = 254F;
             this.xrLabel15.Font = new System.Drawing.Font("Times New Roman", 7F);
             this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(0F, 117F);
@@ -261,7 +259,7 @@
             // xrLabel11
             // 
             this.xrLabel11.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "sadohcm_goldstar_GPM_Setting.DiaChi")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "sadohcm_goldstar_GPM_Setting.DiaChi", "Đ/C: {0}")});
             this.xrLabel11.Dpi = 254F;
             this.xrLabel11.Font = new System.Drawing.Font("Times New Roman", 7F);
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(0F, 86F);
@@ -461,25 +459,8 @@
             this.xrLabel11,
             this.xrLabel15});
             this.reportHeaderBand1.Dpi = 254F;
-            this.reportHeaderBand1.HeightF = 233.0795F;
+            this.reportHeaderBand1.HeightF = 273.4633F;
             this.reportHeaderBand1.Name = "reportHeaderBand1";
-            // 
-            // xrBarCode1
-            // 
-            this.xrBarCode1.AutoModule = true;
-            this.xrBarCode1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "sadohcm_goldstar_GPM_HoaDon.MaHoaDon")});
-            this.xrBarCode1.Dpi = 254F;
-            this.xrBarCode1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
-            this.xrBarCode1.LocationFloat = new DevExpress.Utils.PointFloat(2.000005F, 153F);
-            this.xrBarCode1.Module = 5.08F;
-            this.xrBarCode1.Name = "xrBarCode1";
-            this.xrBarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(25, 25, 0, 0, 254F);
-            this.xrBarCode1.SizeF = new System.Drawing.SizeF(473F, 38.07947F);
-            this.xrBarCode1.StylePriority.UseFont = false;
-            this.xrBarCode1.StylePriority.UseTextAlignment = false;
-            this.xrBarCode1.Symbology = code128Generator1;
-            this.xrBarCode1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomJustify;
             // 
             // xrLabel25
             // 
@@ -503,7 +484,7 @@
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "sadohcm_goldstar_GPM_HoaDon.MaHoaDon")});
             this.xrLabel24.Dpi = 254F;
             this.xrLabel24.Font = new System.Drawing.Font("Times New Roman", 9F);
-            this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(0F, 203.0795F);
+            this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(0F, 218.4633F);
             this.xrLabel24.Name = "xrLabel24";
             this.xrLabel24.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel24.SizeF = new System.Drawing.SizeF(475F, 30F);
@@ -733,21 +714,19 @@
             this.xrLabel27,
             this.xrLabel23,
             this.xrLine2,
-            this.xrLabel14,
             this.xrLabel13,
             this.xrLabel12,
-            this.xrLabel9,
             this.xrLabel10,
             this.xrLabel8});
             this.GroupFooter1.Dpi = 254F;
-            this.GroupFooter1.HeightF = 323.68F;
+            this.GroupFooter1.HeightF = 283.2962F;
             this.GroupFooter1.Name = "GroupFooter1";
             // 
             // xrLabel28
             // 
             this.xrLabel28.Dpi = 254F;
             this.xrLabel28.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(6.99999F, 142F);
+            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(6.99999F, 107F);
             this.xrLabel28.Multiline = true;
             this.xrLabel28.Name = "xrLabel28";
             this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
@@ -763,7 +742,7 @@
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "sadohcm_goldstar_GPM_HoaDon.KhachCanTra", "{0:#,# VND}")});
             this.xrLabel29.Dpi = 254F;
             this.xrLabel29.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(225.8239F, 142F);
+            this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(225.8239F, 107F);
             this.xrLabel29.Name = "xrLabel29";
             this.xrLabel29.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel29.SizeF = new System.Drawing.SizeF(230.176F, 40.00002F);
@@ -775,7 +754,7 @@
             // 
             this.xrLabel7.Dpi = 254F;
             this.xrLabel7.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(17.00002F, 184.9924F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(17.00002F, 149.9924F);
             this.xrLabel7.Multiline = true;
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
@@ -789,7 +768,7 @@
             // 
             this.xrLabel16.Dpi = 254F;
             this.xrLabel16.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(14F, 224.9925F);
+            this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(14F, 189.9925F);
             this.xrLabel16.Name = "xrLabel16";
             this.xrLabel16.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel16.SizeF = new System.Drawing.SizeF(188F, 40F);
@@ -804,7 +783,7 @@
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "sadohcm_goldstar_GPM_HoaDon.TienThua", "{0:#,# VND}")});
             this.xrLabel26.Dpi = 254F;
             this.xrLabel26.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(207F, 224.9925F);
+            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(207F, 189.9925F);
             this.xrLabel26.Name = "xrLabel26";
             this.xrLabel26.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel26.SizeF = new System.Drawing.SizeF(249F, 40.00002F);
@@ -818,7 +797,7 @@
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "sadohcm_goldstar_GPM_HoaDon.KhachThanhToan", "{0:#,# VND}")});
             this.xrLabel27.Dpi = 254F;
             this.xrLabel27.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(207F, 184.9924F);
+            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(207F, 149.9924F);
             this.xrLabel27.Name = "xrLabel27";
             this.xrLabel27.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel27.SizeF = new System.Drawing.SizeF(252F, 40.00002F);
@@ -830,7 +809,7 @@
             // 
             this.xrLabel23.Dpi = 254F;
             this.xrLabel23.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
-            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(7.000027F, 275.0963F);
+            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(7.000027F, 240.0963F);
             this.xrLabel23.Name = "xrLabel23";
             this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel23.SizeF = new System.Drawing.SizeF(453F, 41.57919F);
@@ -846,19 +825,6 @@
             this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrLine2.Name = "xrLine2";
             this.xrLine2.SizeF = new System.Drawing.SizeF(480F, 17F);
-            // 
-            // xrLabel14
-            // 
-            this.xrLabel14.Dpi = 254F;
-            this.xrLabel14.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(6.99999F, 102F);
-            this.xrLabel14.Name = "xrLabel14";
-            this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel14.SizeF = new System.Drawing.SizeF(236.8637F, 40F);
-            this.xrLabel14.StylePriority.UseFont = false;
-            this.xrLabel14.StylePriority.UseTextAlignment = false;
-            this.xrLabel14.Text = "Hình thức giảm:";
-            this.xrLabel14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // xrLabel13
             // 
@@ -886,20 +852,6 @@
             this.xrLabel12.StylePriority.UseTextAlignment = false;
             this.xrLabel12.Text = "Tổng cộng:";
             this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            // 
-            // xrLabel9
-            // 
-            this.xrLabel9.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "sadohcm_goldstar_GPM_HoaDon.HinhThucGiamGia", "{0}")});
-            this.xrLabel9.Dpi = 254F;
-            this.xrLabel9.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(243.8637F, 102F);
-            this.xrLabel9.Name = "xrLabel9";
-            this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel9.SizeF = new System.Drawing.SizeF(214.1363F, 40F);
-            this.xrLabel9.StylePriority.UseFont = false;
-            this.xrLabel9.StylePriority.UseTextAlignment = false;
-            this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
             // xrLabel10
             // 
@@ -934,6 +886,19 @@
             this.TienThua.DataMember = "GPM_HoaDon";
             this.TienThua.Expression = "[Khách thanh toán] - [Khách cần trả]";
             this.TienThua.Name = "TienThua";
+            // 
+            // xrBarCode1
+            // 
+            this.xrBarCode1.AutoModule = true;
+            this.xrBarCode1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "sadohcm_goldstar_GPM_HoaDon.MaHoaDon")});
+            this.xrBarCode1.Dpi = 254F;
+            this.xrBarCode1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 161.4358F);
+            this.xrBarCode1.Module = 5.08F;
+            this.xrBarCode1.Name = "xrBarCode1";
+            this.xrBarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
+            this.xrBarCode1.SizeF = new System.Drawing.SizeF(475F, 40.31691F);
+            this.xrBarCode1.Symbology = code128Generator1;
             // 
             // rpHoaDonBanHangLe
             // 
@@ -998,10 +963,8 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel6;
         private DevExpress.XtraReports.UI.XRLabel xrLabel5;
         private DevExpress.XtraReports.UI.XRLabel xrLabel4;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel14;
         private DevExpress.XtraReports.UI.XRLabel xrLabel13;
         private DevExpress.XtraReports.UI.XRLabel xrLabel12;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel9;
         private DevExpress.XtraReports.UI.XRLabel xrLabel10;
         private DevExpress.XtraReports.UI.XRLabel xrLabel8;
         private DevExpress.XtraReports.UI.XRLine xrLine3;
@@ -1020,12 +983,12 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel23;
         private DevExpress.XtraReports.UI.XRLabel xrLabel24;
         private DevExpress.XtraReports.UI.XRLabel xrLabel25;
-        private DevExpress.XtraReports.UI.XRBarCode xrBarCode1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel28;
         private DevExpress.XtraReports.UI.XRLabel xrLabel29;
         private DevExpress.XtraReports.UI.XRLabel xrLabel7;
         private DevExpress.XtraReports.UI.XRLabel xrLabel16;
         private DevExpress.XtraReports.UI.XRLabel xrLabel26;
         private DevExpress.XtraReports.UI.XRLabel xrLabel27;
+        private DevExpress.XtraReports.UI.XRBarCode xrBarCode1;
     }
 }

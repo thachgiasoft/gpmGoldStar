@@ -282,8 +282,8 @@ namespace BanHang
             DanhSachHoaDon[MaHoaDon].KhachThanhToan = TienKhachThanhToan;
 
             dtBanHangLe dt = new dtBanHangLe();
-            string IDNhanVien = Session["IDThuNgan"].ToString();
-            string IDKhachHang = "1";
+            string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+            string IDKhachHang = "2";
 
             string Diem = dtSetting.LayTienQuyDoiDiem();
             DanhSachHoaDon[MaHoaDon].SoDiemTang = (int)(DanhSachHoaDon[MaHoaDon].KhachCanTra / float.Parse(Diem));
