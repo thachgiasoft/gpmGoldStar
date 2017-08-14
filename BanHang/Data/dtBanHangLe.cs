@@ -108,6 +108,18 @@ namespace BanHang.Data
                         IDHoaDon = cmd.ExecuteScalar();
                     }
 
+                    DateTime date = DateTime.Now;
+                    string strDate = date.ToString("ddMMyyyy") + "-";
+                    string MaHD = strDate + ((int)IDHoaDon * 0.0001).ToString().Replace(".","");
+
+                    string strUpdateMaHoaDon = "update GPM_HoaDon set MaHoaDon = @MaHoaDon where ID = @ID";
+                    using (SqlCommand cmd = new SqlCommand(strUpdateMaHoaDon, con, trans))
+                    {
+                        cmd.Parameters.AddWithValue("@MaHoaDon", MaHD);
+                        cmd.Parameters.AddWithValue("@ID", IDHoaDon);
+                        cmd.ExecuteNonQuery();
+                    }
+
                     string strUpdateDiemKH = "update GPM_KhachHang set DiemTichLuy = DiemTichLuy - @dTL where ID = @IDKhachHang";
                     using (SqlCommand cmd = new SqlCommand(strUpdateDiemKH, con, trans))
                     {
@@ -117,7 +129,7 @@ namespace BanHang.Data
                     }
 
                     string strUpdateDiemKHTang = "update GPM_KhachHang set DiemTichLuy = DiemTichLuy + @dTLTang where ID = @IDKhachHang";
-                    using (SqlCommand cmd = new SqlCommand(strUpdateDiemKH, con, trans))
+                    using (SqlCommand cmd = new SqlCommand(strUpdateDiemKHTang, con, trans))
                     {
                         cmd.Parameters.AddWithValue("@dTLTang", hoaDon.SoDiemTang);
                         cmd.Parameters.AddWithValue("@IDKhachHang", IDKhachHang);

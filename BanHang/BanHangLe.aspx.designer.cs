@@ -445,6 +445,15 @@ namespace BanHang {
         protected global::DevExpress.Web.ASPxComboBox cmbNhomKhachHang;
         
         /// <summary>
+        /// sqlNhomKH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlNhomKH;
+        
+        /// <summary>
         /// LayoutItemNestedControlContainer8 control.
         /// </summary>
         /// <remarks>

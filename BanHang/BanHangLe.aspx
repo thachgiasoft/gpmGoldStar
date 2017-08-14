@@ -438,8 +438,9 @@
             <dx:LayoutItem Caption="Nhóm Khách Hàng" ColSpan="2">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer7" runat="server">
-                        <dx:ASPxComboBox ID="cmbNhomKhachHang" runat="server" Width="100%">
+                        <dx:ASPxComboBox ID="cmbNhomKhachHang" runat="server" Width="100%" DataSourceID="sqlNhomKH" TextField="TenNhomKhachHang" ValueField="ID">
                         </dx:ASPxComboBox>
+                        <asp:SqlDataSource ID="sqlNhomKH" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT [ID], [TenNhomKhachHang] FROM [GPM_NhomKhachHang]"></asp:SqlDataSource>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
