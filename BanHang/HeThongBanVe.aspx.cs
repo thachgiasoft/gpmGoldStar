@@ -104,6 +104,7 @@ namespace BanHang
         {
             txtTienThua.Text = "";
             txtKhachThanhToan.Text = "";
+            txtDiemTichLuy.Text = "0";
             int indexTabActive = tabControlSoHoaDon.ActiveTabIndex;
             DanhSachBanVe.RemoveAt(indexTabActive);
             tabControlSoHoaDon.Tabs.RemoveAt(indexTabActive);

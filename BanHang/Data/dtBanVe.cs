@@ -9,26 +9,18 @@ namespace BanHang.Data
 {
     public class dtBanVe
     {
-        //public string LayID_Max(string KyHieu)
+        //public int Dem_Max(string KyHieu)
         //{
         //    using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
-        //    {  
+        //    {
         //        con.Open();
-        //        string cmdText = "SELECT SoThuTu FROM [GPM_GiaVe_ChiTiet] WHERE [KyHieu] = N'" + KyHieu + "' ORDER BY ID DESC";
+        //        string cmdText = "SELECT ID FROM [GPM_GiaVe_ChiTiet] WHERE [KyHieu] = N'" + KyHieu + "'";
         //        using (SqlCommand command = new SqlCommand(cmdText, con))
         //        using (SqlDataReader reader = command.ExecuteReader())
         //        {
         //            DataTable tb = new DataTable();
         //            tb.Load(reader);
-        //            if (tb.Rows.Count != 0)
-        //            {
-        //                DataRow dr = tb.Rows[0];
-        //                float a = float.Parse(dr["SoThuTu"].ToString());
-        //                return (a + 1).ToString().Replace(".", "");
-                       
-        //            }
-        //            float b = 1 * (1000000/100);
-        //            return b.ToString().Replace(".","");
+        //            return tb.Rows.Count + 1;
         //        }
         //    }
         //}
@@ -68,31 +60,32 @@ namespace BanHang.Data
                                 int SLMua = cthd.SoLuong;
                                 for (int i = 0; i < SLMua; i++)
                                 {
-                                    //string cmdText = "SELECT SoThuTu FROM [GPM_GiaVe_ChiTiet] WHERE [KyHieu] = N'" + cthd.TenKyHieu + "' ORDER BY ID DESC";
-                                    //using (SqlCommand cmd = new SqlCommand(cmdText, con, trans))
-                                    //using (SqlDataReader reader = cmd.ExecuteReader())
-                                    //{
-                                    //    DataTable tb = new DataTable();
-                                    //    tb.Load(reader);
-                                    //    if (tb.Rows.Count != 0)
-                                    //    {
-                                    //        DataRow dr = tb.Rows[0];
-                                    //        float a = float.Parse(dr["SoThuTu"].ToString());
-                                    //        return (a + 1).ToString().Replace(".", "");
+                                    //------------------------------------------------------------------------------------
+                                    int STTV = 0;
+                                    string SoVe;
+                                    string GPM = "0000000";
+                                    string cmdText = "SELECT ID FROM [GPM_GiaVe_ChiTiet] WHERE [KyHieu] = N'" + cthd.TenKyHieu + "'";
+                                    using (SqlCommand command = new SqlCommand(cmdText, con, trans))
+                                    using (SqlDataReader reader = command.ExecuteReader())
+                                    {
+                                        DataTable tb = new DataTable();
+                                        tb.Load(reader);
+                                        STTV = tb.Rows.Count + 1;
+                                        int DoDaiHT = STTV.ToString().Length;
+                                        string DoDaiGPM = GPM.Substring(0,7-DoDaiHT);
+                                        SoVe = DoDaiGPM + STTV;
+                                    }
 
-                                    //    }
-                                    //    float b = 1 * (1000000 / 100);
-                                    //    return b.ToString().Replace(".", "");
-                                    //}
-                                    dtBanVe dt1 = new dtBanVe();
-                                    string InsertChiTietHoaDon = "INSERT INTO [GPM_GiaVe_ChiTiet] ([IDBanVe],[KyHieu],[GiaVe],[SoThuTu]) " +
-                                                            "VALUES (@IDBanVe, @KyHieu, @GiaVe, @SoThuTu)";
+                                    //-------------------------------------------------------------------------
+                                    dtBanVe bv = new dtBanVe();
+                                    string InsertChiTietHoaDon = "INSERT INTO [GPM_GiaVe_ChiTiet] ([IDBanVe],[KyHieu],[GiaVe],[SoThuTu],[NgayBan]) " +
+                                                            "VALUES (@IDBanVe, @KyHieu, @GiaVe, @SoThuTu,getdate())";
                                     using (SqlCommand cmd = new SqlCommand(InsertChiTietHoaDon, con, trans))
                                     {
                                         cmd.Parameters.AddWithValue("@IDBanVe", IDHoaDon);
                                         cmd.Parameters.AddWithValue("@KyHieu", cthd.TenKyHieu);
                                         cmd.Parameters.AddWithValue("@GiaVe", cthd.DonGia);
-                                        cmd.Parameters.AddWithValue("@SoThuTu", "1111");
+                                        cmd.Parameters.AddWithValue("@SoThuTu", SoVe);
                                         cmd.ExecuteNonQuery();
                                     }
                                 } 
