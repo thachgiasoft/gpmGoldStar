@@ -35,27 +35,12 @@ namespace BanHang
             txtBarcode.Focus();
             //if (Session["KTBanLe"] == "GPMBanLe")
             //{
-                if (!IsPostBack)
-                {
-                    DanhSachHoaDon = new List<HoaDon>();
-                    ThemHoaDonMoi();
-                }
-                //btnNhanVien.Text = Session["TenThuNgan"].ToString();
-            //}
-            //else
-            //{
-            //    Response.Redirect("DangNhap.aspx");
-            //}
-            //if (Session["KTBanLe"] == "GPMBanLe")
-            //{
-                if (!IsPostBack)
-                {
-                    DanhSachHoaDon = new List<HoaDon>();
-                    //Session["IDThuNgan"] = 1;
-                    ThemHoaDonMoi();
-                    //btnNhanVien.Text = Session["TenThuNgan"].ToString();
-
-                }
+            if (!IsPostBack)
+            {
+                DanhSachHoaDon = new List<HoaDon>();
+                ThemHoaDonMoi();
+            }
+            //btnNhanVien.Text = Session["TenThuNgan"].ToString();
             //}
             //else
             //{
@@ -103,7 +88,7 @@ namespace BanHang
             else
             {
                 BindGridChiTietHoaDon();
-            }            
+            }
         }
         public void ThemHangVaoChiTietHoaDon(DataTable tbThongTin)
         {
@@ -283,7 +268,7 @@ namespace BanHang
 
             dtBanHangLe dt = new dtBanHangLe();
             string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
-            string IDKhachHang = "2";
+            string IDKhachHang = "1";
 
             string Diem = dtSetting.LayTienQuyDoiDiem();
             DanhSachHoaDon[MaHoaDon].SoDiemTang = (int)(DanhSachHoaDon[MaHoaDon].KhachCanTra / float.Parse(Diem));
