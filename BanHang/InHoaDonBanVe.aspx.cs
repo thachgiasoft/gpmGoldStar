@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BanHang.Report;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,12 @@ namespace BanHang
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string IDVe = Request.QueryString["IDVe"];
 
+            rpInVe rp = new rpInVe();
+            rp.Parameters["IDVe"].Value = IDVe;
+            rp.Parameters["IDVe"].Visible = false;
+            viewerReport.Report = rp;
         }
     }
 }

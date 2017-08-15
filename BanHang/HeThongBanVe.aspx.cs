@@ -258,8 +258,8 @@ namespace BanHang
             object IDHoaDon = dt.InsertHoaDonBanVe(IDNhanVien,TenNhanVien, IDKhachHang, DanhSachBanVe[MaHoaDon],txtDiemTichLuy.Text.ToString());
             HuyHoaDon();
             cmbKhachHang.Text = "";
-            string jsInHoaDon = "window.open(\"InHoaDonBanVe.aspx?IDHoaDon=" + IDHoaDon + "\", \"PrintingFrame\");";
-            ClientScript.RegisterStartupScript(this.GetType(), "Print", jsInHoaDon, true);
+            chitietbuilInLai.ContentUrl = "~/InHoaDonBanVe.aspx?IDVe=" + IDHoaDon;
+            chitietbuilInLai.ShowOnPageLoad = true;
         }
         protected void btnHuyKhachHang_Click(object sender, EventArgs e)
         {
