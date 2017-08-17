@@ -464,7 +464,7 @@
             selectQuery2.Columns.Add(column3);
             selectQuery2.Columns.Add(column4);
             selectQuery2.FilterString = "[sadohcm_goldstar.GPM_BanVe.NgayBan] >= ?NgayBD And [sadohcm_goldstar.GPM_BanVe.N" +
-    "gayBan] <= ?NgayKT";
+    "gayBan] <= ?NgayKT And [sadohcm_goldstar.GPM_GiaVe_ChiTiet.HuyVe] = 0";
             selectQuery2.Name = "sadohcm_goldstar_GPM_BanVe";
             queryParameter1.Name = "NgayBD";
             queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);

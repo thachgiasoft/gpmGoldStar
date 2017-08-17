@@ -24,6 +24,50 @@ namespace BanHang.Data
         //        }
         //    }
         //}
+
+        public void CapNhatHuyVe(string ID)
+        {
+            using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
+            {
+                try
+                {
+                    myConnection.Open();
+                    string strSQL = "UPDATE [GPM_GiaVe_ChiTiet] SET [HuyVe] = 1 WHERE [ID] = @ID";
+                    using (SqlCommand myCommand = new SqlCommand(strSQL, myConnection))
+                    {
+                        myCommand.Parameters.AddWithValue("@ID", ID);;
+                        myCommand.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Lỗi: Quá trình Xóa dữ liệu gặp lỗi, hãy tải lại trang");
+                }
+            }
+        }
+
+        public void CapNhatDiemKhachHang(int IDKhachHang, int Diem)
+        {
+            using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
+            {
+                try
+                {
+                    myConnection.Open();
+                    string strSQL = "UPDATE [GPM_KhachHang] SET [DiemTichLuy] = [DiemTichLuy] - @Diem WHERE [ID] = @ID AND ID != 1";
+                    using (SqlCommand myCommand = new SqlCommand(strSQL, myConnection))
+                    {
+                        myCommand.Parameters.AddWithValue("@ID", IDKhachHang);
+                        myCommand.Parameters.AddWithValue("@Diem", Diem);
+                        myCommand.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Lỗi: Quá trình Xóa dữ liệu gặp lỗi, hãy tải lại trang");
+                }
+            }
+        }
+
         public object InsertHoaDonBanVe(string IDNhanVien,string TenNhanVien, string IDKhachHang, HoaDonBanVe hoaDon,string DiemTichLuy)
         {
             object IDHoaDon = null;
@@ -173,6 +217,60 @@ namespace BanHang.Data
             {
                 con.Open();
                 string cmdText = "SELECT * FROM [GPM_KyHieuGiaVe] WHERE ID = '" + ID + "'";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        DataTable tb = new DataTable();
+                        tb.Load(reader);
+                        return tb;
+                    }
+                }
+            }
+        }
+
+        public DataTable LayDanhSachMaSoVe(string NgayBD, string NgayKT)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "SELECT * FROM [GPM_GiaVe_ChiTiet] WHERE NgayBan >= '" + NgayBD + "' AND NgayBan <= '" + NgayKT + "' AND HuyVe = 0";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        DataTable tb = new DataTable();
+                        tb.Load(reader);
+                        return tb;
+                    }
+                }
+            }
+        }
+
+        public DataTable LayDanhSachMaSoVe_ID(string ID)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "SELECT * FROM [GPM_GiaVe_ChiTiet] WHERE ID = '" + ID + "' AND HuyVe = 0";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        DataTable tb = new DataTable();
+                        tb.Load(reader);
+                        return tb;
+                    }
+                }
+            }
+        }
+
+        public DataTable LayThongTinVe(string ID)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "SELECT GPM_BanVe.IDKhachHang,GPM_BanVe.IDNhanVien,GPM_GiaVe_ChiTiet.* FROM GPM_GiaVe_ChiTiet, GPM_BanVe WHERE GPM_GiaVe_ChiTiet.IDBanVe = GPM_BanVe.ID AND GPM_GiaVe_ChiTiet.ID = '" + ID + "'";
                 using (SqlCommand command = new SqlCommand(cmdText, con))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())

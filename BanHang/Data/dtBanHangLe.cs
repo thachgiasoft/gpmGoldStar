@@ -138,7 +138,7 @@ namespace BanHang.Data
                         cmd.ExecuteNonQuery();
                     }
 
-                    string strUpdateDiemKH = "update GPM_KhachHang set DiemTichLuy = DiemTichLuy - @dTL where ID = @IDKhachHang";
+                    string strUpdateDiemKH = "update GPM_KhachHang set DiemTichLuy = DiemTichLuy - @dTL where ID = @IDKhachHang and ID != 1";
                     using (SqlCommand cmd = new SqlCommand(strUpdateDiemKH, con, trans))
                     {
                         cmd.Parameters.AddWithValue("@dTL", hoaDon.SoDiemGiam);
@@ -146,7 +146,7 @@ namespace BanHang.Data
                         cmd.ExecuteNonQuery();
                     }
 
-                    string strUpdateDiemKHTang = "update GPM_KhachHang set DiemTichLuy = DiemTichLuy + @dTLTang where ID = @IDKhachHang";
+                    string strUpdateDiemKHTang = "update GPM_KhachHang set DiemTichLuy = DiemTichLuy + @dTLTang where ID = @IDKhachHang and ID != 1";
                     using (SqlCommand cmd = new SqlCommand(strUpdateDiemKHTang, con, trans))
                     {
                         cmd.Parameters.AddWithValue("@dTLTang", hoaDon.SoDiemTang);

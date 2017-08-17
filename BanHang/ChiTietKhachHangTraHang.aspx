@@ -53,7 +53,7 @@
                                         </TitlePanel>
                                     </Styles>
                                 </dx:ASPxGridView>
-    </div>
+
     </div>
     </form>
 </body>

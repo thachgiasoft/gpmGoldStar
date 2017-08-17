@@ -290,7 +290,7 @@ namespace BanHang
                 IDKhachHang = ccbKhachHang.Value.ToString();
             object IDHoaDon = dt.InsertHoaDon(IDNhanVien, IDKhachHang, DanhSachHoaDon[MaHoaDon]);
 
-            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Bans hàng", "Thanh toán hóa đơn: " + IDHoaDon);
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Bán hàng", "Thanh toán hóa đơn: " + IDHoaDon);
 
             HuyHoaDon();
             ccbKhachHang.Text = "";

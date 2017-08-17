@@ -129,7 +129,7 @@
        "sadohcm_goldstar.GPM_GiaVe_ChiTiet"
  where
        (("sadohcm_goldstar.GPM_GiaVe_ChiTiet"."NgayBan" &gt;= @NgayBD)
-       and ("sadohcm_goldstar.GPM_GiaVe_ChiTiet"."NgayBan" &lt;= @NgayKT))
+       and ("sadohcm_goldstar.GPM_GiaVe_ChiTiet"."NgayBan" &lt;= @NgayKT) and "sadohcm_goldstar.GPM_GiaVe_ChiTiet"."HuyVe" = 0)
 group by "sadohcm_goldstar.GPM_GiaVe_ChiTiet"."KyHieu","sadohcm_goldstar.GPM_GiaVe_ChiTiet"."GiaVe"</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">

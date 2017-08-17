@@ -217,8 +217,11 @@ namespace BanHang
                         dtCapNhatTonKho.CapNhatTonKho(Int32.Parse(IDHangHoa),Int32.Parse(SoLuong));
                     }
 
-                    data.XoaChiTiet_Temp(ID);
+                    dtBanVe data1 = new dtBanVe();
+                    string Diem = dtSetting.LayTienQuyDoiDiem();
+                    data1.CapNhatDiemKhachHang(Int32.Parse(IDKhachHang), (int)(Int32.Parse(TongTienTra) / float.Parse(Diem)));
 
+                    data.XoaChiTiet_Temp(ID);
                     Response.Redirect("DanhSachKhachHangTraHang.aspx");
                 }
                 else
