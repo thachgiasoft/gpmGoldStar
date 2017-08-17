@@ -33,7 +33,13 @@ namespace BanHang
             e.Cancel = true;
             gridNhomNguoiDung.CancelEdit();
             LoadGrid();
-           
+
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Nhóm người dùng", "Xóa nhóm người dùng ID: " + ID);
         }
 
         protected void gridNhomNguoiDung_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
@@ -55,7 +61,12 @@ namespace BanHang
             gridNhomNguoiDung.CancelEdit();
             LoadGrid();
 
-
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Nhóm người dùng", "Thêm nhóm người dùng");
          
         }
 
@@ -67,7 +78,13 @@ namespace BanHang
             e.Cancel = true;
             gridNhomNguoiDung.CancelEdit();
             LoadGrid();
-         
+
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Nhóm người dùng", "Cập nhật nhóm người dùng");
         }
     }
 }

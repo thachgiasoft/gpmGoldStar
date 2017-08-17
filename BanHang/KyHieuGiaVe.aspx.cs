@@ -34,6 +34,13 @@ namespace BanHang
             e.Cancel = true;
             gridDanhSach.CancelEdit();
             LoadGrid();
+
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Ký hiệu vé", "Thêm ký hiệu vé.");
         }
 
         protected void gridDanhSach_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
@@ -48,6 +55,13 @@ namespace BanHang
             e.Cancel = true;
             gridDanhSach.CancelEdit();
             LoadGrid();
+
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Ký hiệu vé", "Cập nhật ký hiệu vé ID: " + ID);
         }
 
         protected void gridDanhSach_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
@@ -58,6 +72,13 @@ namespace BanHang
             e.Cancel = true;
             gridDanhSach.CancelEdit();
             LoadGrid();
+
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Ký hiệu vé", "Xóa ký hiệu vé ID: " + ID);
         }
     }
 }

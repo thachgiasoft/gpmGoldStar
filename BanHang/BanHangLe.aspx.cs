@@ -39,6 +39,14 @@ namespace BanHang
             {
                 DanhSachHoaDon = new List<HoaDon>();
                 ThemHoaDonMoi();
+
+                string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+                if (Session["IDThuNgan"] != null)
+                    IDNhanVien = Session["IDThuNgan"].ToString();
+                if (Session["IDNhanVien"] != null)
+                    IDNhanVien = Session["IDNhanVien"].ToString();
+                dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien,"Bans hàng", "Truy cập bán hàng");
+                
             }
             //btnNhanVien.Text = Session["TenThuNgan"].ToString();
             //}
@@ -268,15 +276,22 @@ namespace BanHang
 
             dtBanHangLe dt = new dtBanHangLe();
             string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien = Session["IDNhanVien"].ToString();
+
             string IDKhachHang = "1";
 
             string Diem = dtSetting.LayTienQuyDoiDiem();
-            DanhSachHoaDon[MaHoaDon].SoDiemTang = (int)(DanhSachHoaDon[MaHoaDon].KhachCanTra / float.Parse(Diem));
-
+            DanhSachHoaDon[MaHoaDon].SoDiemTang = (int)(DanhSachHoaDon[MaHoaDon].KhachCanTra / float.Parse(Diem));        
 
             if (ccbKhachHang.Value != null)
                 IDKhachHang = ccbKhachHang.Value.ToString();
             object IDHoaDon = dt.InsertHoaDon(IDNhanVien, IDKhachHang, DanhSachHoaDon[MaHoaDon]);
+
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Bans hàng", "Thanh toán hóa đơn: " + IDHoaDon);
+
             HuyHoaDon();
             ccbKhachHang.Text = "";
             chitietbuilInLai.ContentUrl = "~/InHoaDonBanLe.aspx?IDHoaDon=" + IDHoaDon;

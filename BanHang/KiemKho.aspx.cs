@@ -21,6 +21,13 @@ namespace BanHang
                 object IDPhieuKiemKho = data.ThemPhieu_Temp();
                 IDPhieuKiemKho_Temp.Value = IDPhieuKiemKho.ToString();
                 txtNguoiLapPhieu.Text = Session["TenDangNhap"] == null ? "" : Session["TenDangNhap"].ToString();
+
+                string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+                if (Session["IDThuNgan"] != null)
+                    IDNhanVien1 = Session["IDThuNgan"].ToString();
+                if (Session["IDNhanVien"] != null)
+                    IDNhanVien1 = Session["IDNhanVien"].ToString();
+                dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Kiểm kho", "Truy cập kiểm kho.");
             }
             LoadGrid(IDPhieuKiemKho_Temp.Value.ToString());    
         }

@@ -35,7 +35,12 @@ namespace BanHang
             gridHangHoa.CancelEdit();
             LoadGrid();
 
-          
+            string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Hàng hóa", "Xóa hàng hóa ID: " + ID);
         }
 
         protected void gridHangHoa_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
@@ -74,7 +79,13 @@ namespace BanHang
                 e.Cancel = true;
                 gridHangHoa.CancelEdit();
                 LoadGrid();
-                
+
+                string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+                if (Session["IDThuNgan"] != null)
+                    IDNhanVien = Session["IDThuNgan"].ToString();
+                if (Session["IDNhanVien"] != null)
+                    IDNhanVien = Session["IDNhanVien"].ToString();
+                dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Hàng hóa", "Thêm hàng hóa ID: " + IDHangHoa);
             }
             else Response.Write("<script language='JavaScript'> alert('Mã hàng đã tồn tại.'); </script>");
         }
@@ -111,6 +122,13 @@ namespace BanHang
             e.Cancel = true;
             gridHangHoa.CancelEdit();
             LoadGrid();
+
+            string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Hàng hóa", "Cập nhật hàng hóa ID: " + ID);
         }
 
         protected List<string> GetListBarCode()
@@ -196,6 +214,13 @@ namespace BanHang
             HangHoaExport.DataSource = data.LayDanhSachHangHoa_FullBarcode();
             HangHoaExport.DataBind();
             export.WriteXlsToResponse();
+
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Hàng hóa", "Xuất Exel Hàng hóa");
         }
 
         protected void btnNhapExcel_Click(object sender, EventArgs e)

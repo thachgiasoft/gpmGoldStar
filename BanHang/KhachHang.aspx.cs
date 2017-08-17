@@ -45,7 +45,13 @@ namespace BanHang
             {
                 throw new Exception("Số điện thoại này đã được đăng ký.");
             }
-            
+
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Khách hàng", "Cập nhật khách hàng ID: " + ID);
         }
 
         protected void gridKhachHang_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
@@ -84,6 +90,12 @@ namespace BanHang
                 throw new Exception("Số điện thoại này đã được đăng ký.");
             }
 
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Khách hàng", "Thêm khách hàng");
         }
 
         protected void gridKhachHang_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
@@ -94,6 +106,13 @@ namespace BanHang
             e.Cancel = true;
             KhachHangExport.CancelEdit();
             LoadGrid();
+
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Khách hàng", "Xóa khách hàng ID: " + ID);
         }
 
         protected void btnXuatPDF_Click(object sender, EventArgs e)
@@ -104,6 +123,13 @@ namespace BanHang
         protected void btnXuatExcel_Click(object sender, EventArgs e)
         {
             ExportKhachHang.WriteXlsToResponse();
+
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Khách hàng", "Xuất Exel Khách hàng");
         }
 
         protected void btnNhapExcel_Click(object sender, EventArgs e)

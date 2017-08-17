@@ -10,7 +10,7 @@
 
     </script>
     <br />
-    <dx:ASPxButton ID="btnThemPhieuTraHang" runat="server" Text="Thêm phiếu trả hàng" HorizontalAlign="Right" VerticalAlign="Middle" PostBackUrl="PhieuKhachHangTraHang.aspx">
+    <dx:ASPxButton ID="btnThemPhieuTraHang" runat="server" Text="Thêm phiếu trả hàng" HorizontalAlign="Right" VerticalAlign="Middle" PostBackUrl="ThemKhachHangTraHang.aspx">
         <Image IconID="actions_add_32x32">
         </Image>
         <Paddings Padding="4px" />
@@ -45,10 +45,6 @@
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn Caption="Ghi chú" FieldName="GhiChu" VisibleIndex="8">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataComboBoxColumn Caption="Kho" FieldName="IDKho" VisibleIndex="0">
-                <PropertiesComboBox DataSourceID="sqlKhoHang" TextField="TenCuaHang" ValueField="ID">
-                </PropertiesComboBox>
-            </dx:GridViewDataComboBoxColumn>
             <dx:GridViewDataComboBoxColumn Caption="Khách hàng" FieldName="IDKhachHang" VisibleIndex="2">
                 <PropertiesComboBox DataSourceID="sqlKhachHang" TextField="TenKhachHang" ValueField="ID">
                 </PropertiesComboBox>
@@ -57,15 +53,15 @@
                 <PropertiesComboBox DataSourceID="sqlNhanVien" TextField="TenNguoiDung" ValueField="ID">
                 </PropertiesComboBox>
             </dx:GridViewDataComboBoxColumn>
-            <dx:GridViewDataSpinEditColumn Caption="Tổng số hàng hóa" FieldName="TongHangHoaDoi" VisibleIndex="5">
+            <dx:GridViewDataSpinEditColumn Caption="Tổng số hàng hóa" FieldName="SoLuongHang" VisibleIndex="5">
                 <PropertiesSpinEdit DisplayFormatString="{0:#,#}" NumberFormat="Custom">
                 </PropertiesSpinEdit>
             </dx:GridViewDataSpinEditColumn>
-            <dx:GridViewDataSpinEditColumn Caption="Tổng tiền" FieldName="TongTienTra" VisibleIndex="7">
+            <dx:GridViewDataSpinEditColumn Caption="Tổng tiền" FieldName="TongTien" VisibleIndex="7">
                 <PropertiesSpinEdit DisplayFormatString="{0:#,# VND}" NumberFormat="Custom">
                 </PropertiesSpinEdit>
             </dx:GridViewDataSpinEditColumn>
-            <dx:GridViewDataDateColumn Caption="Ngày lập" FieldName="NgayDoi" VisibleIndex="4">
+            <dx:GridViewDataDateColumn Caption="Ngày lập" FieldName="NgayLap" VisibleIndex="4">
                 <PropertiesDateEdit DisplayFormatString="dd/MM/yyyy">
                 </PropertiesDateEdit>
             </dx:GridViewDataDateColumn>
@@ -80,18 +76,12 @@
         </Styles>
     </dx:ASPxGridView>
 
-    <asp:SqlDataSource ID="sqlKhachHang" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT [ID], [TenKhachHang] FROM [GPM_KhachHang] WHERE ([DaXoa] = @DaXoa)">
-        <SelectParameters>
-            <asp:Parameter DefaultValue="0" Name="DaXoa" Type="Int32" />
-        </SelectParameters>
-    </asp:SqlDataSource>
-
     <asp:SqlDataSource ID="sqlNhanVien" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT [ID], [TenNguoiDung] FROM [GPM_NguoiDung] WHERE ([DaXoa] = @DaXoa)">
         <SelectParameters>
             <asp:Parameter DefaultValue="0" Name="DaXoa" Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:SqlDataSource ID="sqlKhoHang" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT [ID], [TenCuaHang] FROM [GPM_Kho] WHERE ([DaXoa] = @DaXoa)">
+    <asp:SqlDataSource ID="sqlKhachHang" runat="server" ConnectionString="<%$ ConnectionStrings:BanHangConnectionString %>" SelectCommand="SELECT [ID], [TenKhachHang], [MaKhachHang] FROM [GPM_KhachHang] WHERE ([DaXoa] = @DaXoa)">
         <SelectParameters>
             <asp:Parameter DefaultValue="0" Name="DaXoa" Type="Int32" />
         </SelectParameters>

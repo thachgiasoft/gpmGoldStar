@@ -70,6 +70,14 @@ namespace BanHang
                             data.ThemHangHoa(IDHangHoaComBo, IDHangHoa1, SoLuong1, GiaBan1, ThanhTien1, MaHang1, IDDonViTinh1);
                         }
                         data.XoaHangHoa_Temp_IDHangCombo(IDHangHoaComBo);
+
+                        string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+                        if (Session["IDThuNgan"] != null)
+                            IDNhanVien1 = Session["IDThuNgan"].ToString();
+                        if (Session["IDNhanVien"] != null)
+                            IDNhanVien1 = Session["IDNhanVien"].ToString();
+                        dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Thêm Hàng hóa Combo", "Thêm hàng hóa combo");
+
                         Response.Redirect("DanhMucCombo.aspx");
                     }
                     else

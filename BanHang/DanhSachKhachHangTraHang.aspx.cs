@@ -13,14 +13,17 @@ namespace BanHang
         protected void Page_Load(object sender, EventArgs e)
         {
             //btnThemPhieuTraHang.Enabled = false;
+            dtPhieuKhachHangTraHang dt = new dtPhieuKhachHangTraHang();
+            dt.XoaPhieu_Null();
+
             LoadGrid();
         }
 
         private void LoadGrid()
         {
-            //dtPhieuKhachHangTraHang data = new dtPhieuKhachHangTraHang();
-            //gridPhieuKhachHangTraHang.DataSource = data.DanhSachPhieuKhachHangTraHang();
-            //gridPhieuKhachHangTraHang.DataBind();
+            dtPhieuKhachHangTraHang data = new dtPhieuKhachHangTraHang();
+            gridPhieuKhachHangTraHang.DataSource = data.DanhSachPhieuKhachHangTraHang();
+            gridPhieuKhachHangTraHang.DataBind();
         }
 
     }

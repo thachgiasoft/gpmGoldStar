@@ -16,7 +16,6 @@ namespace BanHang
             string IDDonHang = Request.QueryString["IDDonHang"];
             if (IDDonHang != null)
             {
-
                 LoadGrid(IDDonHang.ToString());
             }
         }

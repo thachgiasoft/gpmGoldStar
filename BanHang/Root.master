@@ -103,17 +103,15 @@
                                                     </dx:RibbonDropDownButtonItem>
                                                     <dx:RibbonDropDownButtonItem Name="Bang_Ke" Size="Large" Text="Bảng kê">
                                                         <Items>
-                                                            <dx:RibbonDropDownButtonItem Name="Phiếu nhập sỉ" Text="Phiếu nhập sỉ" NavigateUrl="BangKePhieuNhapSi.aspx">
+                                                            <dx:RibbonDropDownButtonItem Name="bangkebanhang" Text="Bảng kê bán hàng" NavigateUrl="BangKeBanHang.aspx">
                                                             </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Phiếu nhập lẻ" Text="Phiếu nhập lẻ" NavigateUrl="BangKePhieuNhapLe.aspx">
+                                                            <dx:RibbonDropDownButtonItem Name="bangkebanve" Text="Bảng kê bán vé" NavigateUrl="BangKeBanVe.aspx">
                                                             </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Phiếu xuất trả" Text="Phiếu xuất trả" NavigateUrl="BangKePhieuXuatTra.aspx">
+                                                            <dx:RibbonDropDownButtonItem Name="bangkekiemkho" NavigateUrl="BangKeKiemKho.aspx" Text="Bảng kê kiểm kho">
                                                             </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Phiếu xuất khác" Text="Phiếu xuất khác" NavigateUrl="BangKePhieuXuatKhac.aspx">
+                                                            <dx:RibbonDropDownButtonItem Name="bangkenhaphang" NavigateUrl="BangKeNhapHang.aspx" Text="Bảng kê nhập hàng">
                                                             </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Phiếu chuyển kho" Text="Phiếu chuyển kho" NavigateUrl="BangKePhieuChuyenKho.aspx">
-                                                            </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Phiếu đổi hàng" Text="Phiếu đổi hàng" NavigateUrl="BangKePhieuDoiHang.aspx">
+                                                            <dx:RibbonDropDownButtonItem Name="bangkephieuxuatkhac" NavigateUrl="BangKePhieuXuatKhac.aspx" Text="Bảng kê phiếu xuất khác">
                                                             </dx:RibbonDropDownButtonItem>
                                                         </Items>
                                                         <LargeImage Url="~/image/bao-cao-thong-ke.png">
@@ -121,21 +119,17 @@
                                                     </dx:RibbonDropDownButtonItem>
                                                     <dx:RibbonDropDownButtonItem Name="Bao_Cao" Size="Large" Text="Báo cáo">
                                                         <Items>
-                                                            <dx:RibbonDropDownButtonItem Name="Nhập hàng lẻ" Text="Nhập hàng lẻ" NavigateUrl="BaoCaoNhapHangLe.aspx">
+                                                            <dx:RibbonDropDownButtonItem Name="baocaobanhang" Text="Báo cáo bán hàng" NavigateUrl="BaoCaoBanHang.aspx">
                                                             </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Nhập hàng sỉ" Text="Nhập hàng sỉ" NavigateUrl="BaoCaoNhapHangSi.aspx">
+                                                            <dx:RibbonDropDownButtonItem Name="baocaobanve" Text="Báo cáo bán vé" NavigateUrl="BaoCaoBanVe.aspx">
                                                             </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Bán hàng lẻ" Text="Bán hàng lẻ" NavigateUrl="BaoCaoBanHangLe.aspx">
+                                                            <dx:RibbonDropDownButtonItem Name="baocaokiemkho" Text="Báo cáo kiểm kho" NavigateUrl="BaoCaoKiemKho.aspx">
                                                             </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Trả hàng" Text="Báo cáo trả hàng" NavigateUrl="BaoCaoTraHang.aspx">
+                                                            <dx:RibbonDropDownButtonItem Name="baocaonhaphang" NavigateUrl="BaoCaoNhapHang.aspx" Text="Báo cáo nhập hàng">
                                                             </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Tồn kho" Text="Tồn kho" NavigateUrl="BaoCaoTonKho.aspx">
+                                                            <dx:RibbonDropDownButtonItem Name="baocaophieuxuatkhac" NavigateUrl="BaoCaoPhieuXuatKhac.aspx" Text="Báo cáo phiếu xuất khác">
                                                             </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Doanh thu" NavigateUrl="BaoCaoDoanhThu.aspx" Text="Doanh thu">
-                                                            </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Chi tiết xuất hàng" NavigateUrl="BaoCaoChiTietXuatHang.aspx" Text="Chi tiết xuất hàng">
-                                                            </dx:RibbonDropDownButtonItem>
-                                                            <dx:RibbonDropDownButtonItem Name="Chi tiết nhập hàng" NavigateUrl="BaoCaoChiTietNhap.aspx" Text="Chi tiết nhập hàng">
+                                                            <dx:RibbonDropDownButtonItem Name="baocaotonkho" NavigateUrl="BaoCaoTonKho.aspx" Text="Báo cáo tồn kho">
                                                             </dx:RibbonDropDownButtonItem>
                                                         </Items>
                                                         <LargeImage Url="~/image/baocao.png">

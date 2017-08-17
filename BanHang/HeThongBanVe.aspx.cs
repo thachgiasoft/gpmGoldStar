@@ -42,6 +42,13 @@ namespace BanHang
                     cmbKyHieu.Focus();
                     ThemHoaDonMoi();
                     btnNhanVien.Text = Session["TenThuNgan"].ToString();
+
+                    string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+                    if (Session["IDThuNgan"] != null)
+                        IDNhanVien = Session["IDThuNgan"].ToString();
+                    if (Session["IDNhanVien"] != null)
+                        IDNhanVien = Session["IDNhanVien"].ToString();
+                    dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Bán vé", "Truy cập bán vé");
                 }
             }
             else
@@ -252,10 +259,19 @@ namespace BanHang
             dtBanVe dt = new dtBanVe();
             string IDNhanVien = Session["IDThuNgan"].ToString();
             string TenNhanVien = Session["TenThuNgan"].ToString();
+
             string IDKhachHang = "1";
             if (cmbKhachHang.Value != null)
                 IDKhachHang = cmbKhachHang.Value.ToString();
             object IDHoaDon = dt.InsertHoaDonBanVe(IDNhanVien,TenNhanVien, IDKhachHang, DanhSachBanVe[MaHoaDon],txtDiemTichLuy.Text.ToString());
+
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Bán vé", "Thanh toán hóa đơn ID: " + IDHoaDon);
+            
             HuyHoaDon();
             cmbKhachHang.Text = "";
             chitietbuilInLai.ContentUrl = "~/InHoaDonBanVe.aspx?IDVe=" + IDHoaDon;

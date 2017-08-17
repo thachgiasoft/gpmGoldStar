@@ -39,6 +39,13 @@ namespace BanHang
             {
                 throw new Exception("Lỗi: Tên đơn vị tính đã tồn tại: " + dtSetting.convertDauSangKhongDau(TenDonViTinh));
             }
+
+            string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Đơn vị tính", "Thêm đơn vị tính");
         }
 
         protected void gridDonViTinh_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
@@ -48,7 +55,14 @@ namespace BanHang
             data.XoaDonViTinh(Int32.Parse(ID));
             e.Cancel = true;
             gridDonViTinh.CancelEdit();
-            LoadGrid();   
+            LoadGrid();
+
+            string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Đơn vị tính", "Xóa đơn vị tính ID: " + ID);
         }
 
         protected void gridDonViTinh_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
@@ -60,6 +74,13 @@ namespace BanHang
             e.Cancel = true;
             gridDonViTinh.CancelEdit();
             LoadGrid();
+
+            string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Đơn vị tính", "Cập nhật đơn vị tính ID: " + ID);
         }
     }
 }

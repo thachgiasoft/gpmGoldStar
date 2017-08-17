@@ -88,7 +88,11 @@ namespace BanHang.Data
                                         cmd.Parameters.AddWithValue("@SoThuTu", SoVe);
                                         cmd.ExecuteNonQuery();
                                     }
-                                } 
+
+                                    
+                                }
+
+                                dtLichSuHeThong.ThemLichSuBanHang(IDNhanVien + "", IDKhachHang + "", " Bán vé", cthd.TenKyHieu, cthd.SoLuong + "", cthd.DonGia + "", "Bán vé");
                             }
                             if (Int32.Parse(IDKhachHang) != 1)
                             {

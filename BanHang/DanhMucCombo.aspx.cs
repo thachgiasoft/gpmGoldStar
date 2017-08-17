@@ -32,6 +32,13 @@ namespace BanHang
             e.Cancel = true;
             gridDanhMucCombo.CancelEdit();
             LoadGrid();
+
+            string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Hàng hóa combo", "Xóa hàng hóa ID: " + ID);
         }
 
         protected void gridDanhMucCombo_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
@@ -52,6 +59,13 @@ namespace BanHang
             e.Cancel = true;
             gridDanhMucCombo.CancelEdit();
             LoadGrid();
+
+            string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Hàng hóa combo", "Cập nhật hàng hóa ID: " + ID);
         }
     }
 }

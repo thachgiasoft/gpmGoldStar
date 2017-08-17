@@ -27,6 +27,24 @@ namespace BanHang.Data
             }
         }
 
+        public string LayMaHoaDon_ID(string ID)
+        {
+            using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
+            {
+                con.Open();
+                string cmdText = "select MaHoaDon from GPM_HoaDon where ID = '" + ID + "'";
+                using (SqlCommand command = new SqlCommand(cmdText, con))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        DataTable tb = new DataTable();
+                        tb.Load(reader);
+                        return tb.Rows[0]["MaHoaDon"].ToString();
+                    }
+                }
+            }
+        }
+
         public DataTable LayThongHoaDon_BaoCao(string NgayBD, string NgayKT, string IDKho)
         {
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
@@ -141,7 +159,8 @@ namespace BanHang.Data
                         foreach (ChiTietHoaDon cthd in hoaDon.ListChiTietHoaDon)
                         {
                             dtHangHoa dtHH = new dtHangHoa();
-
+                            dtLichSuHeThong.ThemLichSuBanHang(IDNhanVien + "", IDKhachHang + "", "Bán hàng", cthd.MaHang + "", cthd.SoLuong + "", cthd.DonGia + "", "Bán hàng");
+                            
                             string InsertChiTietHoaDon = "INSERT INTO [GPM_ChiTietHoaDon] ([IDHoaDon],[IDHangHoa] ,[SoLuong],[DonGia],[TongTien]) " +
                                                          "VALUES (@IDHoaDon, @IDHangHoa, @SoLuong, @DonGia, @TongTien)";
                             using (SqlCommand cmd = new SqlCommand(InsertChiTietHoaDon, con, trans))

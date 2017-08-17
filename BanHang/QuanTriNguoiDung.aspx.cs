@@ -32,8 +32,13 @@ namespace BanHang
             e.Cancel = true;
             gridQuanTriNguoiDung.CancelEdit();
             LoadGrid();
-           
-         
+
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Quản trị người dùng", "Xóa quản trị người dùng ID: " + ID);
         }
 
         protected void gridQuanTriNguoiDung_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
@@ -59,7 +64,14 @@ namespace BanHang
             }
             e.Cancel = true;
             gridQuanTriNguoiDung.CancelEdit();
-            LoadGrid();   
+            LoadGrid();
+
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Quản trị người dùng", "Thêm quản trị người dùng");
         }
 
         protected void gridQuanTriNguoiDung_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
@@ -93,6 +105,13 @@ namespace BanHang
             e.Cancel = true;
             gridQuanTriNguoiDung.CancelEdit();
             LoadGrid();
+
+            string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+            if (Session["IDThuNgan"] != null)
+                IDNhanVien1 = Session["IDThuNgan"].ToString();
+            if (Session["IDNhanVien"] != null)
+                IDNhanVien1 = Session["IDNhanVien"].ToString();
+            dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Quản trị người dùng", "Cập nhật quản trị người dùng ID: " + ID);
         }
     }
 }

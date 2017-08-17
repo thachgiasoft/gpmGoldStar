@@ -33,6 +33,14 @@ namespace BanHang
                         string sha1 = dtSetting.GetSHA1HashData(txtMatKhauMoi2.Value.ToString());
                         data.DoiMatKhau(ID, sha1);
                         Session["KTDangNhap"] = null;
+
+                        string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+                        if (Session["IDThuNgan"] != null)
+                            IDNhanVien1 = Session["IDThuNgan"].ToString();
+                        if (Session["IDNhanVien"] != null)
+                            IDNhanVien1 = Session["IDNhanVien"].ToString();
+                        dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Thay đổi mật khẩu", "Thay đổi mật khẩu");
+
                         Response.Redirect("DangNhap.aspx");   
                     }
                 }

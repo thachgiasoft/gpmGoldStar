@@ -191,6 +191,14 @@ namespace BanHang
                 }
                 data = new dtThemDonHangKho();
                 data.XoaChiTietDonHang_Nhap(IDDonHang);
+
+                string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+                if (Session["IDThuNgan"] != null)
+                    IDNhanVien1 = Session["IDThuNgan"].ToString();
+                if (Session["IDNhanVien"] != null)
+                    IDNhanVien1 = Session["IDNhanVien"].ToString();
+                dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Thêm đơn đặt hàng", "Thêm đơn đặt hàng");
+
                 Response.Redirect("DanhSachPhieuDatHang.aspx");
             }
             else

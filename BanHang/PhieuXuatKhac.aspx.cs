@@ -131,6 +131,14 @@ namespace BanHang
                     }
                     data = new dtPhieuXuatKhac();
                     data.XoaChiTietPhieuXuatKhac_Temp(IDPhieuXuatKhac);
+
+                    string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+                    if (Session["IDThuNgan"] != null)
+                        IDNhanVien1 = Session["IDThuNgan"].ToString();
+                    if (Session["IDNhanVien"] != null)
+                        IDNhanVien1 = Session["IDNhanVien"].ToString();
+                    dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Phiếu xuất khác", "Thêm phiếu xuất khác.");
+
                     Response.Redirect("DanhSachPhieuXuatKhac.aspx");
                 }
                 else
@@ -152,6 +160,7 @@ namespace BanHang
             e.Cancel = true;
             gridDanhSachHangHoa_Temp.CancelEdit();
             LoadGrid(IDPhieuXuatKhac_Temp.Value.ToString());
+
         }
 
         protected void cmbHangHoa_ItemsRequestedByFilterCondition(object source, DevExpress.Web.ListEditItemsRequestedByFilterConditionEventArgs e)

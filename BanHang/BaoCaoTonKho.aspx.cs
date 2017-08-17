@@ -13,15 +13,27 @@ namespace BanHang
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadGrid();
-            dtBaoCao d = new dtBaoCao();
-            DataTable dx = d.LayDanhSach_LoaiHangHoa();
-            dx.Rows.Add(-1, "Tất cả loại hàng");
-            cmbLoaiHangHoa.DataSource = dx;
-            cmbLoaiHangHoa.TextField = "TenTrangThai";
-            cmbLoaiHangHoa.ValueField = "ID";
-            cmbLoaiHangHoa.DataBind();
-            cmbLoaiHangHoa.SelectedIndex = cmbLoaiHangHoa.Items.Count;
+            if (!IsPostBack)
+            {
+                LoadGrid();
+                dtBaoCao d = new dtBaoCao();
+                DataTable dx = d.LayDanhSach_LoaiHangHoa();
+                dx.Rows.Add(-1, "Tất cả loại hàng");
+                cmbLoaiHangHoa.DataSource = dx;
+                cmbLoaiHangHoa.TextField = "TenTrangThai";
+                cmbLoaiHangHoa.ValueField = "ID";
+                cmbLoaiHangHoa.DataBind();
+                cmbLoaiHangHoa.SelectedIndex = cmbLoaiHangHoa.Items.Count;
+
+
+                string IDNhanVien = "1"; // Session["IDThuNgan"].ToString();
+                if (Session["IDThuNgan"] != null)
+                    IDNhanVien = Session["IDThuNgan"].ToString();
+                if (Session["IDNhanVien"] != null)
+                    IDNhanVien = Session["IDNhanVien"].ToString();
+                dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Báo cáo tồn kho", "Truy cập báo cáo");
+
+            }
         }
 
         public void LoadGrid()

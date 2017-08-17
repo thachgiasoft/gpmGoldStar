@@ -139,7 +139,7 @@
        "sadohcm_goldstar.GPM_TrangThaiHang"
        on ("sadohcm_goldstar.GPM_TrangThaiHang"."ID" = "sadohcm_goldstar.GPM_HangHoa"."TrangThaiHang"))
  where
-       ((@idLoai = -1) OR ("sadohcm_goldstar.GPM_HangHoa"."ID" = @idLoai))</value>
+       ((@idLoai = -1) OR ("sadohcm_goldstar.GPM_HangHoa"."TrangThaiHang" = @idLoai))</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
     <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkhhbmdIb2FfIj48RmllbGQgTmFtZT0iTWFIYW5nIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGVuSGFuZ0hvYSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUZW5Eb25WaVRpbmgiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU29MdW9uZ0NvbiIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRlblRyYW5nVGhhaSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48VmlldyBOYW1lPSJzYWRvaGNtX2dvbGRzdGFyX0dQTV9TZXR0aW5nIj48RmllbGQgTmFtZT0iVGlldURlQ29uZ1R5IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRlbkNvbmdUeSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>

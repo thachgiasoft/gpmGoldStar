@@ -13,7 +13,16 @@ namespace BanHang
         dtKhoHang data = new dtKhoHang();
         protected void Page_Load(object sender, EventArgs e)
         {
-          LoadGrid();  
+            if (!IsPostBack)
+            {
+                LoadGrid();
+                string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+                if (Session["IDThuNgan"] != null)
+                    IDNhanVien1 = Session["IDThuNgan"].ToString();
+                if (Session["IDNhanVien"] != null)
+                    IDNhanVien1 = Session["IDNhanVien"].ToString();
+                dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Tồn kho ban đầu", "Truy cập tồn kho ban đầu.");
+            }
         }
         private void LoadGrid()
         {

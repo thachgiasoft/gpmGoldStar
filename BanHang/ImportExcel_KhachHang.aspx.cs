@@ -89,6 +89,13 @@ namespace BanHang
 
                 }
 
+                string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+                if (Session["IDThuNgan"] != null)
+                    IDNhanVien1 = Session["IDThuNgan"].ToString();
+                if (Session["IDNhanVien"] != null)
+                    IDNhanVien1 = Session["IDNhanVien"].ToString();
+                dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Import Khách hàng", "Lưu dữ liệu import Khách hàng");
+
                 Response.Redirect("KhachHang.aspx");
             }
             else

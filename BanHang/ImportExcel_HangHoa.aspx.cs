@@ -101,6 +101,14 @@ namespace BanHang
                 }
 
                 data.XoaDuLieuTemp();
+
+                string IDNhanVien1 = "1"; // Session["IDThuNgan"].ToString();
+                if (Session["IDThuNgan"] != null)
+                    IDNhanVien1 = Session["IDThuNgan"].ToString();
+                if (Session["IDNhanVien"] != null)
+                    IDNhanVien1 = Session["IDNhanVien"].ToString();
+                dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien1, "Import Hàng hóa", "Lưu dữ liệu import hàng hóa");
+
                 Response.Redirect("HangHoa.aspx");
             }
         }
