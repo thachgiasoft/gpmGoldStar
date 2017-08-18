@@ -387,7 +387,7 @@ namespace BanHang
             dtKhachHang dt = new dtKhachHang();
             string Diem = dt.layDiemTichLuy(idKH);
             string TienQuyDoi = dtSetting.LayDiemQuyDoiTien();
-            if (Int32.Parse(txtSoDiem.Value + "") <= Int32.Parse(Diem))
+            if (float.Parse(txtSoDiem.Value + "") <= float.Parse(Diem))
             {
                 txtGiamGia.Value = Int32.Parse(txtSoDiem.Value + "") * float.Parse(TienQuyDoi);
 
@@ -400,8 +400,8 @@ namespace BanHang
             }
             else
             {
-                txtSoDiem.Value = Int32.Parse(Diem);
-                txtGiamGia.Value = Int32.Parse(txtSoDiem.Value + "") * float.Parse(TienQuyDoi);
+                txtSoDiem.Value = float.Parse(Diem);
+                txtGiamGia.Value = float.Parse(txtSoDiem.Value + "") * float.Parse(TienQuyDoi);
 
                 int MaHoaDon = tabControlSoHoaDon.ActiveTabIndex;
                 DanhSachHoaDon[MaHoaDon].SoDiemGiam = Int32.Parse(txtSoDiem.Value + "");

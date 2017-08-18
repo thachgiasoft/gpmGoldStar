@@ -69,7 +69,7 @@ namespace BanHang
 
                 string Diem = dtSetting.LayTienQuyDoiDiem();
                 data.CapNhatHuyVe(cmbMaSoVe.Value + "");
-                data.CapNhatDiemKhachHang(Int32.Parse(IDKhachHang), (int)(Int32.Parse(GiaVe) / float.Parse(Diem)));
+                data.CapNhatDiemKhachHang(Int32.Parse(IDKhachHang), (int)(Int32.Parse(GiaVe) / float.Parse(Diem)), "Hủy vé, trừ điểm tích lũy theo giá vé.");
             }
 
             Response.Redirect("DanhSachKhachHangHuyVe.aspx");

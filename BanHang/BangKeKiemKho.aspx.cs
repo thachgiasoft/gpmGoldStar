@@ -70,7 +70,7 @@ namespace BanHang
             else if (rbTheoThang.Checked == true)
             {
                 ngayBD = nam + "-" + thang + "-01 ";
-                ngayKT = nam + "-" + thang + "-29 ";    // chưa xử lý xong...
+                ngayKT = nam + "-" + thang + "-" + dtSetting.SoNgayTrongThang(nam, thang) + " ";
             }
             else if (rbTuyChon.Checked == true)
             {

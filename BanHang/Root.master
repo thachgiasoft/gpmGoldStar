@@ -48,9 +48,14 @@
                                         <Groups>
                                             <dx:RibbonGroup Text="Bàn hàng & Danh mục" Name="Ban_Hang_Danh_Muc">                                                                                        
                                                 <Items>
-                                                    <dx:RibbonButtonItem Name="ban-hang-le" NavigateUrl="BanHangLe.aspx" 
-                                                        Size="Large" Text="Bán hàng lẻ">
+                                                    <dx:RibbonButtonItem Name="ban-hang" NavigateUrl="BanHangLe.aspx" 
+                                                        Size="Large" Text="Bán hàng">
                                                         <LargeImage Url="~/image/banhang.png">
+                                                        </LargeImage>
+                                                    </dx:RibbonButtonItem>
+
+                                                    <dx:RibbonButtonItem Name="banve" NavigateUrl="HeThongBanVe.aspx" Size="Large" Text="Bán vé">
+                                                        <LargeImage Url="~/image/iconbanve.png">
                                                         </LargeImage>
                                                     </dx:RibbonButtonItem>
 
@@ -117,6 +122,8 @@
                                                             </dx:RibbonDropDownButtonItem>
                                                             <dx:RibbonDropDownButtonItem Name="bangketrahang" NavigateUrl="BangKeTraHang.aspx" Text="Bảng kê trả hàng">
                                                             </dx:RibbonDropDownButtonItem>
+                                                            <dx:RibbonDropDownButtonItem Name="bangkehuyve" NavigateUrl="BangKeHuyVe.aspx" Text="Bảng kê trả vé">
+                                                            </dx:RibbonDropDownButtonItem>
                                                         </Items>
                                                         <LargeImage Url="~/image/bao-cao-thong-ke.png">
                                                         </LargeImage>
@@ -136,6 +143,8 @@
                                                             <dx:RibbonDropDownButtonItem Name="baocaotonkho" NavigateUrl="BaoCaoTonKho.aspx" Text="Báo cáo tồn kho">
                                                             </dx:RibbonDropDownButtonItem>
                                                             <dx:RibbonDropDownButtonItem Name="baocaotrahang" NavigateUrl="BaoCaoTraHang.aspx" Text="Báo cáo trả hàng">
+                                                            </dx:RibbonDropDownButtonItem>
+                                                            <dx:RibbonDropDownButtonItem Name="baocaohuyve" NavigateUrl="BaoCaoHuyVe.aspx" Text="Báo cáo trả vé">
                                                             </dx:RibbonDropDownButtonItem>
                                                         </Items>
                                                         <LargeImage Url="~/image/baocao.png">

@@ -224,3 +224,5 @@ C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\obj\Debug\BanHang.Report.rpB
 C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\obj\Debug\BanHang.Report.rpBangKeKiemKho.resources
 C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\obj\Debug\BanHang.Report.rpBaoCaoTraHang.resources
 C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\obj\Debug\BanHang.Report.rpBangKeTraHang.resources
+C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\obj\Debug\BanHang.Report.rpBaoCaoHuyVe.resources
+C:\Users\vmquy\Desktop\GoldStar\gpmGoldStar\BanHang\obj\Debug\BanHang.Report.rpBangKeHuyVe.resources

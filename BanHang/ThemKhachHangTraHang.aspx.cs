@@ -219,7 +219,7 @@ namespace BanHang
 
                     dtBanVe data1 = new dtBanVe();
                     string Diem = dtSetting.LayTienQuyDoiDiem();
-                    data1.CapNhatDiemKhachHang(Int32.Parse(IDKhachHang), (int)(Int32.Parse(TongTienTra) / float.Parse(Diem)));
+                    data1.CapNhatDiemKhachHang(Int32.Parse(IDKhachHang), (int)(Int32.Parse(TongTienTra) / float.Parse(Diem)),"Trả hàng, trừ điểm theo tổng tiền hàng hóa trả.");
 
                     data.XoaChiTiet_Temp(ID);
                     Response.Redirect("DanhSachKhachHangTraHang.aspx");

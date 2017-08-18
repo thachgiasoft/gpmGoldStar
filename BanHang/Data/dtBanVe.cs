@@ -46,12 +46,15 @@ namespace BanHang.Data
             }
         }
 
-        public void CapNhatDiemKhachHang(int IDKhachHang, int Diem)
+        public void CapNhatDiemKhachHang(int IDKhachHang, int Diem, string noidung)
         {
             using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
             {
                 try
                 {
+                    dtKhachHang dt = new dtKhachHang();
+                    dtLichSuHeThong.ThemLichSuQuyDoiDiem(IDKhachHang + "", dt.layDiemTichLuy(IDKhachHang + "") + "", (float.Parse(dt.layDiemTichLuy(IDKhachHang + "")) - Diem) + "", noidung);
+
                     myConnection.Open();
                     string strSQL = "UPDATE [GPM_KhachHang] SET [DiemTichLuy] = [DiemTichLuy] - @Diem WHERE [ID] = @ID AND ID != 1";
                     using (SqlCommand myCommand = new SqlCommand(strSQL, myConnection))
@@ -140,6 +143,9 @@ namespace BanHang.Data
                             }
                             if (Int32.Parse(IDKhachHang) != 1)
                             {
+                                dtKhachHang dt = new dtKhachHang();
+                                dtLichSuHeThong.ThemLichSuQuyDoiDiem(IDKhachHang, dt.layDiemTichLuy(IDKhachHang) + "", (float.Parse(dt.layDiemTichLuy(IDKhachHang)) - Int32.Parse(DiemTichLuy)) + "", "Quy đổi điểm sang tiền giảm giá.");
+                                
                                 string TruDiemTichLuy = "UPDATE [GPM_KhachHang] SET DiemTichLuy = DiemTichLuy -  @DiemTichLuy WHERE ID = @ID";
                                 using (SqlCommand cmd = new SqlCommand(TruDiemTichLuy, con, trans))
                                 {
@@ -149,6 +155,9 @@ namespace BanHang.Data
                                 }
 
                                 float TongTienGiam = hoaDon.KhachCanTra / float.Parse(dtSetting.LayTienQuyDoiDiem());
+
+                                dtLichSuHeThong.ThemLichSuQuyDoiDiem(IDKhachHang, dt.layDiemTichLuy(IDKhachHang) + "", (float.Parse(dt.layDiemTichLuy(IDKhachHang)) + TongTienGiam) + "", "Quy đổi tổng tiền sang điểm tích lũy.");
+
                                 string CongDiemTichLuy = "UPDATE [GPM_KhachHang] SET DiemTichLuy = DiemTichLuy +  @DiemTichLuy1 WHERE ID = @ID";
                                 using (SqlCommand cmd = new SqlCommand(CongDiemTichLuy, con, trans))
                                 {

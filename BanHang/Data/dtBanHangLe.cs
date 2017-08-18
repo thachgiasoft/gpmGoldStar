@@ -102,13 +102,14 @@ namespace BanHang.Data
         public object InsertHoaDon(string IDNhanVien, string IDKhachHang, HoaDon hoaDon)
         {
             object IDHoaDon = null;
+            dtKhachHang dt = new dtKhachHang();
             using (SqlConnection con = new SqlConnection(StaticContext.ConnectionString))
             {
                 SqlTransaction trans = null;
                 try
                 {
                     con.Open();
-                    trans = con.BeginTransaction();
+                    //trans = con.BeginTransaction();
                     string InsertHoaDon = "INSERT INTO [GPM_HoaDon] ([IDKhachHang],[IDNhanVien],[NgayBan],[TongTien],[HinhThucGiamGia],[GiamGia],[KhachCanTra],[KhachThanhToan],[TienThua]) " +
                                           "OUTPUT INSERTED.ID " +
                                           "VALUES (@IDKhachHang, @IDNhanVien, getdate(), @TongTien, @HinhThucGiamGia, @GiamGia, @KhachCanTra, @KhachThanhToan, @TienThua)";
@@ -138,6 +139,8 @@ namespace BanHang.Data
                         cmd.ExecuteNonQuery();
                     }
 
+                    dtLichSuHeThong.ThemLichSuQuyDoiDiem(IDKhachHang, dt.layDiemTichLuy(IDKhachHang) + "", (float.Parse(dt.layDiemTichLuy(IDKhachHang)) - hoaDon.SoDiemGiam) + "", "Quy đổi điểm sang tiền giảm giá.");
+
                     string strUpdateDiemKH = "update GPM_KhachHang set DiemTichLuy = DiemTichLuy - @dTL where ID = @IDKhachHang and ID != 1";
                     using (SqlCommand cmd = new SqlCommand(strUpdateDiemKH, con, trans))
                     {
@@ -145,6 +148,8 @@ namespace BanHang.Data
                         cmd.Parameters.AddWithValue("@IDKhachHang", IDKhachHang);
                         cmd.ExecuteNonQuery();
                     }
+
+                    dtLichSuHeThong.ThemLichSuQuyDoiDiem(IDKhachHang, dt.layDiemTichLuy(IDKhachHang) + "", (float.Parse(dt.layDiemTichLuy(IDKhachHang)) + hoaDon.SoDiemTang) + "", "Quy đổi tổng tiền hóa đơn sang điểm.");
 
                     string strUpdateDiemKHTang = "update GPM_KhachHang set DiemTichLuy = DiemTichLuy + @dTLTang where ID = @IDKhachHang and ID != 1";
                     using (SqlCommand cmd = new SqlCommand(strUpdateDiemKHTang, con, trans))
@@ -184,7 +189,7 @@ namespace BanHang.Data
 
                         }
                     }
-                    trans.Commit();
+                    //trans.Commit();
                     con.Close();
                 }
                 catch (Exception ex)

@@ -8,8 +8,9 @@ using System.Web.UI.WebControls;
 
 namespace BanHang
 {
-    public partial class BangKeBanHang : System.Web.UI.Page
+    public partial class BaoCaoHuyVe : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -19,9 +20,10 @@ namespace BanHang
                     IDNhanVien = Session["IDThuNgan"].ToString();
                 if (Session["IDNhanVien"] != null)
                     IDNhanVien = Session["IDNhanVien"].ToString();
-                dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Bảng kê bán hàng", "Truy cập bảng kê");
+                dtLichSuHeThong.ThemLichSuTruyCap(IDNhanVien, "Báo cáo trả vé", "Truy cập báo cáo");
             }
         }
+
 
         protected void rbTheoNam_CheckedChanged(object sender, EventArgs e)
         {
@@ -61,7 +63,6 @@ namespace BanHang
             DateTime date = DateTime.Now;
             int thang = date.Month;
             int nam = date.Year;
-
             string ngayBD = ""; string ngayKT = "";
             if (rbTheoNam.Checked == true)
             {
@@ -83,7 +84,7 @@ namespace BanHang
             ngayBD = ngayBD + "00:00:0.000";
             ngayKT = ngayKT + "23:59:59.999";
 
-            popup.ContentUrl = "~/InBangKeBanHang.aspx?ngayBD=" + ngayBD + "&ngayKT=" + ngayKT;
+            popup.ContentUrl = "~/InBaoCaoHuyVe.aspx?ngayBD=" + ngayBD + "&ngayKT=" + ngayKT;
             popup.ShowOnPageLoad = true;
         }
     }

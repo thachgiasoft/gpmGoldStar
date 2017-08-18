@@ -61,5 +61,34 @@ namespace BanHang.Data
                 }
             }
         }
+
+        public static void ThemLichSuQuyDoiDiem(string IDKhachHang, string SoDiemCu, string SoDiemMoi, string NoiDung)
+        {
+            if (Int32.Parse(IDKhachHang) != 1 && (float.Parse(SoDiemCu) != float.Parse(SoDiemMoi)))
+            {
+                using (SqlConnection myConnection = new SqlConnection(StaticContext.ConnectionString))
+                {
+                    try
+                    {
+                        myConnection.Open();
+                        string cmdText = "INSERT INTO [GPM_LichSuQuyDoiDiem] ([IDKhachHang],[SoDiemCu], [SoDiemMoi],[NoiDung],[Ngay]) VALUES (@IDKhachHang,@SoDiemCu, @SoDiemMoi,@NoiDung, getdate())";
+                        using (SqlCommand myCommand = new SqlCommand(cmdText, myConnection))
+                        {
+                            myCommand.Parameters.AddWithValue("@IDKhachHang", IDKhachHang);
+                            myCommand.Parameters.AddWithValue("@SoDiemCu", SoDiemCu);
+                            myCommand.Parameters.AddWithValue("@SoDiemMoi", SoDiemMoi);
+                            myCommand.Parameters.AddWithValue("@NoiDung", NoiDung);
+
+                            myCommand.ExecuteNonQuery();
+                        }
+                        myConnection.Close();
+                    }
+                    catch
+                    {
+                        throw new Exception("Lỗi: Quá trình thêm dữ liệu gặp lỗi");
+                    }
+                }
+            }
+        }
     }
 }

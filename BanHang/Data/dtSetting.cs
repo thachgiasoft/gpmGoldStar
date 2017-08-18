@@ -291,5 +291,22 @@ namespace BanHang.Data
 
             return returnValue.ToString();
         }
+
+
+        public static int SoNgayTrongThang(int nam, int thang)
+        {
+            int soNgay = 0;
+            if (thang == 4 || thang == 6 || thang == 9 || thang == 11)
+                soNgay = 30;
+            else if (thang == 2)
+            {
+                if ((nam % 100 != 0) && (nam % 4 == 0))
+                    soNgay = 29;
+                else soNgay = 28;
+            }
+            else soNgay = 31;
+
+            return soNgay;
+        }
     }
 }
