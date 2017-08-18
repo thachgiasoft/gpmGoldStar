@@ -310,7 +310,7 @@ namespace BanHang
 
         protected void btnThemKhachHang_Click(object sender, EventArgs e)
         {
-            if (cmbNhomKhachHang.Text != "" && txtTenKhachHang.Text != "")
+            if (cmbNhomKhachHang.Text != "" && txtTenKhachHang.Text != "" && txtSoDienThoai.Text != "")
             {
                 int IDNhom = Int32.Parse(cmbNhomKhachHang.Value.ToString());
                 string TenKH = txtTenKhachHang.Text;
@@ -330,7 +330,7 @@ namespace BanHang
                         MaKh = sR;
                 }
 
-                object ID = dtkh.ThemKhachHang(IDNhom, MaKh + "", TenKH, DateTime.Now, "", DC, SDT, "");
+                object ID = dtkh.ThemKhachHang(IDNhom, sDate + MaKh + "", TenKH, DateTime.Now, "", DC, SDT, "");
 
                 txtTenKhachHang.Text = "";
                 cmbNhomKhachHang.Text = "";

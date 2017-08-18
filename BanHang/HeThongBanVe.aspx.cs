@@ -289,7 +289,39 @@ namespace BanHang
 
         protected void btnThemKhachHang_Click(object sender, EventArgs e)
         {
-           
+            if (cmbNhomKhachHang.Text != "" && txtTenKhachHang.Text != "" && txtSoDienThoai.Text != "")
+            {
+                int IDNhom = Int32.Parse(cmbNhomKhachHang.Value.ToString());
+                string TenKH = txtTenKhachHang.Text;
+                string SDT = txtSoDienThoai.Text == null ? "" : txtSoDienThoai.Text;
+                string DC = txtDiaChi.Text == null ? "" : txtDiaChi.Text;
+                dtKhachHang dtkh = new dtKhachHang();
+
+                DateTime date = DateTime.Now;
+                string sDate = date.ToString("MMddyyyy");
+                int MaKh = 0;
+                Random dr = new Random();
+                while (MaKh == 0)
+                {
+                    int sR = dr.Next(10000, 99999);
+                    int kt = dtkh.KiemTraMaKhachHang(sDate + sR);
+                    if (kt == 0)
+                        MaKh = sR;
+                }
+
+                object ID = dtkh.ThemKhachHang(IDNhom, sDate + MaKh, TenKH, DateTime.Now, "", DC, SDT, "");
+
+                txtTenKhachHang.Text = "";
+                cmbNhomKhachHang.Text = "";
+                txtSoDienThoai.Text = "";
+                txtDiaChi.Text = "";
+                HienThiThongBao("Thêm khách hàng thành công !!"); return;
+                popupThemKhachHang.ShowOnPageLoad = false;
+            }
+            else
+            {
+                HienThiThongBao("Vui lòng nhập thông tin đầy đủ !!"); return;
+            }
         }
         protected void cmbKhachHang_ItemRequestedByValue(object source, ListEditItemRequestedByValueEventArgs e)
         {
